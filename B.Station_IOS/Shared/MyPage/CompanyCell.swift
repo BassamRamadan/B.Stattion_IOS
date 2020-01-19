@@ -16,7 +16,9 @@ class CompanyCell: UITableViewCell {
     @IBOutlet weak var phone: UILabel!
     @IBOutlet weak var rateView: CosmosView!
     @IBOutlet weak var ratePercentage: UILabel!
-    @IBOutlet weak var level: UILabel!
+    @IBOutlet weak var rateLevel: UILabel!
+    @IBOutlet weak var bio: UILabel!
+    @IBOutlet weak var cityName: UILabel!
     @IBOutlet weak var air: UIStackView!
     @IBOutlet weak var shading: UIStackView!
     @IBOutlet weak var wifi: UIStackView!

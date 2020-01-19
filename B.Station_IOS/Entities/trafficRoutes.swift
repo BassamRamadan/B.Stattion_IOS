@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class TrafficRoutes: Codable{
+class Companies: Codable{
     let code: Int?
     let message: String?
     let data: [RoutesDetails]
@@ -19,7 +19,8 @@ class TrafficRoutes: Codable{
     }
 }
 class RoutesDetails: Codable{
-    let id,avgRate: Int?
+    let avgRate: Double?
+    let id: Int?
     let name,cityId,phone,whatsapp,email,image,code,ordering,lat,lon,status,bio,username,cityName: String?
     let imagePath: String?
     let trafficRoutes: [trafficRoutes]
@@ -34,7 +35,7 @@ class RoutesDetails: Codable{
         case cityName = "city_name"
         case userRates = "user_rates"
     }
-    init(id: Int,avgRate: Int, trafficRoutes: [trafficRoutes],images:[imageDetails],userRates : [userRates],name: String,
+    init(id: Int,avgRate: Double, trafficRoutes: [trafficRoutes],images:[imageDetails],userRates : [userRates],name: String,
          cityId: String,phone: String,whatsapp: String,email: String,image: String,code: String,ordering: String,lat: String,lon: String,status: String,bio: String,username: String,cityName: String,imagePath:String) {
         self.id = id
         self.avgRate = avgRate

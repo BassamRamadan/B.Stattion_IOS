@@ -11,6 +11,9 @@ import Spring
 import DropDown
 
 class SearchingController: UIViewController {
+    
+    var AllCompanies = [RoutesDetails]()
+    
     var CitiesObjects = [Details]()
     var RoutesObjects = [Details]()
     var StartPointObjects = [Details]()
@@ -21,8 +24,8 @@ class SearchingController: UIViewController {
     var StartPointId : Int! = nil
     var EndPointId : Int! = nil
     
-    var StartPointText : String!
-    var EndPointText  : String!
+    var StartPointText : String! = "......"
+    var EndPointText  : String! = "......"
     
     @IBOutlet weak var CityButton: DesignableButton!
     @IBOutlet weak var PathButton: DesignableButton!
@@ -31,9 +34,7 @@ class SearchingController: UIViewController {
     
     
     @IBAction func Submit(_ sender: Any) {
-        if StartPointId != nil && EndPointId != nil{
-            performSegue(withIdentifier: "SearchingDetails", sender: self)
-        }
+            self.loadingCompanies()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SearchingDetails"{
@@ -41,6 +42,8 @@ class SearchingController: UIViewController {
                 distination.search = true
                 distination.name = self.StartPointText
                 distination.path = self.EndPointText
+                distination.AllCompanies.removeAll()
+                distination.AllCompanies.append(contentsOf: self.AllCompanies)
             }
         }
     }
@@ -116,5 +119,52 @@ class SearchingController: UIViewController {
             ResData.append(x.name ?? "")
         }
         return ResData
+    }
+    
+    fileprivate func loadingCompanies(){
+        let url = "https://services-apps.net/bstation/public/api/companies"
+        let headers = [ "Content-Type": "application/json" ,
+                        "Accept" : "application/json"
+        ]
+        var params = ["city_id":"","traffic_id":"","start_point":"","end_point":""]
+        if self.CityId != nil{
+            params.updateValue(String(self.CityId), forKey: "city_id")
+        }
+        if self.RouteId != nil{
+            params.updateValue(String(self.RouteId), forKey: "traffic_id")
+        }
+        if self.StartPointId != nil{
+            params.updateValue(String(self.StartPointId), forKey: "start_point")
+        }
+        if self.EndPointId != nil{
+            params.updateValue(String(self.EndPointId), forKey: "end_point")
+        }
+         self.AllCompanies.removeAll()
+        AlamofireRequests.PostMethod(methodType: "Get", url: url, info: params as [String : Any], headers: headers)
+        { (error, success, jsonData) in
+            do {
+                let decoder = JSONDecoder()
+                if error == nil{
+                    if success{
+                        let propertiesRecived = try decoder.decode(Companies.self, from: jsonData)
+                        self.AllCompanies.append(contentsOf: propertiesRecived.data)
+                        if self.AllCompanies.count == 0{
+                            self.present(common.makeAlert(message: "لا يوجد بيانات مطابقة"), animated: true, completion: nil)
+                        }else{
+                            self.performSegue(withIdentifier: "SearchingDetails", sender: self)
+                        }
+                    }else{
+                        let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
+                        self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
+                    }
+                }else{
+                    self.present(common.makeAlert(), animated: true, completion: nil)
+                    
+                }
+            } catch {
+                self.present(common.makeAlert(message: error.localizedDescription), animated: true, completion: nil)
+                
+            }
+        }
     }
 }

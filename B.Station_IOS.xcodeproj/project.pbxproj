@@ -29,6 +29,14 @@
 		58C258572395C64400294ACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58C258562395C64400294ACE /* Assets.xcassets */; };
 		58C2585A2395C64400294ACE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58C258582395C64400294ACE /* LaunchScreen.storyboard */; };
 		58CF5D2623966982003BCB28 /* AllCompanies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CF5D2523966982003BCB28 /* AllCompanies.swift */; };
+		58D9943723D487BB00A54AD9 /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D9943623D487BA00A54AD9 /* common.swift */; };
+		58D9943B23D488A500A54AD9 /* CashedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D9943A23D488A500A54AD9 /* CashedData.swift */; };
+		58D9944323D4895500A54AD9 /* AboutUsDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D9943D23D4895500A54AD9 /* AboutUsDataClass.swift */; };
+		58D9944423D4895500A54AD9 /* CarToUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D9943E23D4895500A54AD9 /* CarToUpload.swift */; };
+		58D9944523D4895500A54AD9 /* ErrorHandel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D9943F23D4895500A54AD9 /* ErrorHandel.swift */; };
+		58D9944623D4895500A54AD9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D9944023D4895500A54AD9 /* Item.swift */; };
+		58D9944723D4895500A54AD9 /* MainGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D9944123D4895500A54AD9 /* MainGuide.swift */; };
+		58D9944823D4895500A54AD9 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D9944223D4895500A54AD9 /* UserProfile.swift */; };
 		58E9BA58239B1D630028C572 /* Generate Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E9BA57239B1D630028C572 /* Generate Path.swift */; };
 		58FA80D823D39A540058B4F5 /* trafficRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FA80D723D39A540058B4F5 /* trafficRoutes.swift */; };
 /* End PBXBuildFile section */
@@ -58,6 +66,14 @@
 		58C258592395C64400294ACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58C2585B2395C64400294ACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58CF5D2523966982003BCB28 /* AllCompanies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCompanies.swift; sourceTree = "<group>"; };
+		58D9943623D487BA00A54AD9 /* common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = common.swift; path = "../../../AllFinishedProjects/TouristGuide/Tourist-Guide/common.swift"; sourceTree = "<group>"; };
+		58D9943A23D488A500A54AD9 /* CashedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashedData.swift; sourceTree = "<group>"; };
+		58D9943D23D4895500A54AD9 /* AboutUsDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsDataClass.swift; sourceTree = "<group>"; };
+		58D9943E23D4895500A54AD9 /* CarToUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarToUpload.swift; sourceTree = "<group>"; };
+		58D9943F23D4895500A54AD9 /* ErrorHandel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandel.swift; sourceTree = "<group>"; };
+		58D9944023D4895500A54AD9 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		58D9944123D4895500A54AD9 /* MainGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainGuide.swift; sourceTree = "<group>"; };
+		58D9944223D4895500A54AD9 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		58E9BA57239B1D630028C572 /* Generate Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Generate Path.swift"; sourceTree = "<group>"; };
 		58FA80D723D39A540058B4F5 /* trafficRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trafficRoutes.swift; sourceTree = "<group>"; };
 		8D5375C387F3E86ADDF009AD /* Pods-B.Station_IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-B.Station_IOS.release.xcconfig"; path = "Target Support Files/Pods-B.Station_IOS/Pods-B.Station_IOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -207,6 +223,9 @@
 		58C2584E2395C64300294ACE /* B.Station_IOS */ = {
 			isa = PBXGroup;
 			children = (
+				58D9943C23D4895500A54AD9 /* Models */,
+				58D9943A23D488A500A54AD9 /* CashedData.swift */,
+				58D9943623D487BA00A54AD9 /* common.swift */,
 				58080C0623D21221004F1FCA /* Network */,
 				58080C0123D20D34004F1FCA /* Entities */,
 				58201BA923CFD83C001734D0 /* AdminPages */,
@@ -220,6 +239,19 @@
 				58C2585B2395C64400294ACE /* Info.plist */,
 			);
 			path = B.Station_IOS;
+			sourceTree = "<group>";
+		};
+		58D9943C23D4895500A54AD9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				58D9943D23D4895500A54AD9 /* AboutUsDataClass.swift */,
+				58D9943E23D4895500A54AD9 /* CarToUpload.swift */,
+				58D9943F23D4895500A54AD9 /* ErrorHandel.swift */,
+				58D9944023D4895500A54AD9 /* Item.swift */,
+				58D9944123D4895500A54AD9 /* MainGuide.swift */,
+				58D9944223D4895500A54AD9 /* UserProfile.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		7E64777B0F92CDC0DB94E9D1 /* Pods */ = {
@@ -382,13 +414,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				584BE55623D2B9C700F677B4 /* SearchingController.swift in Sources */,
+				58D9944823D4895500A54AD9 /* UserProfile.swift in Sources */,
 				58C258502395C64300294ACE /* AppDelegate.swift in Sources */,
+				58D9943723D487BB00A54AD9 /* common.swift in Sources */,
+				58D9944323D4895500A54AD9 /* AboutUsDataClass.swift in Sources */,
+				58D9944723D4895500A54AD9 /* MainGuide.swift in Sources */,
 				58CF5D2623966982003BCB28 /* AllCompanies.swift in Sources */,
 				58080C0923D21221004F1FCA /* Network.swift in Sources */,
+				58D9944423D4895500A54AD9 /* CarToUpload.swift in Sources */,
 				58080C0323D20D55004F1FCA /* City.swift in Sources */,
+				58D9943B23D488A500A54AD9 /* CashedData.swift in Sources */,
 				58A3943423AE38E000A40508 /* MainProfile.swift in Sources */,
 				584BE55423D29FF900F677B4 /* ClassesGetData.swift in Sources */,
+				58D9944523D4895500A54AD9 /* ErrorHandel.swift in Sources */,
 				58E9BA58239B1D630028C572 /* Generate Path.swift in Sources */,
+				58D9944623D4895500A54AD9 /* Item.swift in Sources */,
 				584BE55823D2C2A800F677B4 /* CompanyCell.swift in Sources */,
 				58080C0A23D21221004F1FCA /* NetworkError.swift in Sources */,
 				582EC6552396C9BE006360F0 /* ElementShadow.swift in Sources */,

@@ -30,4 +30,6 @@ target 'B.Station_IOS' do
   pod 'Amplitude-iOS', '~> 4.0.4'
   pod 'SwiftyMenu'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
+  pod 'MOLH'
+  pod 'Firebase'
 end
