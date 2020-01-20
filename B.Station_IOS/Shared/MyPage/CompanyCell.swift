@@ -23,6 +23,8 @@ class CompanyCell: UITableViewCell {
     @IBOutlet weak var shading: UIStackView!
     @IBOutlet weak var wifi: UIStackView!
     @IBOutlet weak var path: UIStackView!
+    @IBOutlet weak var StartPoint: UILabel!
+    @IBOutlet weak var EndPoint: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

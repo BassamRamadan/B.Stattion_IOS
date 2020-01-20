@@ -32,4 +32,5 @@ target 'B.Station_IOS' do
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
   pod 'MOLH'
   pod 'Firebase'
+  pod 'SDWebImage'
 end

@@ -100,6 +100,9 @@ PODS:
   - ObjectMapper (3.5.1)
   - PopupDialog (1.1.0):
     - DynamicBlurView (~> 3.0.1)
+  - SDWebImage (5.1.0):
+    - SDWebImage/Core (= 5.1.0)
+  - SDWebImage/Core (5.1.0)
   - SnapKit (4.0.1)
   - Spring (1.0.6)
   - SwiftLint (0.34.0)
@@ -128,6 +131,7 @@ DEPENDENCIES:
   - NVActivityIndicatorView
   - ObjectMapper
   - PopupDialog
+  - SDWebImage
   - SnapKit (~> 4.0.0)
   - Spring (from `https://github.com/MengTo/Spring.git`)
   - SwiftLint
@@ -168,6 +172,7 @@ SPEC REPOS:
     - NVActivityIndicatorView
     - ObjectMapper
     - PopupDialog
+    - SDWebImage
     - SnapKit
     - SwiftLint
     - SwiftyMenu
@@ -215,12 +220,13 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   PopupDialog: 42fb7a0bc4fafdf89fef8b5b2b127a6023f3e1cc
+  SDWebImage: fb387001955223213dde14bc08c8b73f371f8d8f
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
   SwiftLint: 79d48a17c6565dc286c37efb8322c7b450f95c67
   SwiftyMenu: 6d436a5455de0df3b1bb24274d93b2c27475f29d
   UIColor_Hex_Swift: 2fb123c7d864994a5137ef57c4dc55e17a657d29
 
-PODFILE CHECKSUM: 5803c755f4b46145be814317213fc2cc46f949f2
+PODFILE CHECKSUM: 34b748cc2b6507745d34ba4c58cd8909cb3c2548
 
 COCOAPODS: 1.7.5

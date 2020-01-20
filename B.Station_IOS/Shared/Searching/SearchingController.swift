@@ -14,6 +14,11 @@ class SearchingController: UIViewController {
     
     var AllCompanies = [RoutesDetails]()
     
+    let CityDrop = DropDown()
+    let RouteDrop = DropDown()
+    let StartPointDrop = DropDown()
+    let EndPointDrop = DropDown()
+    
     var CitiesObjects = [Details]()
     var RoutesObjects = [Details]()
     var StartPointObjects = [Details]()
@@ -28,7 +33,7 @@ class SearchingController: UIViewController {
     var EndPointText  : String! = "......"
     
     @IBOutlet weak var CityButton: DesignableButton!
-    @IBOutlet weak var PathButton: DesignableButton!
+    @IBOutlet weak var RouteButton: DesignableButton!
     @IBOutlet weak var StartPointButton: DesignableButton!
     @IBOutlet weak var EndPointButton: DesignableButton!
     
@@ -47,26 +52,17 @@ class SearchingController: UIViewController {
             }
         }
     }
-    @IBAction func Cityclick(_ sender: DesignableButton) {
-        let dd = DropDown()
-        dd.anchorView = (sender as AnchorView)
-        switch sender {
-        case CityButton:
-            dd.dataSource = parsingData(self.CitiesObjects)
-        case PathButton:
-            dd.dataSource = parsingData(self.RoutesObjects)
-        case EndPointButton:
-            dd.dataSource = parsingData(self.EndPointObjects)
-        case StartPointButton:
-            dd.dataSource = parsingData(self.StartPointObjects)
-        default:
-            break
-        }
-        dd.bottomOffset = CGPoint(x: 0, y:(dd.anchorView?.plainView.bounds.height)!)
-        dd.selectionAction = {[unowned self](index : Int , item : String)in
-            (sender as DesignableButton).setTitle(item, for: .normal)
-            switch sender {
-            case self.CityButton:
+    @IBAction func CityClick(_ sender: DesignableButton) {
+        // reset start and end point
+        ResetPoints()
+        
+        CityDrop.anchorView = (sender as AnchorView)
+        CityDrop.dataSource = parsingData(self.CitiesObjects)
+        CityDrop.bottomOffset = CGPoint(x: 0, y:(CityDrop.anchorView?.plainView.bounds.height)!)
+        CityDrop.selectionAction = {
+            [unowned self](index : Int , item : String)in
+            
+                self.CityButton.setTitle(item, for: .normal)
                 self.CityId = self.CitiesObjects[index].id
                 // startPoint
                 self.StartPointObjects.removeAll()
@@ -80,27 +76,54 @@ class SearchingController: UIViewController {
                         self.EndPointObjects.append(contentsOf: success)
                     }
                 }
-                
-            case self.PathButton:
-                self.RouteId = self.RoutesObjects[index].id
-                if self.CityId != nil{
-                    GetDataForPaths().loadOnLinePoints(self.CityId, self.RouteId){ (success : [Details]) in
-                        self.EndPointObjects.removeAll()
-                         self.EndPointObjects.append(contentsOf: success)
-                    }
+            }
+        CityDrop.show()
+    }
+    @IBAction func RouteClick(_ sender: DesignableButton) {
+        RouteDrop.anchorView = (sender as AnchorView)
+        RouteDrop.dataSource = parsingData(self.RoutesObjects)
+        RouteDrop.bottomOffset = CGPoint(x: 0, y:(RouteDrop.anchorView?.plainView.bounds.height)!)
+        RouteDrop.selectionAction = {
+            [unowned self](index : Int , item : String)in
+            self.RouteButton.setTitle(item, for: .normal)
+            
+            self.RouteId = self.RoutesObjects[index].id
+            if self.CityId != nil{
+                GetDataForPaths().loadOnLinePoints(self.CityId, self.RouteId){ (success : [Details]) in
+                    self.EndPointObjects.removeAll()
+                    self.EndPointObjects.append(contentsOf: success)
                 }
-            case self.EndPointButton:
-                self.EndPointId = self.EndPointObjects[index].id
-                self.EndPointText = self.EndPointObjects[index].name
-            case self.StartPointButton:
-                self.StartPointId = self.StartPointObjects[index].id
-                self.StartPointText = self.StartPointObjects[index].name
-            default:
-                break
             }
         }
-        dd.show()
+        RouteDrop.show()
     }
+    @IBAction func StartPointClick(_ sender: DesignableButton) {
+        StartPointDrop.anchorView = (sender as AnchorView)
+        StartPointDrop.dataSource = parsingData(self.StartPointObjects)
+        StartPointDrop.bottomOffset = CGPoint(x: 0, y:(StartPointDrop.anchorView?.plainView.bounds.height)!)
+        
+        StartPointDrop.selectionAction = {
+            [unowned self](index : Int , item : String)in
+            self.StartPointButton.setTitle(item, for: .normal)
+            self.StartPointId = self.StartPointObjects[index].id
+            self.StartPointText = self.StartPointObjects[index].name
+        }
+        StartPointDrop.show()
+    }
+    @IBAction func EndPointClick(_ sender: DesignableButton) {
+        EndPointDrop.anchorView = (sender as AnchorView)
+        EndPointDrop.dataSource = parsingData(self.EndPointObjects)
+        EndPointDrop.bottomOffset = CGPoint(x: 0, y:(EndPointDrop.anchorView?.plainView.bounds.height)!)
+        
+        EndPointDrop.selectionAction = {
+            [unowned self](index : Int , item : String)in
+            self.EndPointButton.setTitle(item, for: .normal)
+            self.EndPointId = self.EndPointObjects[index].id
+            self.EndPointText = self.EndPointObjects[index].name
+        }
+        EndPointDrop.show()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -112,6 +135,17 @@ class SearchingController: UIViewController {
             self.RoutesObjects.removeAll()
             self.RoutesObjects.append(contentsOf: success)
         }
+    }
+    
+    fileprivate func ResetPoints(){
+        StartPointDrop.dataSource.removeAll()
+        EndPointDrop.dataSource.removeAll()
+        StartPointButton.setTitle("", for: .normal)
+        EndPointButton.setTitle("", for: .normal)
+        StartPointId = nil
+        EndPointId = nil
+        StartPointText = "......"
+        EndPointText = "......"
     }
     fileprivate func parsingData(_ data : [Details])->[String]{
         var ResData = [String]()
