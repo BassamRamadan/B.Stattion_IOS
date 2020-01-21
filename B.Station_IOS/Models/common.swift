@@ -70,10 +70,13 @@ class common : UIViewController , NVActivityIndicatorViewable{
     }
     class func userLogout(currentController: UIViewController){
         CashedData.saveUserApiKey(token: "")
+         CashedData.saveUserPhone(name: "")
+         CashedData.saveUserName(name: "")
+         CashedData.saveUserCode(token: -1)
         openMain(currentController: currentController)
     }
     class func openMain(currentController: UIViewController){
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard.init(name: "User", bundle: nil)
         UIApplication.shared.keyWindow?.rootViewController = storyboard.instantiateInitialViewController()
     }
     func loading(_ message:String = ""){

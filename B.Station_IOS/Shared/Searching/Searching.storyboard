@@ -364,7 +364,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bWg-N6-MQ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-90313.043478260879" y="1354.6875"/>
+            <point key="canvasLocation" x="-90762" y="1355"/>
         </scene>
         <!--شركات النقل-->
         <scene sceneID="EAr-yJ-9Ja">
@@ -824,7 +824,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cDW-Gw-Ess" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-89460.869565217392" y="1354.6875"/>
+            <point key="canvasLocation" x="-89801" y="1347"/>
         </scene>
     </scenes>
     <resources>

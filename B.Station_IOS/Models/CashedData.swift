@@ -46,6 +46,24 @@ class CashedData: NSObject  {
         let dif = UserDefaults.standard
         return (dif.object(forKey : "UserUpdateApiKey") as? String)
     }
+    class func saveUserCode(token:Int){
+        let def = UserDefaults.standard
+        def.setValue(token , forKey: "code")
+        def.synchronize()
+    }
+    class  func getUserCode ()->Int? {
+        let dif = UserDefaults.standard
+        return (dif.object(forKey : "code") as? Int)
+    }
+    class func saveUserUpdateCode (token:Int){
+        let def = UserDefaults.standard
+        def.setValue(token , forKey: "UserUpdateCode")
+        def.synchronize()
+    }
+    class  func getUserUpdateCode ()->Int? {
+        let dif = UserDefaults.standard
+        return (dif.object(forKey : "UserUpdateCode") as? Int)
+    }
     class func saveUserName (name:String){
         let def = UserDefaults.standard
         def.setValue(name , forKey: "UserName")
@@ -56,14 +74,14 @@ class CashedData: NSObject  {
         return (dif.object(forKey : "UserName") as? String)
     }
     
-    class func saveUserPassword (name:String){
+    class func saveUserPhone (name:String){
         let def = UserDefaults.standard
-        def.setValue(name , forKey: "UserPassword")
+        def.setValue(name , forKey: "UserPhone")
         def.synchronize()
     }
-    class func getUserPassword ()->String? {
+    class func getUserPhone ()->String? {
         let dif = UserDefaults.standard
-        return (dif.object(forKey : "UserPassword") as? String)
+        return (dif.object(forKey : "UserPhone") as? String)
     }
     class  func getUserImage ()->String? {
         let dif = UserDefaults.standard
@@ -77,21 +95,38 @@ class CashedData: NSObject  {
         let dif = UserDefaults.standard
         return (dif.object(forKey : "UserID") as? String)
     }
-    class func saveUserData (admin:User){
+    class func saveUserData (LogAdmin: LogDetails){
         let def = UserDefaults.standard
-        def.setValue(admin.name , forKey: "UserName")
-        def.setValue(admin.username , forKey: "UserUserName")
-        def.setValue(admin.imagePath , forKey: "UserImage")
-        def.setValue(admin.email , forKey: "UserEmail")
-        def.setValue(admin.id , forKey: "UserID")
-        if let token = admin.accessToken{
+        def.setValue(LogAdmin.name , forKey: "UserName")
+        def.setValue(LogAdmin.phone , forKey: "UserPhone")
+        def.setValue(LogAdmin.imagePath , forKey: "UserImage")
+        def.setValue(LogAdmin.id , forKey: "UserID")
+        if let token = LogAdmin.accessToken{
             def.setValue(token , forKey: "token")
             def.setValue(token , forKey: "UserUpdateApiKey")
         }
-        
+        if let token = LogAdmin.code{
+            def.setValue(token , forKey: "code")
+            def.setValue(token , forKey: "UserUpdateCode")
+        }
         def.synchronize()
     }
-    
+    class func saveUserData (SignAdmin: SignDetails){
+        let def = UserDefaults.standard
+        def.setValue(SignAdmin.name , forKey: "UserName")
+        def.setValue(SignAdmin.phone , forKey: "UserPhone")
+        def.setValue(SignAdmin.imagePath , forKey: "UserImage")
+        def.setValue(SignAdmin.id , forKey: "UserID")
+        if let token = SignAdmin.accessToken{
+            def.setValue(token , forKey: "token")
+            def.setValue(token , forKey: "UserUpdateApiKey")
+        }
+        if let token = SignAdmin.code{
+            def.setValue(token , forKey: "code")
+            def.setValue(token , forKey: "UserUpdateCode")
+        }
+        def.synchronize()
+    }
     
     // for admin
     class func saveAdminApiKey (token:String){
@@ -140,17 +175,17 @@ class CashedData: NSObject  {
         let dif = UserDefaults.standard
         return (dif.object(forKey : "AdminbalanceInvitations") as? String)
     }
-    class func saveAdminData (admin:User){
+    class func saveAdminData (admin:SignDetails){
         let def = UserDefaults.standard
         def.setValue(admin.name , forKey: "AdminName")
-        def.setValue(admin.username , forKey: "AdminUserName")
+       // def.setValue(admin.username , forKey: "AdminUserName")
         def.setValue(admin.imagePath , forKey: "AdminImage")
-        def.setValue(admin.email , forKey: "AdminEmail")
+       // def.setValue(admin.email , forKey: "AdminEmail")
         def.setValue(admin.id , forKey: "AdminID")
         def.setValue(admin.code , forKey: "AdminCode")
-        def.setValue(admin.balance , forKey: "AdminBalance")
-        def.setValue(admin.balanceRewards , forKey: "AdminBalanceRewards")
-        def.setValue(admin.balanceInvitations , forKey: "AdminbalanceInvitations")
+      //  def.setValue(admin.balance , forKey: "AdminBalance")
+      //  def.setValue(admin.balanceRewards , forKey: "AdminBalanceRewards")
+      //  def.setValue(admin.balanceInvitations , forKey: "AdminbalanceInvitations")
         if let token = admin.accessToken{
             def.setValue(token , forKey: "AdminApiKey")
             def.setValue(token , forKey: "AdminUpdateApiKey")

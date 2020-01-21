@@ -9,6 +9,7 @@ import UIKit
 
 class UserLogin: common {
     
+    @IBOutlet weak var astric: UILabel!
     @IBOutlet weak var Submit: UIButton!
     @IBOutlet weak var Label: UILabel!
     @IBOutlet weak var OldUser: UIButton!
@@ -16,25 +17,51 @@ class UserLogin: common {
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var phone: UITextField!
     @IBAction func Old(_ sender: Any) {
+        if CashedData.getUserPhone() != ""{
+            phone.text = CashedData.getUserPhone()
+        }
         Label.isHidden = false
+        astric.isHidden = false
         name.isHidden = true
         Submit.setTitle("تسجيل", for: .normal)
+        NewUser.backgroundColor = UIColor(named: "dark light")
+        OldUser.backgroundColor = UIColor.white
+        
     }
     @IBAction func New(_ sender: Any) {
+        phone.text = ""
         Label.isHidden = true
+        astric.isHidden = true
         name.isHidden = false
         Submit.setTitle("دخول", for: .normal)
+        OldUser.backgroundColor = UIColor(named: "dark light")
+        NewUser.backgroundColor = UIColor.white
     }
  
+    @IBAction func Submit(_ sender: Any) {
+        if name.isHidden == true{
+            sign()
+        }else{
+            login()
+        }
+       
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        Modules()
+        setModules(name)
+        setModules(phone)
+    }
+    fileprivate func Modules(){
+        name.delegate = self
+        phone.delegate = self
         setModules(name)
         setModules(phone)
     }
     fileprivate func setModules(_ textField : UIView){
-        textField.backgroundColor = .white
+        textField.backgroundColor = UIColor(named: "textFieldBackground")
         textField.layer.borderColor = UIColor.lightGray.cgColor
-        textField.layer.borderWidth = 1.0
+        textField.layer.borderWidth = 0.0
     }
     @IBAction func remeperMe(_ sender: UIButton) {
         
@@ -47,38 +74,43 @@ class UserLogin: common {
         sender.isSelected = !sender.isSelected
         
     }
-    
-    @IBAction func login(_ sender: UIButton) {
+    fileprivate func sign() {
+        self.loading()
         let url = "https://services-apps.net/bstation/public/api/user-signup"
         let info = ["name": name.text!,
                     "phone":phone.text!
-        ]
-        
+            ]
+      
         let headers = [ "Content-Type": "application/json" ,
                         "Accept" : "application/json"
         ]
         AlamofireRequests.PostMethod( methodType: "POST", url: url, info: info, headers: headers) { (error, success , jsonData) in
             do {
+                self.stopAnimating()
                 let decoder = JSONDecoder()
                 if error == nil{
                     if success{
-                        let dataRecived = try decoder.decode(UserProfile.self, from: jsonData)
-                        if dataRecived.code >= 201 && dataRecived.code < 300{
-                            if let user = dataRecived.data{
-                                CashedData.saveAdminApiKey(token: (user.accessToken ?? ""))
-                                CashedData.saveAdminUpdateKey(token: (user.accessToken ?? ""))
-                                CashedData.saveAdminData(admin: user)
-                                CashedData.saveAdminPassword(name: self.phone.text!)
+                            let dataRecived = try decoder.decode(UserSign.self, from: jsonData)
+                            if dataRecived.code >= 201 && dataRecived.code < 300{
+                                if let user = dataRecived.data{
+                                    CashedData.saveUserApiKey(token: (user.accessToken ?? ""))
+                                    CashedData.saveUserUpdateKey(token: (user.accessToken ?? ""))
+                                    CashedData.saveUserData(SignAdmin: user)
+                                    CashedData.saveUserCode(token: user.code! )
+                                    CashedData.saveUserUpdateCode(token: user.code! )
+                                    CashedData.saveUserPhone(name: user.phone)
+                                }
                             }
-                            let storyboard = UIStoryboard(name: "User", bundle: nil)
-                            let linkingVC = storyboard.instantiateViewController(withIdentifier: "TabUserController") as! TabUserController
-                            linkingVC.index = 4
-                            self.present(linkingVC, animated: false, completion: nil)
-                        }}
+                        let storyboard = UIStoryboard(name: "User", bundle: nil)
+                        let linkingVC = storyboard.instantiateViewController(withIdentifier: "TabUserController") as! TabUserController
+                        self.present(linkingVC, animated: false, completion: nil)
+                      
+                        }
                     else{
                         let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
                         self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
-                    }}
+                    }
+                }
                 else{
                     let message = NSLocalizedString("عفوا حدث خطأ اثناء التسجيل بسبب الانترنت برجاء المحاوله مره اخري", comment: "error login") 
                     
@@ -88,23 +120,69 @@ class UserLogin: common {
             } catch {
                 self.present(common.makeAlert(message: error.localizedDescription), animated: true, completion: nil)
             }
-            
         }
     }
-    
+    fileprivate func login() {
+        self.loading()
+        let url = "https://services-apps.net/bstation/public/api/user-login"
+        let info = ["phone": CashedData.getUserPhone() ?? "",
+                    "code": CashedData.getUserCode() as Any
+        ]
+        let headers = [ "Content-Type": "application/json" ,
+                        "Accept" : "application/json"
+        ]
+        AlamofireRequests.PostMethod( methodType: "POST", url: url, info: info, headers: headers) { (error, success , jsonData) in
+            do {
+                self.stopAnimating()
+                let decoder = JSONDecoder()
+                if error == nil{
+                    if success{
+                        let dataRecived = try decoder.decode(UserLog.self, from: jsonData)
+                        if dataRecived.code >= 201 && dataRecived.code < 300{
+                            if let user = dataRecived.data{
+                                CashedData.saveUserApiKey(token: (user.accessToken ?? ""))
+                                CashedData.saveUserUpdateKey(token: (user.accessToken ?? ""))
+                                CashedData.saveUserData(LogAdmin: user)
+                                CashedData.saveUserCode(token: Int(user.code!)! )
+                                CashedData.saveUserUpdateCode(token: Int(user.code!)! )
+                                CashedData.saveUserPhone(name: user.phone)
+                            }
+                        }
+                        let storyboard = UIStoryboard(name: "User", bundle: nil)
+                        let linkingVC = storyboard.instantiateViewController(withIdentifier: "TabUserController") as! TabUserController
+                        self.present(linkingVC, animated: false, completion: nil)
+                        
+                    }
+                    else{
+                        let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
+                        self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
+                    }
+                }
+                else{
+                    let message = NSLocalizedString("عفوا حدث خطأ اثناء التسجيل بسبب الانترنت برجاء المحاوله مره اخري", comment: "error login")
+                    
+                    self.present(common.makeAlert(message: message), animated: true, completion: nil)
+                }
+                
+            } catch {
+                self.present(common.makeAlert(message: error.localizedDescription), animated: true, completion: nil)
+            }
+        }
+    }
 }
+
 extension UserLogin : UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return false
-    }
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+     }
+     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         textField.backgroundColor = .white
         textField.layer.borderWidth = 1.0
         textField.layer.borderColor = UIColor.red.cgColor
         return true
-    }
-    func textFieldDidEndEditing(_ textField: UITextField) {
+     }
+     func textFieldDidEndEditing(_ textField: UITextField) {
         setModules(textField)
-    }
-}
+     }
+ }

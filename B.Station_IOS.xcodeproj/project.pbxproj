@@ -38,7 +38,7 @@
 		58D9944523D4895500A54AD9 /* ErrorHandel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D9943F23D4895500A54AD9 /* ErrorHandel.swift */; };
 		58D9944623D4895500A54AD9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D9944023D4895500A54AD9 /* Item.swift */; };
 		58D9944723D4895500A54AD9 /* MainGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D9944123D4895500A54AD9 /* MainGuide.swift */; };
-		58D9944823D4895500A54AD9 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D9944223D4895500A54AD9 /* UserProfile.swift */; };
+		58D9944823D4895500A54AD9 /* UserSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D9944223D4895500A54AD9 /* UserSign.swift */; };
 		58E9BA58239B1D630028C572 /* Generate Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E9BA57239B1D630028C572 /* Generate Path.swift */; };
 		58F1755B23D63DF6004DA24C /* AlamofireRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F1755A23D63DF6004DA24C /* AlamofireRequest.swift */; };
 		58F1756123D6501F004DA24C /* UsagePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F1755C23D6501E004DA24C /* UsagePolicy.swift */; };
@@ -49,6 +49,7 @@
 		58F1756923D65B42004DA24C /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F1756823D65B42004DA24C /* AboutUsViewController.swift */; };
 		58F1756B23D67133004DA24C /* ActivateCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F1756A23D67133004DA24C /* ActivateCompany.swift */; };
 		58F1756D23D6799E004DA24C /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F1756C23D6799E004DA24C /* common.swift */; };
+		58F54E0223D7A53700416746 /* UserLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F54E0123D7A53700416746 /* UserLog.swift */; };
 		58FA80D823D39A540058B4F5 /* trafficRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FA80D723D39A540058B4F5 /* trafficRoutes.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,7 +87,7 @@
 		58D9943F23D4895500A54AD9 /* ErrorHandel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandel.swift; sourceTree = "<group>"; };
 		58D9944023D4895500A54AD9 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		58D9944123D4895500A54AD9 /* MainGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainGuide.swift; sourceTree = "<group>"; };
-		58D9944223D4895500A54AD9 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		58D9944223D4895500A54AD9 /* UserSign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSign.swift; sourceTree = "<group>"; };
 		58E9BA57239B1D630028C572 /* Generate Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Generate Path.swift"; sourceTree = "<group>"; };
 		58F1755A23D63DF6004DA24C /* AlamofireRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireRequest.swift; sourceTree = "<group>"; };
 		58F1755C23D6501E004DA24C /* UsagePolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsagePolicy.swift; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 		58F1756823D65B42004DA24C /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		58F1756A23D67133004DA24C /* ActivateCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateCompany.swift; sourceTree = "<group>"; };
 		58F1756C23D6799E004DA24C /* common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
+		58F54E0123D7A53700416746 /* UserLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLog.swift; sourceTree = "<group>"; };
 		58FA80D723D39A540058B4F5 /* trafficRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trafficRoutes.swift; sourceTree = "<group>"; };
 		8D5375C387F3E86ADDF009AD /* Pods-B.Station_IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-B.Station_IOS.release.xcconfig"; path = "Target Support Files/Pods-B.Station_IOS/Pods-B.Station_IOS.release.xcconfig"; sourceTree = "<group>"; };
 		B61752634DE1CCF822675ABE /* Pods_B_Station_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_B_Station_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -282,7 +284,8 @@
 				58D9943F23D4895500A54AD9 /* ErrorHandel.swift */,
 				58D9944023D4895500A54AD9 /* Item.swift */,
 				58D9944123D4895500A54AD9 /* MainGuide.swift */,
-				58D9944223D4895500A54AD9 /* UserProfile.swift */,
+				58D9944223D4895500A54AD9 /* UserSign.swift */,
+				58F54E0123D7A53700416746 /* UserLog.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -449,12 +452,13 @@
 				584BE55623D2B9C700F677B4 /* SearchingController.swift in Sources */,
 				58F1756123D6501F004DA24C /* UsagePolicy.swift in Sources */,
 				58F1756B23D67133004DA24C /* ActivateCompany.swift in Sources */,
-				58D9944823D4895500A54AD9 /* UserProfile.swift in Sources */,
+				58D9944823D4895500A54AD9 /* UserSign.swift in Sources */,
 				58F1756723D65736004DA24C /* AppDelegate.swift in Sources */,
 				58D9944323D4895500A54AD9 /* AboutUsDataClass.swift in Sources */,
 				58D9944723D4895500A54AD9 /* MainGuide.swift in Sources */,
 				58CF5D2623966982003BCB28 /* AllCompanies.swift in Sources */,
 				58D9944423D4895500A54AD9 /* CarToUpload.swift in Sources */,
+				58F54E0223D7A53700416746 /* UserLog.swift in Sources */,
 				5809EA3823D4F944002AF4D9 /* Fav.swift in Sources */,
 				58080C0323D20D55004F1FCA /* City.swift in Sources */,
 				58D9943B23D488A500A54AD9 /* CashedData.swift in Sources */,

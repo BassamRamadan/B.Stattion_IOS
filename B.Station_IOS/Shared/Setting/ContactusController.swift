@@ -42,9 +42,9 @@ class ContactusController: common {
         setModules(body)
     }
     fileprivate func setModules(_ textField : UIView){
-        textField.backgroundColor = .white
+        textField.backgroundColor = UIColor(named: "textFieldBackground")
         textField.layer.borderColor = UIColor.lightGray.cgColor
-        textField.layer.borderWidth = 1.0
+        textField.layer.borderWidth = 0.0
     }
     
     fileprivate func setUserData(){
@@ -125,15 +125,4 @@ extension ContactusController : UITextFieldDelegate {
         setModules(textField)
     }
 }
-extension UITextField {
-    @IBInspectable var placeholderColor: UIColor {
-        get {
-            return attributedPlaceholder?.attribute(.foregroundColor, at: 0, effectiveRange: nil) as? UIColor ?? .clear
-        }
-        set {
-            guard let attributedPlaceholder = attributedPlaceholder else { return }
-            let attributes: [NSAttributedString.Key: UIColor] = [.foregroundColor: newValue]
-            self.attributedPlaceholder = NSAttributedString(string: attributedPlaceholder.string, attributes: attributes)
-        }
-    }
-}
+
