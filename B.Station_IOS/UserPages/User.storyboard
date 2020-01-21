@@ -14,7 +14,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="hMd-uG-vsE">
             <objects>
-                <tabBarController id="0uf-PK-PzK" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabUserController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0uf-PK-PzK" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" insetsLayoutMarginsFromSafeArea="NO" id="F1a-mM-Lgo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -261,7 +261,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <view userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="wpu-mB-ol0" customClass="CosmosView" customModule="Cosmos">
-                                                                            <rect key="frame" x="234" y="23.5" width="120" height="50"/>
+                                                                            <rect key="frame" x="234" y="38.5" width="120" height="20"/>
                                                                             <color key="backgroundColor" name="white"/>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="totalStars">

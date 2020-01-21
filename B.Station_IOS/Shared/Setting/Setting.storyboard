@@ -557,7 +557,6 @@
         <!--سياسة الاستخدام-->
         <scene sceneID="AZY-6h-FOz">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ood-JJ-a04" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="سياسة الاستخدام" id="lOW-tI-KHU" customClass="UsagePolicy" customModule="B_Station_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3c5-2l-Iwc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -618,6 +617,7 @@
                         <outlet property="content" destination="2zd-cg-4eq" id="Uz3-7O-89f"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ood-JJ-a04" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-89042" y="2283"/>
         </scene>

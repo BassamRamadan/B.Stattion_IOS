@@ -42,7 +42,7 @@ class ContactusController: common {
         setModules(body)
     }
     fileprivate func setModules(_ textField : UIView){
-        textField.backgroundColor = .init(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
+        textField.backgroundColor = .white
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.layer.borderWidth = 1.0
     }
