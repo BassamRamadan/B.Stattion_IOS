@@ -10,7 +10,7 @@ import UIKit
 import Spring
 import DropDown
 
-class SearchingController: UIViewController {
+class SearchingController: common {
     
     var AllCompanies = [RoutesDetails]()
     
@@ -156,6 +156,7 @@ class SearchingController: UIViewController {
     }
     
     fileprivate func loadingCompanies(){
+        self.loading()
         let url = "https://services-apps.net/bstation/public/api/companies"
         let headers = [ "Content-Type": "application/json" ,
                         "Accept" : "application/json"
@@ -177,6 +178,7 @@ class SearchingController: UIViewController {
         AlamofireRequests.PostMethod(methodType: "Get", url: url, info: params as [String : Any], headers: headers)
         { (error, success, jsonData) in
             do {
+                self.stopAnimating()
                 let decoder = JSONDecoder()
                 if error == nil{
                     if success{

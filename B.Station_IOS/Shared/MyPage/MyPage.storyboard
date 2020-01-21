@@ -14,7 +14,6 @@
         <!--مسارات النقل-->
         <scene sceneID="0jt-7X-W1L">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WyK-CE-3WA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController title="مسارات النقل" id="ZLe-vT-z1R" customModule="B_Station_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="QMk-HZ-oCc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -244,6 +243,7 @@
                     <string key="customClass">Transport companies
 </string>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WyK-CE-3WA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-91257" y="1389"/>
         </scene>

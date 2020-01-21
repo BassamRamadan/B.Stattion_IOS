@@ -8,12 +8,18 @@
 
 import UIKit
 import SDWebImage
-class FavouriteCompanies: UIViewController {
+class FavouriteCompanies: common {
     var TrashingCompanies = [FavDetails]()
     @IBOutlet weak var TrashingTable: UITableView!
     
-    @IBAction func StartPointClick(_ sender: UIButton) {
-        
+    @IBAction func Delete(_ sender: Any) {
+        let alert = UIAlertController(title: "Alert", message: "هل تريد حذف المسار بالفعل" , preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "لا أوافق", style: .default, handler: { action in
+        }))
+        alert.addAction(UIAlertAction(title: "موافق", style: .default, handler: { action in
+            self.DeleteCompany(self.TrashingCompanies[(sender as! UIButton).tag].id)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -21,16 +27,46 @@ class FavouriteCompanies: UIViewController {
        
         loadingCompanies()
     }
+    fileprivate func DeleteCompany(_ Id : Int){
+        self.loading()
+        let url = "https://services-apps.net/bstation/public/api/user/delete-from-favourite/\(Id)"
+        let headers = [ "Content-Type": "application/json" ,
+                        "Accept" : "application/json",
+                        "Authorization" : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc2VydmljZXMtYXBwcy5uZXRcL2JzdGF0aW9uXC9wdWJsaWNcL2FwaVwvdXNlci1sb2dpbiIsImlhdCI6MTU3OTUyOTE0MCwibmJmIjoxNTc5NTI5MTQwLCJqdGkiOiIxaW10REpCZTFVSjh5OWFOIiwic3ViIjo1LCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.BlG8QCqXbD6ZgKz6GC9DkydETVsRfI9MdQfsh9rprwE"
+        ]
+        AlamofireRequests.PostMethod(methodType: "DELETE", url: url, info: [:], headers: headers){
+            (error, success, jsonData) in
+            do {
+                self.stopAnimating()
+                let decoder = JSONDecoder()
+                if error == nil{
+                    if success{
+                        self.loadingCompanies()
+                    }else{
+                        let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
+                        self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
+                    }
+                }else{
+                    self.present(common.makeAlert(), animated: true, completion: nil)
+                }
+            } catch {
+                self.present(common.makeAlert(message: error.localizedDescription), animated: true, completion: nil)
+                
+            }
+        }
+    }
     fileprivate func loadingCompanies(){
+        self.loading()
         let url = "https://services-apps.net/bstation/public/api/user/favourite-list"
         let headers = [ "Content-Type": "application/json" ,
                         "Accept" : "application/json",
-                        "Authorization" : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc2VydmljZXMtYXBwcy5uZXRcL2JzdGF0aW9uXC9wdWJsaWNcL2FwaVwvdXNlci1zaWdudXAiLCJpYXQiOjE1Nzk0NDQyNTcsIm5iZiI6MTU3OTQ0NDI1NywianRpIjoiMzNYZ1pKQU9MZUhDMHE4aCIsInN1YiI6MiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.Joj4p8wSxXzQRStV-wFKYppIw9uS0zTANu7570EzF_k"
+                         "Authorization" : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc2VydmljZXMtYXBwcy5uZXRcL2JzdGF0aW9uXC9wdWJsaWNcL2FwaVwvdXNlci1sb2dpbiIsImlhdCI6MTU3OTUyOTE0MCwibmJmIjoxNTc5NTI5MTQwLCJqdGkiOiIxaW10REpCZTFVSjh5OWFOIiwic3ViIjo1LCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.BlG8QCqXbD6ZgKz6GC9DkydETVsRfI9MdQfsh9rprwE"
         ]
         self.TrashingCompanies.removeAll()
         AlamofireRequests.getMethod(url: url, headers: headers){
             (error, success, jsonData) in
             do {
+                self.stopAnimating()
                 let decoder = JSONDecoder()
                 if error == nil{
                     if success{
@@ -61,12 +97,13 @@ extension FavouriteCompanies: UITableViewDelegate , UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavCompanies", for: indexPath) as! CompanyCell
-        cell.companyImage.sd_setImage(with: URL(string: TrashingCompanies[indexPath.row].ImagePath))
+        cell.companyImage.sd_setImage(with: URL(string: TrashingCompanies[indexPath.row].ImagePath ?? ""))
         cell.companyName.text = TrashingCompanies[indexPath.row].name
         cell.ratePercentage.text = "\(TrashingCompanies[indexPath.row].AvgRate)"
         cell.rateLevel.text = RatingLevel().Level(Double(TrashingCompanies[indexPath.row].AvgRate))
         cell.rateView.rating = Double(TrashingCompanies[indexPath.row].AvgRate)
         cell.cityName.text = TrashingCompanies[indexPath.row].CityName
+        cell.DeleteButton.tag = indexPath.row
         return cell
     }
     

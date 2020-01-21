@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TransportCompanies : UIViewController {
+class TransportCompanies : common {
     var AllCompanies = [RoutesDetails]()
 
     @IBOutlet weak var SearchDetails: UIView!
@@ -32,6 +32,7 @@ class TransportCompanies : UIViewController {
         }
     }
     fileprivate func loadingCompanies(){
+        self.loading()
         let url = "https://services-apps.net/bstation/public/api/companies"
         let headers = [ "Content-Type": "application/json" ,
                         "Accept" : "application/json"
@@ -40,6 +41,7 @@ class TransportCompanies : UIViewController {
         AlamofireRequests.getMethod(url: url, headers: headers){
             (error, success, jsonData) in
             do {
+                self.stopAnimating()
                 let decoder = JSONDecoder()
                 if error == nil{
                     if success{

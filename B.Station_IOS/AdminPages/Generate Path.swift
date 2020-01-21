@@ -10,7 +10,7 @@ import UIKit
 import DropDown
 import Spring
 import Alamofire
-class GeneratePath: UIViewController {
+class GeneratePath: common {
     
     let CityDrop = DropDown()
     let RouteDrop = DropDown()
@@ -164,10 +164,11 @@ class GeneratePath: UIViewController {
         EndPointText = "......"
     }
     fileprivate func Uploading(){
+        self.loading()
         let url = "https://services-apps.net/bstation/public/api/company/add-traffic"
         let headers = [ "Content-Type": "application/json" ,
                         "Accept" : "application/json",
-                        "Authorization" : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc2VydmljZXMtYXBwcy5uZXRcL2JzdGF0aW9uXC9wdWJsaWNcL2FwaVwvY29tcGFueS1sb2dpbiIsImlhdCI6MTU3OTQ3NDY0NywibmJmIjoxNTc5NDc0NjQ3LCJqdGkiOiJFNGJiUHh4OEtoNUhQU0FrIiwic3ViIjoxNiwicHJ2IjoiY2ZlN2VjOTlhMjNmNDM4OGU3ZjFkNWZiODcwODM3NWM4NTRlZGE2NCJ9.bBry3A30zjn9IFmqZQcjdkqIdLKGJGma6J82Szw4nk0"
+                        "Authorization" : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc2VydmljZXMtYXBwcy5uZXRcL2JzdGF0aW9uXC9wdWJsaWNcL2FwaVwvY29tcGFueS1zaWdudXAiLCJpYXQiOjE1Nzk1MjQ0OTksIm5iZiI6MTU3OTUyNDQ5OSwianRpIjoiNGJRd2RaYkJ3S0JRRXdnRiIsInN1YiI6MTcsInBydiI6ImNmZTdlYzk5YTIzZjQzODhlN2YxZDVmYjg3MDgzNzVjODU0ZWRhNjQifQ.B4wBM8paBOD1zBVVlzuf_qCaPJcLBh-HCQLL0RnpXBg"
         ]
         let params = ["city_id":self.CityId as Any,
                       "traffic_id":self.RouteId as Any,
@@ -184,25 +185,20 @@ class GeneratePath: UIViewController {
         AlamofireRequests.PostMethod(methodType: "POST", url: url, info: params, headers: headers){
             (error, success, jsonData) in
             do {
+                self.stopAnimating()
                 let decoder = JSONDecoder()
                 if error == nil{
                     if success{
-                        let propertiesRecived = try decoder.decode(FavList.self, from: jsonData)
-                        if propertiesRecived.code == 200{
-                            self.present(common.makeAlert(message: "تم إضافةالمسار بنجاح"), animated: true, completion: nil)
-                        }else{
-                            self.present(common.makeAlert(message: propertiesRecived.message!), animated: true, completion: nil)
-                        }
+                        self.present(common.makeAlert(message: "تم إضافةالمسار بنجاح"), animated: true, completion: nil)
                     }else{
                         let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
                         self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
                     }
                 }else{
-                    self.present(common.makeAlert(), animated: true, completion: nil)
+                        self.present(common.makeAlert(), animated: true, completion: nil)
                 }
-            } catch {
-                self.present(common.makeAlert(message: error.localizedDescription), animated: true, completion: nil)
-                
+            }catch {
+                        self.present(common.makeAlert(message: error.localizedDescription), animated: true, completion: nil)
             }
         }
     }

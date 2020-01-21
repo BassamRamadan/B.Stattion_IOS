@@ -20,13 +20,13 @@ class FavList: Codable{
 }
 class FavDetails: Codable{
     let id , AvgRate: Int
-    let CompanyId, name,ImagePath , CityName: String
+    let CompanyId, name,ImagePath , CityName: String?
     enum CodingKeys: String , CodingKey{
         case id , name
         case AvgRate = "avg_rate",ImagePath = "image_path"
         case CompanyId = "company_id",CityName = "city_name"
     }
-    init(id:Int,AvgRate:Int,CompanyId: String, name: String,ImagePath: String , CityName: String) {
+    init(id:Int,AvgRate:Int,CompanyId: String, name: String,ImagePath: String? , CityName: String) {
         self.id = id
         self.AvgRate = AvgRate
         self.CityName = CityName

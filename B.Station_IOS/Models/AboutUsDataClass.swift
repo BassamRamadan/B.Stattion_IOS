@@ -14,16 +14,16 @@ import ObjectMapper
 class AboutUS: Codable {
     let code: Int?
     let message: String?
-    let data: AboutUSDataClass
+    let data: AboutUSDataDetails
     
-    init(code: Int, message: String, data: AboutUSDataClass) {
+    init(code: Int, message: String, data: AboutUSDataDetails) {
         self.code = code
         self.message = message
         self.data = data
     }
 }
 
-class AboutUSDataClass: Codable {
+class AboutUSDataDetails: Codable {
     let id: Int?
     let title, content: String?
     
@@ -45,45 +45,31 @@ class AboutUSDataClass: Codable {
 class SocialLinks: Codable {
     let code: Int?
     let message: String?
-    let data: [SocialLinksDatum]
+    let data: [SocialLinksDetails]
     
-    init(code: Int, message: String, data: [SocialLinksDatum]) {
+    init(code: Int, message: String, data: [SocialLinksDetails]) {
         self.code = code
         self.message = message
         self.data = data
     }
 }
 
-class SocialLinksDatum: Codable {
-    let id: Int?
-    let type: String?
+class SocialLinksDetails: Codable {
     let link: String?
-    let iconPath: String?
-    let createdAt, updatedAt: String?
+    let icon: String?
     
-    enum CodingKeys: String, CodingKey {
-        case id, type, link
-        case iconPath = "icon_path"
-        case createdAt = "created_at"
-        case updatedAt = "updated_at"
-    }
-    
-    init(id: Int, type: String, link: String, iconPath: String, createdAt: String, updatedAt: String) {
-        self.id = id
-        self.type = type
+    init(link: String, icon: String) {
         self.link = link
-        self.iconPath = iconPath
-        self.createdAt = createdAt
-        self.updatedAt = updatedAt
+        self.icon = icon
     }
 }
 
 class AppContacts: Codable {
     let code: Int?
     let message: String?
-    let data: Contacts
+    let data: ContactsDetails
     
-    init(code: Int, message: String, data: Contacts) {
+    init(code: Int, message: String, data: ContactsDetails) {
         self.code = code
         self.message = message
         self.data = data
@@ -91,7 +77,7 @@ class AppContacts: Codable {
 }
 
 
-class Contacts: Codable {
+class ContactsDetails: Codable {
     let phone, whatsapp, telegram: String?
     
     enum CodingKeys: String, CodingKey {

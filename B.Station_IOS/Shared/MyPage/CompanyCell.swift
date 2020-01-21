@@ -25,6 +25,7 @@ class CompanyCell: UITableViewCell {
     @IBOutlet weak var path: UIStackView!
     @IBOutlet weak var StartPoint: UILabel!
     @IBOutlet weak var EndPoint: UILabel!
+    @IBOutlet weak var DeleteButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
