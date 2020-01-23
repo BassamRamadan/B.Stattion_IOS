@@ -42,8 +42,8 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="iSk-a4-YL2">
                                                                         <rect key="frame" x="0.0" y="0.0" width="353" height="60"/>
                                                                         <subviews>
-                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="712-HJ-DV3">
-                                                                                <rect key="frame" x="0.0" y="8.5" width="273" height="43.5"/>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="712-HJ-DV3">
+                                                                                <rect key="frame" x="0.0" y="4.5" width="273" height="51.5"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مرحبا.." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EgT-yX-trJ">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="273" height="20"/>
@@ -53,9 +53,9 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bassam" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wpa-x2-KoP">
-                                                                                        <rect key="frame" x="0.0" y="22" width="273" height="21.5"/>
+                                                                                        <rect key="frame" x="0.0" y="30" width="273" height="21.5"/>
                                                                                         <color key="backgroundColor" name="clear color"/>
-                                                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                                                         <color key="textColor" name="dark text"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
@@ -342,7 +342,7 @@
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kzb-2h-eqz">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="128"/>
                                                                                 <connections>
-                                                                                    <segue destination="eHM-oU-Stc" kind="show" id="PcY-Jy-6bZ"/>
+                                                                                    <segue destination="eHM-oU-Stc" kind="show" id="jT5-Jj-bBS"/>
                                                                                 </connections>
                                                                             </button>
                                                                         </subviews>

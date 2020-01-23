@@ -39,6 +39,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8EN-ob-so9">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="red"/>
                     </navigationBar>
                     <connections>
                         <segue destination="a21-c1-49y" kind="relationship" relationship="rootViewController" id="Jdj-Cg-mre"/>
@@ -56,6 +57,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FLv-vk-BLW">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="red"/>
                     </navigationBar>
                     <connections>
                         <segue destination="9Ef-af-6z1" kind="relationship" relationship="rootViewController" id="74E-uG-ezk"/>
@@ -83,6 +85,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="q8o-oa-EI3">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="red"/>
                     </navigationBar>
                     <connections>
                         <segue destination="Jsf-EK-sS2" kind="relationship" relationship="rootViewController" id="fUq-sR-S3N"/>
@@ -100,6 +103,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="R2b-o7-yld">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="red"/>
                     </navigationBar>
                     <connections>
                         <segue destination="WGE-Uf-NU7" kind="relationship" relationship="rootViewController" id="wq3-BV-Ou9"/>
@@ -796,11 +800,22 @@
                         <outlet property="SearchDetails" destination="lEL-mY-MqG" id="orB-d8-zbo"/>
                         <outlet property="searchName" destination="9c5-zw-PkE" id="K2l-jI-DUK"/>
                         <outlet property="searchPath" destination="V6S-fc-Wda" id="Pd6-oh-3Cn"/>
+                        <segue destination="DRi-Jw-YVT" kind="show" identifier="CompanyPage" id="Mx3-X9-I95"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BhO-KC-zNU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-93271" y="1260"/>
+        </scene>
+        <!--CompanyPage-->
+        <scene sceneID="sJb-hk-iB2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CompanyPage" id="DRi-Jw-YVT" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="lJT-GY-zXa"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rwI-QJ-Q6n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-93270" y="1754"/>
         </scene>
     </scenes>
     <resources>
@@ -836,6 +851,9 @@
         </namedColor>
         <namedColor name="gray text">
             <color red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="red">
+            <color red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="separator">
             <color red="0.80000000000000004" green="0.80000000000000004" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

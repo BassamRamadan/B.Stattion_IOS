@@ -161,7 +161,7 @@ class SearchingController: common {
         let headers = [ "Content-Type": "application/json" ,
                         "Accept" : "application/json"
         ]
-        var params = ["city_id":"","traffic_id":"","start_point":"","end_point":""]
+        var params = ["city_id":"","traffic_id":"","from_station_id":"","to_station_id":""]
         if self.CityId != nil{
             params.updateValue(String(self.CityId), forKey: "city_id")
         }
@@ -169,10 +169,10 @@ class SearchingController: common {
             params.updateValue(String(self.RouteId), forKey: "traffic_id")
         }
         if self.StartPointId != nil{
-            params.updateValue(String(self.StartPointId), forKey: "start_point")
+            params.updateValue(String(self.StartPointId), forKey: "from_station_id")
         }
         if self.EndPointId != nil{
-            params.updateValue(String(self.EndPointId), forKey: "end_point")
+            params.updateValue(String(self.EndPointId), forKey: "to_station_id")
         }
          self.AllCompanies.removeAll()
         AlamofireRequests.PostMethod(methodType: "Get", url: url, info: params as [String : Any], headers: headers)

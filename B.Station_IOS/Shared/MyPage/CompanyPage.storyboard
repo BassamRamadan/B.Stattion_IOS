@@ -250,7 +250,7 @@
         <!--بروفيل الشركة-->
         <scene sceneID="WVv-Wk-Sr5">
             <objects>
-                <viewController title="بروفيل الشركة" id="nug-SC-n9W" customClass="MainProfile" customModule="B_Station_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CompanyPage" title="بروفيل الشركة" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nug-SC-n9W" customClass="MainProfile" customModule="B_Station_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2yY-tg-qtt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -371,7 +371,7 @@
                                                                                 <rect key="frame" x="0.0" y="175.5" width="394" height="50"/>
                                                                                 <subviews>
                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sw-bL-CTd">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="50.000000000000014" height="50.000000000000014"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                                         <color key="backgroundColor" name="clear color"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" constant="50" id="4UE-ej-SC6"/>
@@ -383,7 +383,7 @@
                                                                                         </connections>
                                                                                     </button>
                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3OJ-Wa-Xwr">
-                                                                                        <rect key="frame" x="59.999999999999993" y="0.0" width="50.000000000000021" height="50.000000000000014"/>
+                                                                                        <rect key="frame" x="60" y="0.0" width="50" height="50"/>
                                                                                         <color key="backgroundColor" name="clear color"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="50" id="En5-Vm-vml"/>
@@ -502,7 +502,7 @@
                                                                         </constraints>
                                                                         <color key="sectionIndexBackgroundColor" name="dark light"/>
                                                                         <prototypes>
-                                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PathsCell" rowHeight="249" id="6vj-ZN-tI4" customClass="MainProfileCell" customModule="B_Station_IOS" customModuleProvider="target">
+                                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PathsCell" rowHeight="249" id="6vj-ZN-tI4" customClass="CompanyCell" customModule="B_Station_IOS" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="28" width="414" height="249"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6vj-ZN-tI4" id="hGZ-L2-23J">
@@ -700,6 +700,15 @@
                                                                                     </constraints>
                                                                                 </tableViewCellContentView>
                                                                                 <color key="backgroundColor" name="dark light"/>
+                                                                                <connections>
+                                                                                    <outlet property="EndPoint" destination="5SZ-Ih-TPb" id="ins-QA-lR3"/>
+                                                                                    <outlet property="StartPoint" destination="PFu-ru-eiG" id="NCe-P2-Aql"/>
+                                                                                    <outlet property="air" destination="es8-Fn-K1U" id="6Ft-fv-doz"/>
+                                                                                    <outlet property="carModeling" destination="KnT-n9-LwX" id="fvb-Lk-vuz"/>
+                                                                                    <outlet property="phone" destination="j6z-xz-v0q" id="sOz-R0-2hs"/>
+                                                                                    <outlet property="shading" destination="scN-ZW-GMu" id="D6h-DJ-5fX"/>
+                                                                                    <outlet property="wifi" destination="Ne5-bK-GCr" id="bbH-4F-Cst"/>
+                                                                                </connections>
                                                                             </tableViewCell>
                                                                         </prototypes>
                                                                         <connections>
@@ -715,7 +724,7 @@
                                                                         </constraints>
                                                                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <prototypes>
-                                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RatingsCell" rowHeight="249" id="0Np-Ot-uIp" customClass="MainProfileCell" customModule="B_Station_IOS" customModuleProvider="target">
+                                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RatingsCell" rowHeight="249" id="0Np-Ot-uIp" customClass="CompanyCell" customModule="B_Station_IOS" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="28" width="414" height="249"/>
                                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Np-Ot-uIp" id="nsK-D5-VBS">
@@ -847,6 +856,13 @@
                                                                                     </constraints>
                                                                                 </tableViewCellContentView>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <connections>
+                                                                                    <outlet property="Date" destination="cTd-vN-Nce" id="ZZ4-ob-vZu"/>
+                                                                                    <outlet property="comment" destination="P4p-ud-bRI" id="rOO-Cd-S8o"/>
+                                                                                    <outlet property="name" destination="7lh-D0-FTE" id="CGE-8k-RqV"/>
+                                                                                    <outlet property="ratePercentage" destination="cVm-3x-4vR" id="8kw-Ed-043"/>
+                                                                                    <outlet property="rateView" destination="AgW-pq-rIn" id="yVu-DJ-G7q"/>
+                                                                                </connections>
                                                                             </tableViewCell>
                                                                         </prototypes>
                                                                         <connections>
@@ -946,7 +962,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftP-Xu-Kjc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-93161" y="1574"/>
+            <point key="canvasLocation" x="-93574" y="1574"/>
         </scene>
     </scenes>
     <resources>

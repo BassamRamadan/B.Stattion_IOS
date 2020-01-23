@@ -24,7 +24,7 @@ class common : UIViewController , NVActivityIndicatorViewable{
     
     class func drowbackButton()->UIButton {
         let notifBtn: UIButton = UIButton(type: UIButton.ButtonType.custom)
-        notifBtn.setImage(UIImage(named: "ic_back_blue"), for: [])
+        notifBtn.setImage(UIImage(named: "ic_back_arrow"), for: [])
         notifBtn.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         return notifBtn
         // Do any additional setup after loading the view
@@ -69,14 +69,12 @@ class common : UIViewController , NVActivityIndicatorViewable{
         openMain(currentController: currentController)
     }
     class func userLogout(currentController: UIViewController){
-        CashedData.saveUserApiKey(token: "")
+         CashedData.saveUserApiKey(token: "")
          CashedData.saveUserPhone(name: "")
-         CashedData.saveUserName(name: "")
-         CashedData.saveUserCode(token: -1)
         openMain(currentController: currentController)
     }
     class func openMain(currentController: UIViewController){
-        let storyboard = UIStoryboard.init(name: "User", bundle: nil)
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         UIApplication.shared.keyWindow?.rootViewController = storyboard.instantiateInitialViewController()
     }
     func loading(_ message:String = ""){

@@ -7,11 +7,23 @@
 //
 
 import UIKit
+import Cosmos
 class MainProfile: UIViewController {
+    var CompanyInfo : RoutesDetails?
     @IBOutlet var PhotosCollection : UICollectionView!
     @IBOutlet var PhotosCollectionWidth : NSLayoutConstraint!
     
+    @IBOutlet weak var CityName: UILabel!
+    @IBOutlet weak var CompanyName: UILabel!
+    @IBOutlet weak var bio: UILabel!
+    @IBOutlet weak var CosmosRate: CosmosView!
     
+    @IBAction func WhatsuppCall(_ sender: Any) {
+    }
+    @IBAction func PhoneCall(_ sender: Any) {
+    }
+    @IBOutlet weak var RatePercentage: UILabel!
+    @IBOutlet weak var RateLevel: UILabel!
     @IBOutlet var PathsTableView : UITableView!
     @IBOutlet var RatingsTableView : UITableView!
     @IBOutlet var PathsTableHeight : NSLayoutConstraint!
@@ -39,8 +51,16 @@ class MainProfile: UIViewController {
         super.viewDidLoad()
         
         self.RatingsClicked(RatingsButton)
-
-        // Do any additional setup after loading the view.
+        
+        setupValues()
+    }
+    fileprivate func setupValues(){
+        CompanyName.text = CompanyInfo?.name
+        CityName.text = CompanyInfo?.cityName
+        bio.text = CompanyInfo?.bio
+        RatePercentage.text = "\(CompanyInfo?.avgRate ?? 0)"
+        CosmosRate.rating = CompanyInfo?.avgRate ?? 0.0
+        RateLevel.text = RatingLevel.Level(CompanyInfo?.avgRate ?? 0.0)
     }
     override func viewWillLayoutSubviews() {
         super.updateViewConstraints()
@@ -53,21 +73,40 @@ class MainProfile: UIViewController {
 
 extension MainProfile : UITableViewDataSource , UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        switch tableView {
+        case PathsTableView:
+            return self.CompanyInfo?.trafficRoutes.count ?? 0
+        default:
+            return self.CompanyInfo?.userRates.count ?? 0
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var identifier : String = ""
+        
         switch tableView {
             case PathsTableView:
-              identifier = "PathsCell"
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PathsCell", for: indexPath) as! CompanyCell
+             cell.air.isHidden = !(CompanyInfo?.trafficRoutes[indexPath.row].airConditioning ?? false)
+             cell.wifi.isHidden = !(CompanyInfo?.trafficRoutes[indexPath.row].wifi ?? false)
+             cell.shading.isHidden = !(CompanyInfo?.trafficRoutes[indexPath.row].shading ?? false)
+             cell.StartPoint.text = CompanyInfo?.trafficRoutes[indexPath.row].fromStation
+             cell.EndPoint.text = CompanyInfo?.trafficRoutes[indexPath.row].toStation
+            cell.carModeling.text = "\(CompanyInfo?.trafficRoutes[indexPath.row].carModel) - \(CompanyInfo?.trafficRoutes[indexPath.row].carType)"
+              return cell
             default:
-                identifier = "RatingsCell"
+            let cell = tableView.dequeueReusableCell(withIdentifier: "RatingsCell", for: indexPath) as! CompanyCell
+            cell.name.text = CompanyInfo?.userRates[indexPath.row].userName
+            cell.comment.text = CompanyInfo?.userRates[indexPath.row].comment
+            cell.rateView.rating = Double(CompanyInfo?.userRates[indexPath.row].rate ?? "0.0") as! Double
+            cell.ratePercentage.text = CompanyInfo?.userRates[indexPath.row].rate ?? "0.0"
+            cell.Date.text = CompanyInfo?.userRates[indexPath.row].createdAt
+              return cell
         }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
-     return cell
+    
+   
     }
 }
 extension MainProfile : UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{

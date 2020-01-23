@@ -9,7 +9,8 @@
 import UIKit
 import Cosmos
 class CompanyCell: UITableViewCell {
-
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var comment: UILabel!
     @IBOutlet weak var companyName: UILabel!
     @IBOutlet weak var companyImage : UIImageView!
     @IBOutlet weak var carModeling: UILabel!
@@ -26,6 +27,8 @@ class CompanyCell: UITableViewCell {
     @IBOutlet weak var StartPoint: UILabel!
     @IBOutlet weak var EndPoint: UILabel!
     @IBOutlet weak var DeleteButton: UIButton!
+    @IBOutlet weak var Date: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -32,7 +32,7 @@ class FavouriteCompanies: common {
         let url = "https://services-apps.net/bstation/public/api/user/delete-from-favourite/\(Id)"
         let headers = [ "Content-Type": "application/json" ,
                         "Accept" : "application/json",
-                        "Authorization" : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc2VydmljZXMtYXBwcy5uZXRcL2JzdGF0aW9uXC9wdWJsaWNcL2FwaVwvdXNlci1sb2dpbiIsImlhdCI6MTU3OTUyOTE0MCwibmJmIjoxNTc5NTI5MTQwLCJqdGkiOiIxaW10REpCZTFVSjh5OWFOIiwic3ViIjo1LCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.BlG8QCqXbD6ZgKz6GC9DkydETVsRfI9MdQfsh9rprwE"
+                        "Authorization" : "Bearer \(CashedData.getUserApiKey() ?? "")"
         ]
         AlamofireRequests.PostMethod(methodType: "DELETE", url: url, info: [:], headers: headers){
             (error, success, jsonData) in
@@ -60,7 +60,7 @@ class FavouriteCompanies: common {
         let url = "https://services-apps.net/bstation/public/api/user/favourite-list"
         let headers = [ "Content-Type": "application/json" ,
                         "Accept" : "application/json",
-                         "Authorization" : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc2VydmljZXMtYXBwcy5uZXRcL2JzdGF0aW9uXC9wdWJsaWNcL2FwaVwvdXNlci1sb2dpbiIsImlhdCI6MTU3OTUyOTE0MCwibmJmIjoxNTc5NTI5MTQwLCJqdGkiOiIxaW10REpCZTFVSjh5OWFOIiwic3ViIjo1LCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.BlG8QCqXbD6ZgKz6GC9DkydETVsRfI9MdQfsh9rprwE"
+                         "Authorization" : "Bearer \(CashedData.getUserApiKey() ?? "")"
         ]
         self.TrashingCompanies.removeAll()
         AlamofireRequests.getMethod(url: url, headers: headers){
@@ -100,7 +100,7 @@ extension FavouriteCompanies: UITableViewDelegate , UITableViewDataSource {
         cell.companyImage.sd_setImage(with: URL(string: TrashingCompanies[indexPath.row].ImagePath ?? ""))
         cell.companyName.text = TrashingCompanies[indexPath.row].name
         cell.ratePercentage.text = "\(TrashingCompanies[indexPath.row].AvgRate)"
-        cell.rateLevel.text = RatingLevel().Level(Double(TrashingCompanies[indexPath.row].AvgRate))
+        cell.rateLevel.text = RatingLevel.Level(Double(TrashingCompanies[indexPath.row].AvgRate))
         cell.rateView.rating = Double(TrashingCompanies[indexPath.row].AvgRate)
         cell.cityName.text = TrashingCompanies[indexPath.row].CityName
         cell.DeleteButton.tag = indexPath.row

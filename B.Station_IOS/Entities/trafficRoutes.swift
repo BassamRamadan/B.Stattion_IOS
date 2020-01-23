@@ -36,7 +36,7 @@ class RoutesDetails: Codable{
     let imagePath: String?
     let trafficRoutes: [trafficRoutes]
     let images:[imageDetails]
-   // let userRates : [userRates]
+    let userRates : [userRates]
     enum CodingKeys: String,CodingKey{
         case id,name,phone,whatsapp,email,image,code,ordering,lat,lon,status,bio,username,images
         case trafficRoutes = "traffic_routes"
@@ -44,7 +44,7 @@ class RoutesDetails: Codable{
         case cityId = "city_id"
         case avgRate = "avg_rate"
         case cityName = "city_name"
-      //  case userRates = "user_rates"
+        case userRates = "user_rates"
     }
     init(id: Int,avgRate: Double, trafficRoutes: [trafficRoutes],images:[imageDetails],userRates : [userRates],name: String,
          cityId: String,phone: String,whatsapp: String,email: String,image: String,code: String,ordering: String,lat: String,lon: String,status: String,bio: String,username: String,cityName: String,imagePath:String) {
@@ -52,7 +52,7 @@ class RoutesDetails: Codable{
         self.avgRate = avgRate
         self.trafficRoutes = trafficRoutes
         self.images = images
-      //  self.userRates = userRates
+        self.userRates = userRates
         self.name = name
         self.cityId = cityId
         self.phone = phone

@@ -14,7 +14,6 @@ class AboutUsViewController: common {
     var aboutData: AboutUSDataDetails?
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupBackButton()
         common.setNavigationShadow(navigationController: self.navigationController)
         self.tabBarController?.tabBar.isHidden = false
         getAboutData()
@@ -103,6 +102,9 @@ class AboutUsViewController: common {
     @objc func back(){
         print("accessed")
         common.openback(sender: self.navigationController!)
+    }
+    fileprivate func setupShadowViewtop(){
+        common.setNavigationShadow(navigationController: self.navigationController)
     }
 }
 extension AboutUsViewController : UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{

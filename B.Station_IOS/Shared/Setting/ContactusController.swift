@@ -30,6 +30,7 @@ class ContactusController: common {
         let tap = UITapGestureRecognizer(target: self, action: #selector(ok(reg:)))
         view.addGestureRecognizer(tap)
         setUserData()
+        getApiToken()
     }
     @objc func ok(reg : UITapGestureRecognizer){
         view.endEditing(true)
@@ -49,8 +50,10 @@ class ContactusController: common {
     
     fileprivate func setUserData(){
         if AppDelegate.normalUser {
+            phone.text = CashedData.getUserPhone()
             name.text = CashedData.getUserName()
         }else{
+            phone.text = CashedData.getAdminPhone()
             name.text = CashedData.getAdminName()
         }
     }
@@ -91,10 +94,8 @@ class ContactusController: common {
     
     func getApiToken() {
         if AppDelegate.normalUser {
-            self.name.text = CashedData.getUserName()
             token = CashedData.getUserApiKey() ?? ""
         }else{
-            self.name.text = CashedData.getAdminName()
             token = CashedData.getAdminApiKey() ?? ""
         }
     }

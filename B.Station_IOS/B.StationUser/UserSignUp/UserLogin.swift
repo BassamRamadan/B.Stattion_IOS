@@ -23,7 +23,7 @@ class UserLogin: common {
         Label.isHidden = false
         astric.isHidden = false
         name.isHidden = true
-        Submit.setTitle("تسجيل", for: .normal)
+        Submit.setTitle("دخول", for: .normal)
         NewUser.backgroundColor = UIColor(named: "dark light")
         OldUser.backgroundColor = UIColor.white
         
@@ -33,21 +33,24 @@ class UserLogin: common {
         Label.isHidden = true
         astric.isHidden = true
         name.isHidden = false
-        Submit.setTitle("دخول", for: .normal)
+        Submit.setTitle("تسجيل", for: .normal)
         OldUser.backgroundColor = UIColor(named: "dark light")
         NewUser.backgroundColor = UIColor.white
     }
  
     @IBAction func Submit(_ sender: Any) {
         if name.isHidden == true{
-            sign()
+            login("oldUser")
         }else{
-            login()
+            login("newUser")
         }
        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        CashedData.saveUserCode(token: 4633)
+        CashedData.saveUserPhone(name: "01025961815")
+        Old(OldUser as Any)
         Modules()
         setModules(name)
         setModules(phone)
@@ -74,13 +77,21 @@ class UserLogin: common {
         sender.isSelected = !sender.isSelected
         
     }
-    fileprivate func sign() {
+    fileprivate func login(_ userType : String) {
         self.loading()
-        let url = "https://services-apps.net/bstation/public/api/user-signup"
-        let info = ["name": name.text!,
+        var url : String
+        var info : [String : Any]
+        if userType == "newUser"{
+            url = "https://services-apps.net/bstation/public/api/user-signup"
+            info = ["name": name.text!,
                     "phone":phone.text!
             ]
-      
+        }else{
+            url = "https://services-apps.net/bstation/public/api/user-login"
+            info = ["phone": CashedData.getUserPhone() ?? "",
+                    "code": CashedData.getUserCode() as Any
+            ]
+        }
         let headers = [ "Content-Type": "application/json" ,
                         "Accept" : "application/json"
         ]
@@ -90,67 +101,23 @@ class UserLogin: common {
                 let decoder = JSONDecoder()
                 if error == nil{
                     if success{
+                        if userType == "newUser"{
                             let dataRecived = try decoder.decode(UserSign.self, from: jsonData)
                             if dataRecived.code >= 201 && dataRecived.code < 300{
                                 if let user = dataRecived.data{
                                     CashedData.saveUserApiKey(token: (user.accessToken ?? ""))
                                     CashedData.saveUserUpdateKey(token: (user.accessToken ?? ""))
                                     CashedData.saveUserData(SignAdmin: user)
-                                    CashedData.saveUserCode(token: user.code! )
-                                    CashedData.saveUserUpdateCode(token: user.code! )
+                                    CashedData.saveUserCode(token: Int(user.code!) )
+                                    CashedData.saveUserUpdateCode(token: Int(user.code!) )
                                     CashedData.saveUserPhone(name: user.phone)
                                 }
                             }
-                        let storyboard = UIStoryboard(name: "User", bundle: nil)
-                        let linkingVC = storyboard.instantiateViewController(withIdentifier: "TabUserController") as! TabUserController
-                        self.present(linkingVC, animated: false, completion: nil)
-                      
-                        }
-                    else{
-                        let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
-                        self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
-                    }
-                }
-                else{
-                    let message = NSLocalizedString("عفوا حدث خطأ اثناء التسجيل بسبب الانترنت برجاء المحاوله مره اخري", comment: "error login") 
-                    
-                    self.present(common.makeAlert(message: message), animated: true, completion: nil)
-                }
-                
-            } catch {
-                self.present(common.makeAlert(message: error.localizedDescription), animated: true, completion: nil)
-            }
-        }
-    }
-    fileprivate func login() {
-        self.loading()
-        let url = "https://services-apps.net/bstation/public/api/user-login"
-        let info = ["phone": CashedData.getUserPhone() ?? "",
-                    "code": CashedData.getUserCode() as Any
-        ]
-        let headers = [ "Content-Type": "application/json" ,
-                        "Accept" : "application/json"
-        ]
-        AlamofireRequests.PostMethod( methodType: "POST", url: url, info: info, headers: headers) { (error, success , jsonData) in
-            do {
-                self.stopAnimating()
-                let decoder = JSONDecoder()
-                if error == nil{
-                    if success{
-                        let dataRecived = try decoder.decode(UserLog.self, from: jsonData)
-                        if dataRecived.code >= 201 && dataRecived.code < 300{
-                            if let user = dataRecived.data{
-                                CashedData.saveUserApiKey(token: (user.accessToken ?? ""))
-                                CashedData.saveUserUpdateKey(token: (user.accessToken ?? ""))
-                                CashedData.saveUserData(LogAdmin: user)
-                                CashedData.saveUserCode(token: Int(user.code!)! )
-                                CashedData.saveUserUpdateCode(token: Int(user.code!)! )
-                                CashedData.saveUserPhone(name: user.phone)
-                            }
                         }
                         let storyboard = UIStoryboard(name: "User", bundle: nil)
                         let linkingVC = storyboard.instantiateViewController(withIdentifier: "TabUserController") as! TabUserController
-                        self.present(linkingVC, animated: false, completion: nil)
+                        let appDelegate = UIApplication.shared.delegate
+                        appDelegate?.window??.rootViewController = linkingVC
                         
                     }
                     else{

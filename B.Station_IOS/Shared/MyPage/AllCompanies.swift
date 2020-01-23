@@ -74,7 +74,7 @@ extension TransportCompanies: UITableViewDelegate , UITableViewDataSource {
         cell.companyImage.isHidden = search
         cell.path.isHidden = search
         if search == false{
-            cell.companyImage.sd_setImage(with: URL(string: "https://services-apps.net/bstation/public/images/users/"+AllCompanies[indexPath.row].image!))
+            cell.companyImage.sd_setImage(with: URL(string: "https://services-apps.net/bstation/public/images/users/"+(AllCompanies[indexPath.row].image ?? "") ) )
             if AllCompanies[indexPath.row].trafficRoutes.count > 0{
                 cell.StartPoint.text = AllCompanies[indexPath.row].trafficRoutes[0].fromStation
                 cell.EndPoint.text = AllCompanies[indexPath.row].trafficRoutes[0].toStation
@@ -86,15 +86,26 @@ extension TransportCompanies: UITableViewDelegate , UITableViewDataSource {
         
         cell.companyName.text = AllCompanies[indexPath.row].name
         cell.ratePercentage.text = "\(AllCompanies[indexPath.row].avgRate ?? 0)"
-        cell.rateLevel.text = RatingLevel().Level(AllCompanies[indexPath.row].avgRate!)
+        cell.rateLevel.text = RatingLevel.Level(AllCompanies[indexPath.row].avgRate!)
         cell.rateView.rating = AllCompanies[indexPath.row].avgRate ?? 0
         cell.bio.text = AllCompanies[indexPath.row].bio
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       performSegue(withIdentifier: "CompanyPage", sender: self.AllCompanies[indexPath.row])
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CompanyPage"{
+            if let destination = segue.destination as? MainProfile{
+                destination.CompanyInfo = sender as! RoutesDetails?
+            }
+        }
+    }
    
 }
 class RatingLevel{
-    func Level(_ avgRate : Double) -> String{
+    class func Level(_ avgRate : Double) -> String{
         switch avgRate {
         case 0.0...1.0:
             return "مقبول"
