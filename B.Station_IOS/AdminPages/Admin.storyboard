@@ -658,12 +658,10 @@
                                                     <rect key="frame" x="15" y="11" width="290" height="504"/>
                                                     <subviews>
                                                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJm-AP-Gv6">
-                                                            <rect key="frame" x="10" y="10" width="40" height="40"/>
+                                                            <rect key="frame" x="10" y="10" width="24" height="24"/>
                                                             <color key="backgroundColor" name="dark light"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="40" id="Ekt-l5-qHr"/>
                                                                 <constraint firstAttribute="width" secondItem="bJm-AP-Gv6" secondAttribute="height" multiplier="1:1" id="OuQ-0F-59E"/>
-                                                                <constraint firstAttribute="width" constant="40" id="gyS-Ag-0b1"/>
                                                             </constraints>
                                                             <state key="normal" image="ic_delete"/>
                                                             <userDefinedRuntimeAttributes>

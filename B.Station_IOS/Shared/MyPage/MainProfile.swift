@@ -8,11 +8,14 @@
 
 import UIKit
 import Cosmos
+import SDWebImage
 class MainProfile: UIViewController {
     var CompanyInfo : RoutesDetails?
     @IBOutlet var PhotosCollection : UICollectionView!
     @IBOutlet var PhotosCollectionWidth : NSLayoutConstraint!
-    
+    @IBOutlet weak var image1: UIImageView!
+    @IBOutlet weak var image2: UIImageView!
+    @IBOutlet weak var TestData: UILabel!
     @IBOutlet weak var CityName: UILabel!
     @IBOutlet weak var CompanyName: UILabel!
     @IBOutlet weak var bio: UILabel!
@@ -32,27 +35,37 @@ class MainProfile: UIViewController {
     @IBOutlet var PathsButton : UIButton!
     @IBOutlet var RatingsButton : UIButton!
     
-    @IBAction func PathsClicked(_ sender : UIButton){
+    @IBAction func PathsClicked(_ sender : UIButton!){
         RatingsTableView.isHidden = true
         PathsTableView.isHidden = false
-        
-        RatingsButton.titleLabel?.textColor = UIColor.init(named: "gray text")
-        PathsButton.titleLabel?.textColor = UIColor.init(named: "dark text")
+        RatingsButton.isHighlighted = true
+        PathsButton.isHighlighted = false
+        if CompanyInfo?.trafficRoutes.count ?? 0 > 0{
+            TestData.isHidden = true
+        }else{
+            TestData.isHidden = false
+            TestData.text = "لا يوجد مسارات بالشركة"
+        }
     }
-    @IBAction func RatingsClicked(_ sender : UIButton){
+    @IBAction func RatingsClicked(_ sender : UIButton!){
         RatingsTableView.isHidden = false
         PathsTableView.isHidden = true
-        
-        PathsButton.titleLabel?.textColor = UIColor.init(named: "gray text")
-        RatingsButton.titleLabel?.textColor = UIColor.init(named: "dark text")
+        RatingsButton.isHighlighted = false
+        PathsButton.isHighlighted = true
+        if CompanyInfo?.userRates.count ?? 0 > 0{
+            TestData.isHidden = true
+        }else{
+            TestData.isHidden = false
+            TestData.text = "لا يوجد تقييمات للشركة"
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.RatingsClicked(RatingsButton)
-        
-        setupValues()
+       RatingsClicked(RatingsButton)
+       setupValues()
+       setTowImages()
     }
     fileprivate func setupValues(){
         CompanyName.text = CompanyInfo?.name
@@ -61,6 +74,14 @@ class MainProfile: UIViewController {
         RatePercentage.text = "\(CompanyInfo?.avgRate ?? 0)"
         CosmosRate.rating = CompanyInfo?.avgRate ?? 0.0
         RateLevel.text = RatingLevel.Level(CompanyInfo?.avgRate ?? 0.0)
+    }
+    fileprivate func setTowImages(){
+        if CompanyInfo?.images.count ?? 0 >= 1{
+            image1.sd_setImage(with: URL(string: self.CompanyInfo?.images[0].imagePath ?? ""))
+        }
+        if CompanyInfo?.images.count ?? 0 >= 2{
+            image2.sd_setImage(with: URL(string: self.CompanyInfo?.images[1].imagePath ?? ""))
+        }
     }
     override func viewWillLayoutSubviews() {
         super.updateViewConstraints()
@@ -93,7 +114,7 @@ extension MainProfile : UITableViewDataSource , UITableViewDelegate{
              cell.shading.isHidden = !(CompanyInfo?.trafficRoutes[indexPath.row].shading ?? false)
              cell.StartPoint.text = CompanyInfo?.trafficRoutes[indexPath.row].fromStation
              cell.EndPoint.text = CompanyInfo?.trafficRoutes[indexPath.row].toStation
-            cell.carModeling.text = "\(CompanyInfo?.trafficRoutes[indexPath.row].carModel) - \(CompanyInfo?.trafficRoutes[indexPath.row].carType)"
+             cell.carModeling.text = "\(CompanyInfo?.trafficRoutes[indexPath.row].carModel ?? "") - \(CompanyInfo?.trafficRoutes[indexPath.row].carType ?? "")"
               return cell
             default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "RatingsCell", for: indexPath) as! CompanyCell
@@ -111,14 +132,14 @@ extension MainProfile : UITableViewDataSource , UITableViewDelegate{
 }
 extension MainProfile : UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return max((self.CompanyInfo?.images.count ?? 0)-2, 0)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 200)
+        return CGSize(width: 200, height: 150)
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photos", for: indexPath)
-        cell.backgroundColor = UIColor.init(named: "dark light")
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photos", for: indexPath) as! CompanyImageCell
+        cell.image.sd_setImage(with: URL(string: self.CompanyInfo?.images[indexPath.row+2].imagePath ?? ""))
         return cell
     }
 }

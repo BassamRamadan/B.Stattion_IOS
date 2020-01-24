@@ -23,7 +23,10 @@ class CompanyPaths:  common {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadingPaths()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+         loadingPaths()
     }
     fileprivate func DeletePaths(_ Id : Int){
          self.loading()

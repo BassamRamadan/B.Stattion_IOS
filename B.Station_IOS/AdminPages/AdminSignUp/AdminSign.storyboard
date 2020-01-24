@@ -79,11 +79,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="249" height="60"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_list_down" translatesAutoresizingMaskIntoConstraints="NO" id="gFo-Te-HzY">
-                                                                        <rect key="frame" x="8" y="15" width="30" height="30"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="30" id="2HI-bJ-Ppg"/>
-                                                                            <constraint firstAttribute="width" constant="30" id="Vuo-Pl-boT"/>
-                                                                        </constraints>
+                                                                        <rect key="frame" x="8" y="20" width="20" height="20"/>
                                                                     </imageView>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whB-7n-iWh" customClass="DesignableButton" customModule="Spring">
                                                                         <rect key="frame" x="0.0" y="0.0" width="241" height="60"/>
@@ -797,7 +793,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kTa-rj-1z3">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="635.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="571.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UT7-gV-7Gd">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
@@ -826,10 +822,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IKX-Db-4Dm">
-                                                <rect key="frame" x="10" y="315" width="394" height="300.5"/>
+                                                <rect key="frame" x="10" y="315" width="394" height="236.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="Hb9-3U-JPg">
-                                                        <rect key="frame" x="10" y="15" width="374" height="270.5"/>
+                                                        <rect key="frame" x="10" y="15" width="374" height="206.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VgM-AO-yzG">
                                                                 <rect key="frame" x="21.5" y="0.0" width="331.5" height="71"/>
@@ -854,14 +850,10 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cMt-0s-zbZ">
-                                                                <rect key="frame" x="134.5" y="151" width="105.5" height="119.5"/>
+                                                                <rect key="frame" x="134.5" y="151" width="105.5" height="55.5"/>
                                                                 <subviews>
                                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHJ-1P-S1R">
-                                                                        <rect key="frame" x="12.5" y="0.0" width="80" height="80"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="80" id="3re-XC-phF"/>
-                                                                            <constraint firstAttribute="height" constant="80" id="kIA-SD-boC"/>
-                                                                        </constraints>
+                                                                        <rect key="frame" x="44.5" y="0.0" width="16" height="16"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                                         <state key="normal" backgroundImage="ic_whatsapp">
                                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -876,7 +868,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تواصل مع الإدارة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5N-ZT-m4D">
-                                                                        <rect key="frame" x="0.0" y="100" width="105.5" height="19.5"/>
+                                                                        <rect key="frame" x="0.0" y="36" width="105.5" height="19.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                         <color key="textColor" name="gray text"/>
                                                                         <nil key="highlightedColor"/>

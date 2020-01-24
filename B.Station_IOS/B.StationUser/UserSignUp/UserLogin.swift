@@ -48,8 +48,6 @@ class UserLogin: common {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        CashedData.saveUserCode(token: 4633)
-        CashedData.saveUserPhone(name: "01025961815")
         Old(OldUser as Any)
         Modules()
         setModules(name)

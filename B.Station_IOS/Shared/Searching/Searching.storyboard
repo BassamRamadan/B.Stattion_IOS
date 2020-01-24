@@ -56,10 +56,9 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="350" height="60"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_list_down" translatesAutoresizingMaskIntoConstraints="NO" id="WAc-Y6-43r">
-                                                                        <rect key="frame" x="8" y="15" width="30" height="30"/>
+                                                                        <rect key="frame" x="8" y="20" width="20" height="20"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="30" id="6X7-8g-hFO"/>
-                                                                            <constraint firstAttribute="width" constant="30" id="mIy-Wu-i7N"/>
+                                                                            <constraint firstAttribute="width" secondItem="WAc-Y6-43r" secondAttribute="height" multiplier="1:1" id="KkR-5X-5g1"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgZ-7T-SEp" customClass="DesignableButton" customModule="Spring">
@@ -111,10 +110,9 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="350" height="60"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_list_down" translatesAutoresizingMaskIntoConstraints="NO" id="ib4-fu-cAa">
-                                                                        <rect key="frame" x="8" y="15" width="30" height="30"/>
+                                                                        <rect key="frame" x="8" y="20" width="20" height="20"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="30" id="Fr8-go-uVN"/>
-                                                                            <constraint firstAttribute="width" constant="30" id="Z5x-Lf-U1f"/>
+                                                                            <constraint firstAttribute="width" secondItem="ib4-fu-cAa" secondAttribute="height" multiplier="1:1" id="35d-Xv-PY4"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FY1-vj-7cC" customClass="DesignableButton" customModule="Spring">
@@ -178,10 +176,9 @@
                                                                                 <rect key="frame" x="0.0" y="30.5" width="358" height="70"/>
                                                                                 <subviews>
                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_list_down" translatesAutoresizingMaskIntoConstraints="NO" id="Bur-Bk-gQc">
-                                                                                        <rect key="frame" x="8" y="20" width="30" height="30"/>
+                                                                                        <rect key="frame" x="8" y="25" width="20" height="20"/>
                                                                                         <constraints>
-                                                                                            <constraint firstAttribute="width" constant="30" id="UsS-FQ-l4P"/>
-                                                                                            <constraint firstAttribute="height" constant="30" id="hOo-cx-9YE"/>
+                                                                                            <constraint firstAttribute="width" secondItem="Bur-Bk-gQc" secondAttribute="height" multiplier="1:1" id="8st-6P-7Pv"/>
                                                                                         </constraints>
                                                                                     </imageView>
                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1D2-L9-Uvd" customClass="DesignableButton" customModule="Spring">
@@ -243,10 +240,9 @@
                                                                                 <rect key="frame" x="0.0" y="30.5" width="358" height="70"/>
                                                                                 <subviews>
                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_list_down" translatesAutoresizingMaskIntoConstraints="NO" id="gae-zp-akU">
-                                                                                        <rect key="frame" x="8" y="20" width="30" height="30"/>
+                                                                                        <rect key="frame" x="8" y="25" width="20" height="20"/>
                                                                                         <constraints>
-                                                                                            <constraint firstAttribute="height" constant="30" id="fdz-gG-C9F"/>
-                                                                                            <constraint firstAttribute="width" constant="30" id="uHA-6u-H4K"/>
+                                                                                            <constraint firstAttribute="width" secondItem="gae-zp-akU" secondAttribute="height" multiplier="1:1" id="qOR-By-T9U"/>
                                                                                         </constraints>
                                                                                     </imageView>
                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXq-Sr-Vom" customClass="DesignableButton" customModule="Spring">
@@ -697,16 +693,15 @@
                                                                             <rect key="frame" x="0.0" y="246.5" width="348" height="200"/>
                                                                             <subviews>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGC-fB-1S5">
-                                                                                    <rect key="frame" x="0.0" y="87.5" width="25" height="25"/>
+                                                                                    <rect key="frame" x="0.0" y="88" width="33" height="24"/>
                                                                                     <color key="backgroundColor" name="clear color"/>
                                                                                     <constraints>
-                                                                                        <constraint firstAttribute="width" constant="25" id="KoV-4F-acf"/>
-                                                                                        <constraint firstAttribute="height" constant="25" id="dH4-k2-4QQ"/>
+                                                                                        <constraint firstAttribute="width" secondItem="RGC-fB-1S5" secondAttribute="height" multiplier="11:8" id="mzk-uR-S7t"/>
                                                                                     </constraints>
                                                                                     <state key="normal" backgroundImage="ic_share_gray"/>
                                                                                 </button>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="جيدة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kd4-QU-P7N">
-                                                                                    <rect key="frame" x="35" y="90.5" width="125.5" height="19.5"/>
+                                                                                    <rect key="frame" x="43" y="90.5" width="117.5" height="19.5"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                                                     <color key="textColor" name="gray text"/>
                                                                                     <nil key="highlightedColor"/>
@@ -820,11 +815,22 @@
                         <outlet property="SearchDetails" destination="bSe-Zz-QK0" id="NAT-7n-yip"/>
                         <outlet property="searchName" destination="D92-qS-oVd" id="n0T-Rl-SfW"/>
                         <outlet property="searchPath" destination="AsY-aK-2gP" id="Mum-w6-AaT"/>
+                        <segue destination="SX4-Zu-GMk" kind="show" identifier="CompanyPage" id="ncE-cE-apK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cDW-Gw-Ess" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-89801" y="1347"/>
+            <point key="canvasLocation" x="-89817" y="1355"/>
+        </scene>
+        <!--CompanyPage-->
+        <scene sceneID="g1o-RU-aq8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CompanyPage" id="SX4-Zu-GMk" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="aGh-fQ-oLw"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mfv-ZM-xRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-89046" y="1355"/>
         </scene>
     </scenes>
     <resources>

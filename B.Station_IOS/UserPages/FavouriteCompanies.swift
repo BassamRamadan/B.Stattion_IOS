@@ -24,7 +24,9 @@ class FavouriteCompanies: common {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         loadingCompanies()
     }
     fileprivate func DeleteCompany(_ Id : Int){
