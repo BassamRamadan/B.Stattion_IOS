@@ -69,7 +69,7 @@
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                     <subviews>
                                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bassam" translatesAutoresizingMaskIntoConstraints="NO" id="1FA-cJ-hth">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="102"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="298"/>
                                                                                         </imageView>
                                                                                     </subviews>
                                                                                 </view>

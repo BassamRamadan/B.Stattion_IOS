@@ -66,13 +66,13 @@ class SearchingController: common {
                 self.CityId = self.CitiesObjects[index].id
                 // startPoint
                 self.StartPointObjects.removeAll()
-                GetDataForPaths().loadOnLinePoints(self.CityId,-1){ (success : [Details]) in
+                GetDataForPaths.loadOnLinePoints(self.CityId,-1){ (success : [Details]) in
                    self.StartPointObjects.append(contentsOf: success)
                 }
                 // endPoint
                 if self.RouteId != nil{
                     self.EndPointObjects.removeAll()
-                    GetDataForPaths().loadOnLinePoints(self.CityId, self.RouteId){ (success : [Details]) in
+                    GetDataForPaths.loadOnLinePoints(self.CityId, self.RouteId){ (success : [Details]) in
                         self.EndPointObjects.append(contentsOf: success)
                     }
                 }
@@ -89,7 +89,7 @@ class SearchingController: common {
             
             self.RouteId = self.RoutesObjects[index].id
             if self.CityId != nil{
-                GetDataForPaths().loadOnLinePoints(self.CityId, self.RouteId){ (success : [Details]) in
+                GetDataForPaths.loadOnLinePoints(self.CityId, self.RouteId){ (success : [Details]) in
                     self.EndPointObjects.removeAll()
                     self.EndPointObjects.append(contentsOf: success)
                 }
@@ -127,11 +127,11 @@ class SearchingController: common {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        GetDataForPaths().loadOnLineCities { (success : [Details]) in
+        GetDataForPaths.loadOnLineCities { (success : [Details]) in
             self.CitiesObjects.removeAll()
             self.CitiesObjects.append(contentsOf: success)
         }
-        GetDataForPaths().loadOnLineRoute { (success : [Details]) in
+        GetDataForPaths.loadOnLineRoute { (success : [Details]) in
             self.RoutesObjects.removeAll()
             self.RoutesObjects.append(contentsOf: success)
         }

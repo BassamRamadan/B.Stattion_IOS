@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 class GetDataForPaths : NSObject{
-     func loadOnLineCities(completion : @escaping (_ success:[Details]) -> Void ){
+     class func loadOnLineCities(completion : @escaping (_ success:[Details]) -> Void ){
         let url = "https://services-apps.net/bstation/public/api/cities"
         let headers = [ "Content-Type": "application/json" ,
                         "Accept" : "application/json"
@@ -24,7 +24,7 @@ class GetDataForPaths : NSObject{
             }
         }
     }
-    func loadOnLineRoute(completion : @escaping (_ success:[Details]) -> Void ){
+    class func loadOnLineRoute(completion : @escaping (_ success:[Details]) -> Void ){
        let url = "https://services-apps.net/bstation/public/api/main-traffic"
         let headers = [ "Content-Type": "application/json" ,
                         "Accept" : "application/json"
@@ -39,7 +39,7 @@ class GetDataForPaths : NSObject{
             }
         }
     }
-    func loadOnLinePoints(_ cityId:Int ,_ RouteId : Int,completion : @escaping (_ success:[Details]) -> Void ){
+    class func loadOnLinePoints(_ cityId:Int ,_ RouteId : Int,completion : @escaping (_ success:[Details]) -> Void ){
         let url = "https://services-apps.net/bstation/public/api/traffic-stations"
         let headers = [ "Content-Type": "application/json" ,
                         "Accept" : "application/json"

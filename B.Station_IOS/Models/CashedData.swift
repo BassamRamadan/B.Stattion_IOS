@@ -122,6 +122,8 @@ class CashedData: NSObject  {
         let dif = UserDefaults.standard
         return (dif.object(forKey : "AdminApiKey") as? String)
     }
+    
+    
     class func saveAdminUpdateKey (token:String){
         let def = UserDefaults.standard
         def.setValue(token , forKey: "AdminUpdateApiKey")
@@ -131,6 +133,8 @@ class CashedData: NSObject  {
         let dif = UserDefaults.standard
         return (dif.object(forKey : "AdminUpdateApiKey") as? String)
     }
+    
+    
     class func saveAdminPhone (name:String){
         let def = UserDefaults.standard
         def.setValue(name , forKey: "AdminPhone")
@@ -140,57 +144,82 @@ class CashedData: NSObject  {
         let dif = UserDefaults.standard
         return (dif.object(forKey : "AdminPhone") as? String)
     }
-    class func saveAdminUserName (name:String){
+    
+    
+    class func saveAdminCode (Code:Int){
         let def = UserDefaults.standard
-        def.setValue(name , forKey: "AdminName")
+        def.setValue(Code , forKey: "AdminCode")
         def.synchronize()
-    }
-    class func getAdminUserName ()->String? {
-        let dif = UserDefaults.standard
-        return (dif.object(forKey : "AdminName") as? String)
-    }
-    class  func getAdminImage ()->String? {
-        let dif = UserDefaults.standard
-        return (dif.object(forKey : "AdminImage") as? String)
-    }
-    class  func getAdminEmail ()->String? {
-        let dif = UserDefaults.standard
-        return (dif.object(forKey : "AdminEmail") as? String)
-    }
-    class  func getAdminID ()->String? {
-        let dif = UserDefaults.standard
-        return (dif.object(forKey : "AdminID") as? String)
     }
     class  func getAdminCode ()->String? {
         let dif = UserDefaults.standard
         return (dif.object(forKey : "AdminCode") as? String)
     }
-    class  func getBalanceInvitations ()->String? {
-        let dif = UserDefaults.standard
-        return (dif.object(forKey : "AdminbalanceInvitations") as? String)
-    }
-    class func saveAdminData (admin:SignDetails){
+    
+    
+    class func saveAdminUpdateCode (Code:Int){
         let def = UserDefaults.standard
-        def.setValue(admin.name , forKey: "AdminName")
-        def.setValue(admin.imagePath , forKey: "AdminImage")
-       def.setValue(admin.phone , forKey: "AdminPhone")
-        def.setValue(admin.id , forKey: "AdminID")
-        def.setValue(admin.code , forKey: "AdminCode")
-        if let token = admin.accessToken{
-            def.setValue(token , forKey: "AdminApiKey")
-            def.setValue(token , forKey: "AdminUpdateApiKey")
-        }
+        def.setValue(Code , forKey: "AdminUpdateCode")
         def.synchronize()
     }
+    class  func getAdminUpdateCode ()->String? {
+        let dif = UserDefaults.standard
+        return (dif.object(forKey : "AdminUpdateCode") as? String)
+    }
+    
+    
+    class func saveAdminUserName (name:String){
+        let def = UserDefaults.standard
+        def.setValue(name , forKey: "AdminUserName")
+        def.synchronize()
+    }
+    class func getAdminUserName ()->String? {
+        let dif = UserDefaults.standard
+        return (dif.object(forKey : "AdminUserName") as? String)
+    }
+    
+   
     class func saveAdminName (name:String){
         let def = UserDefaults.standard
         def.setValue(name , forKey: "AdminName")
         def.synchronize()
     }
-    class  func getAdminName ()->String? {
+    class func getAdminName ()->String? {
         let dif = UserDefaults.standard
         return (dif.object(forKey : "AdminName") as? String)
     }
+    
+    
+    class func saveAdminImage (name:String){
+        let def = UserDefaults.standard
+        def.setValue(name , forKey: "AdminImage")
+        def.synchronize()
+    }
+    class  func getAdminImage ()->String? {
+        let dif = UserDefaults.standard
+        return (dif.object(forKey : "AdminImage") as? String)
+    }
+    
+    class func saveAdminID (name:Int){
+        let def = UserDefaults.standard
+        def.setValue(name , forKey: "AdminID")
+        def.synchronize()
+    }
+    class  func getAdminID ()->Int? {
+        let dif = UserDefaults.standard
+        return (dif.object(forKey : "AdminID") as? Int)
+    }
+    
+    class func saveAdminStatus (name:String){
+        let def = UserDefaults.standard
+        def.setValue(name , forKey: "Status")
+        def.synchronize()
+    }
+    class  func getAdminStatus ()->String? {
+        let dif = UserDefaults.standard
+        return (dif.object(forKey : "Status") as? String)
+    }
+    
     class func saveAdminPassword(name:String){
         let def = UserDefaults.standard
         def.setValue(name , forKey: "AdminPassword")
@@ -198,6 +227,25 @@ class CashedData: NSObject  {
     }
     class func getAdminPassword()->String? {
         let dif = UserDefaults.standard
-        return (dif.object(forKey : "AdminnPassword") as? String)
+        return (dif.object(forKey : "AdminPassword") as? String)
     }
+    
+    class func saveAdminData (admin:AdminLoginDetails){
+        let def = UserDefaults.standard
+        def.setValue(admin.username , forKey: "AdminUserName")
+        def.setValue(admin.name , forKey: "AdminName")
+        def.setValue(admin.imagePath , forKey: "AdminImage")
+        def.setValue(admin.phone , forKey: "AdminPhone")
+        def.setValue(admin.status , forKey: "Status")
+     //   def.setValue(admin.password , forKey: "AdminPassword")
+        def.setValue(admin.id , forKey: "AdminID")
+        if let token = admin.accessToken{
+            def.setValue(token , forKey: "AdminApiKey")
+            def.setValue(token , forKey: "AdminUpdateApiKey")
+        }
+        def.synchronize()
+    }
+   
+    
+    
 }

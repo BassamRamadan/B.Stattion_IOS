@@ -33,7 +33,7 @@ class CompanyPaths:  common {
          let url = "https://services-apps.net/bstation/public/api/company/delete-traffic/\(Id)"
          let headers = [ "Content-Type": "application/json" ,
                         "Accept" : "application/json",
-                        "Authorization" : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc2VydmljZXMtYXBwcy5uZXRcL2JzdGF0aW9uXC9wdWJsaWNcL2FwaVwvY29tcGFueS1zaWdudXAiLCJpYXQiOjE1Nzk1MjQ0OTksIm5iZiI6MTU3OTUyNDQ5OSwianRpIjoiNGJRd2RaYkJ3S0JRRXdnRiIsInN1YiI6MTcsInBydiI6ImNmZTdlYzk5YTIzZjQzODhlN2YxZDVmYjg3MDgzNzVjODU0ZWRhNjQifQ.B4wBM8paBOD1zBVVlzuf_qCaPJcLBh-HCQLL0RnpXBg"
+                        "Authorization" : "Bearer \(CashedData.getAdminApiKey() ?? "")"
         ]
         AlamofireRequests.PostMethod(methodType: "DELETE", url: url, info: [:], headers: headers){
             (error, success, jsonData) in
@@ -59,10 +59,10 @@ class CompanyPaths:  common {
     }
     fileprivate func loadingPaths(){
         self.loading()
-        let url = "https://services-apps.net/bstation/public/api/company/profile"
+        let url = "https://services-apps.net/bstation/public/api/companies/\(CashedData.getAdminID() ?? 0)"
         let headers = [ "Content-Type": "application/json" ,
                         "Accept" : "application/json",
-                        "Authorization" : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc2VydmljZXMtYXBwcy5uZXRcL2JzdGF0aW9uXC9wdWJsaWNcL2FwaVwvY29tcGFueS1zaWdudXAiLCJpYXQiOjE1Nzk1MjQ0OTksIm5iZiI6MTU3OTUyNDQ5OSwianRpIjoiNGJRd2RaYkJ3S0JRRXdnRiIsInN1YiI6MTcsInBydiI6ImNmZTdlYzk5YTIzZjQzODhlN2YxZDVmYjg3MDgzNzVjODU0ZWRhNjQifQ.B4wBM8paBOD1zBVVlzuf_qCaPJcLBh-HCQLL0RnpXBg"
+                        "Authorization" : "Bearer \(CashedData.getAdminUpdateKey() ?? "")"
         ]
         AlamofireRequests.getMethod(url: url, headers: headers){
             (error, success, jsonData) in
@@ -113,6 +113,8 @@ extension CompanyPaths:UITableViewDelegate , UITableViewDataSource{
         cell.DeleteButton.tag = indexPath.row
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
 }

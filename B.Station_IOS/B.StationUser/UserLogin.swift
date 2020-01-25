@@ -46,6 +46,12 @@ class UserLogin: common {
         }
        
     }
+    @IBAction func ToCompanySign(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "AdminLog", bundle: nil)
+        let linkingVC = storyboard.instantiateViewController(withIdentifier: "AdminLog")
+        let appDelegate = UIApplication.shared.delegate
+        appDelegate?.window??.rootViewController = linkingVC
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         Old(OldUser as Any)

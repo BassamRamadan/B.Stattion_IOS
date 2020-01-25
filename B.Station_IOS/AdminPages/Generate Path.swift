@@ -79,13 +79,13 @@ class GeneratePath: common {
             self.CityId = self.CitiesObjects[index].id
             // startPoint
             self.StartPointObjects.removeAll()
-            GetDataForPaths().loadOnLinePoints(self.CityId,-1){ (success : [Details]) in
+            GetDataForPaths.loadOnLinePoints(self.CityId,-1){ (success : [Details]) in
                 self.StartPointObjects.append(contentsOf: success)
             }
             // endPoint
             if self.RouteId != nil{
                 self.EndPointObjects.removeAll()
-                GetDataForPaths().loadOnLinePoints(self.CityId, self.RouteId){ (success : [Details]) in
+                GetDataForPaths.loadOnLinePoints(self.CityId, self.RouteId){ (success : [Details]) in
                     self.EndPointObjects.append(contentsOf: success)
                 }
             }
@@ -102,7 +102,7 @@ class GeneratePath: common {
             
             self.RouteId = self.RoutesObjects[index].id
             if self.CityId != nil{
-                GetDataForPaths().loadOnLinePoints(self.CityId, self.RouteId){ (success : [Details]) in
+                GetDataForPaths.loadOnLinePoints(self.CityId, self.RouteId){ (success : [Details]) in
                     self.EndPointObjects.removeAll()
                     self.EndPointObjects.append(contentsOf: success)
                 }
@@ -139,10 +139,10 @@ class GeneratePath: common {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-        GetDataForPaths().loadOnLineCities { (success : [Details]) in
+        GetDataForPaths.loadOnLineCities { (success : [Details]) in
             self.CitiesObjects = success
         }
-        GetDataForPaths().loadOnLineRoute { (success : [Details]) in
+        GetDataForPaths.loadOnLineRoute { (success : [Details]) in
             self.RoutesObjects = success
         }
     }
@@ -168,7 +168,7 @@ class GeneratePath: common {
         let url = "https://services-apps.net/bstation/public/api/company/add-traffic"
         let headers = [ "Content-Type": "application/json" ,
                         "Accept" : "application/json",
-                        "Authorization" : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc2VydmljZXMtYXBwcy5uZXRcL2JzdGF0aW9uXC9wdWJsaWNcL2FwaVwvY29tcGFueS1zaWdudXAiLCJpYXQiOjE1Nzk1MjQ0OTksIm5iZiI6MTU3OTUyNDQ5OSwianRpIjoiNGJRd2RaYkJ3S0JRRXdnRiIsInN1YiI6MTcsInBydiI6ImNmZTdlYzk5YTIzZjQzODhlN2YxZDVmYjg3MDgzNzVjODU0ZWRhNjQifQ.B4wBM8paBOD1zBVVlzuf_qCaPJcLBh-HCQLL0RnpXBg"
+                        "Authorization" : "Bearer \(CashedData.getAdminUpdateKey() ?? "")"
         ]
         let params = ["city_id":self.CityId as Any,
                       "traffic_id":self.RouteId as Any,

@@ -5,7 +5,6 @@
 //  Created by Bassam Ramadan on 1/18/20.
 //  Copyright © 2020 Bassam Ramadan. All rights reserved.
 //
-
 import UIKit
 class Companies: Codable{
     let code: Int?
@@ -121,7 +120,7 @@ class userRates: Codable {
         case userImage = "user_image"
     }
     init(userId:String , companyId:String ,rate:String, comment:String ,createdAt:String
-       , userName:String ,userImage:String ) {
+        , userName:String ,userImage:String ) {
         self.comment = comment
         self.companyId = companyId
         self.createdAt = createdAt
@@ -131,4 +130,3 @@ class userRates: Codable {
         self.userName = userName
     }
 }
-

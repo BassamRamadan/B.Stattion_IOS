@@ -10,7 +10,6 @@ import UIKit
 
 class TransportCompanies : common {
     var AllCompanies = [RoutesDetails]()
-
     @IBOutlet weak var SearchDetails: UIView!
     @IBOutlet weak var AllCompaniesTable: UITableView!
     @IBOutlet weak var searchName: UILabel!

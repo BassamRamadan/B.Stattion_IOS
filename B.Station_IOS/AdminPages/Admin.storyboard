@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Tab Admin Controller-->
         <scene sceneID="M5I-ZS-7DH">
             <objects>
-                <tabBarController id="J48-tD-M4H" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabAdminController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="J48-tD-M4H" customClass="TabAdminController" customModule="B_Station_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" insetsLayoutMarginsFromSafeArea="NO" id="3ZB-03-sxb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -654,10 +654,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="526"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqR-jl-ifj">
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqR-jl-ifj" customClass="ViewShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                     <rect key="frame" x="15" y="11" width="290" height="504"/>
                                                     <subviews>
-                                                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJm-AP-Gv6">
+                                                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJm-AP-Gv6" customClass="ButtonShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                             <rect key="frame" x="10" y="10" width="24" height="24"/>
                                                             <color key="backgroundColor" name="dark light"/>
                                                             <constraints>

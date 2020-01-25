@@ -176,7 +176,7 @@
                                                                                                     <constraint firstAttribute="height" constant="50" id="0AO-ak-uGr"/>
                                                                                                 </constraints>
                                                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                                                                <state key="normal">
+                                                                                                <state key="normal" title="تسجيل">
                                                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 </state>
                                                                                                 <userDefinedRuntimeAttributes>
@@ -217,9 +217,6 @@
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hz8-mX-QrM">
                                                                                                 <rect key="frame" x="0.0" y="291.5" width="332" height="108.5"/>
                                                                                                 <subviews>
-                                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAq-f5-It6" userLabel="segueToSignUp">
-                                                                                                        <rect key="frame" x="0.0" y="0.0" width="332" height="108.5"/>
-                                                                                                    </button>
                                                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="he0-S3-OqJ">
                                                                                                         <rect key="frame" x="0.0" y="0.0" width="332" height="108.5"/>
                                                                                                         <subviews>
@@ -262,6 +259,12 @@
                                                                                                         </subviews>
                                                                                                         <color key="backgroundColor" name="clear color"/>
                                                                                                     </stackView>
+                                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAq-f5-It6" userLabel="segueToSignUp">
+                                                                                                        <rect key="frame" x="0.0" y="0.0" width="332" height="108.5"/>
+                                                                                                        <connections>
+                                                                                                            <action selector="ToCompanySign:" destination="Cta-aH-8a4" eventType="touchUpInside" id="IIL-jE-2x8"/>
+                                                                                                        </connections>
+                                                                                                    </button>
                                                                                                 </subviews>
                                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                 <constraints>

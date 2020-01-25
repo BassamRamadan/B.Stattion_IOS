@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4E857BBDBC7BA90DA2B4022C /* Pods_B_Station_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B61752634DE1CCF822675ABE /* Pods_B_Station_IOS.framework */; };
 		5805832A23D73D6C006930BB /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5805832923D73D6C006930BB /* UserLogin.swift */; };
-		5805832C23D73F23006930BB /* TabGuideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5805832B23D73F23006930BB /* TabGuideController.swift */; };
+		5805832C23D73F23006930BB /* TabBarUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5805832B23D73F23006930BB /* TabBarUser.swift */; };
 		580687FD23AFB40000DE5839 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 580687FC23AFB40000DE5839 /* Setting.storyboard */; };
 		5806880223AFC29700DE5839 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5806880023AFC29600DE5839 /* Main.storyboard */; };
 		5806880423AFC3DD00DE5839 /* CompanyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5806880323AFC3DD00DE5839 /* CompanyPage.storyboard */; };
@@ -23,10 +23,14 @@
 		5809EA3A23D5183C002AF4D9 /* CompanyPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5809EA3923D5183C002AF4D9 /* CompanyPaths.swift */; };
 		58201BA723CFBC15001734D0 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58201BA623CFBC15001734D0 /* User.storyboard */; };
 		58201BAB23CFD856001734D0 /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58201BAA23CFD856001734D0 /* Admin.storyboard */; };
-		582EC6552396C9BE006360F0 /* ElementShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582EC6542396C9BE006360F0 /* ElementShadow.swift */; };
 		584BE55423D29FF900F677B4 /* ClassesGetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584BE55323D29FF900F677B4 /* ClassesGetData.swift */; };
 		584BE55623D2B9C700F677B4 /* SearchingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584BE55523D2B9C700F677B4 /* SearchingController.swift */; };
 		584BE55823D2C2A800F677B4 /* CompanyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584BE55723D2C2A800F677B4 /* CompanyCell.swift */; };
+		587567D623DB8B9D00A7417F /* ShadowClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587567D523DB8B9D00A7417F /* ShadowClasses.swift */; };
+		587567D923DB8D7500A7417F /* TabAdminController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587567D823DB8D7500A7417F /* TabAdminController.swift */; };
+		587567DB23DB8DDD00A7417F /* AdminLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587567DA23DB8DDD00A7417F /* AdminLog.swift */; };
+		587567DE23DB8E4D00A7417F /* AdminLog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587567DD23DB8E4D00A7417F /* AdminLog.storyboard */; };
+		587567E023DBB30500A7417F /* AdminData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587567DF23DBB30500A7417F /* AdminData.swift */; };
 		5886001123DA777300424D1F /* CompanyImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5886001023DA777300424D1F /* CompanyImageCell.swift */; };
 		58A3943423AE38E000A40508 /* MainProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A3943323AE38E000A40508 /* MainProfile.swift */; };
 		58C258572395C64400294ACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58C258562395C64400294ACE /* Assets.xcassets */; };
@@ -56,7 +60,7 @@
 /* Begin PBXFileReference section */
 		549B74C2F02C1E847A5F2772 /* Pods-B.Station_IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-B.Station_IOS.debug.xcconfig"; path = "Target Support Files/Pods-B.Station_IOS/Pods-B.Station_IOS.debug.xcconfig"; sourceTree = "<group>"; };
 		5805832923D73D6C006930BB /* UserLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
-		5805832B23D73F23006930BB /* TabGuideController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabGuideController.swift; sourceTree = "<group>"; };
+		5805832B23D73F23006930BB /* TabBarUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarUser.swift; sourceTree = "<group>"; };
 		580687FC23AFB40000DE5839 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		5806880123AFC29600DE5839 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5806880323AFC3DD00DE5839 /* CompanyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CompanyPage.storyboard; sourceTree = "<group>"; };
@@ -70,10 +74,14 @@
 		5809EA3923D5183C002AF4D9 /* CompanyPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyPaths.swift; sourceTree = "<group>"; };
 		58201BA623CFBC15001734D0 /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		58201BAA23CFD856001734D0 /* Admin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
-		582EC6542396C9BE006360F0 /* ElementShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementShadow.swift; sourceTree = "<group>"; };
 		584BE55323D29FF900F677B4 /* ClassesGetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesGetData.swift; sourceTree = "<group>"; };
 		584BE55523D2B9C700F677B4 /* SearchingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingController.swift; sourceTree = "<group>"; };
 		584BE55723D2C2A800F677B4 /* CompanyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCell.swift; sourceTree = "<group>"; };
+		587567D523DB8B9D00A7417F /* ShadowClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowClasses.swift; sourceTree = "<group>"; };
+		587567D823DB8D7500A7417F /* TabAdminController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabAdminController.swift; sourceTree = "<group>"; };
+		587567DA23DB8DDD00A7417F /* AdminLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminLog.swift; sourceTree = "<group>"; };
+		587567DD23DB8E4D00A7417F /* AdminLog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminLog.storyboard; sourceTree = "<group>"; };
+		587567DF23DBB30500A7417F /* AdminData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminData.swift; sourceTree = "<group>"; };
 		5886001023DA777300424D1F /* CompanyImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyImageCell.swift; sourceTree = "<group>"; };
 		58A3943323AE38E000A40508 /* MainProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProfile.swift; sourceTree = "<group>"; };
 		58C2584C2395C64300294ACE /* B.Station_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = B.Station_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,19 +162,10 @@
 		580687F723AFB2FC00DE5839 /* B.StationUser */ = {
 			isa = PBXGroup;
 			children = (
-				580687F823AFB31400DE5839 /* UserSignUp */,
-			);
-			path = B.StationUser;
-			sourceTree = "<group>";
-		};
-		580687F823AFB31400DE5839 /* UserSignUp */ = {
-			isa = PBXGroup;
-			children = (
 				5806880823AFC66100DE5839 /* UserSgnUp.storyboard */,
 				5805832923D73D6C006930BB /* UserLogin.swift */,
-				582EC6532396C994006360F0 /* Shadows */,
 			);
-			path = UserSignUp;
+			path = B.StationUser;
 			sourceTree = "<group>";
 		};
 		5806880523AFC57900DE5839 /* Searching */ = {
@@ -182,9 +181,12 @@
 		58080C0123D20D34004F1FCA /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				58F54E0123D7A53700416746 /* UserLog.swift */,
+				58D9944223D4895500A54AD9 /* UserSign.swift */,
 				58080C0223D20D55004F1FCA /* City.swift */,
 				58FA80D723D39A540058B4F5 /* trafficRoutes.swift */,
 				5809EA3723D4F944002AF4D9 /* Fav.swift */,
+				587567DF23DBB30500A7417F /* AdminData.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -202,30 +204,20 @@
 		58201BA823CFD81A001734D0 /* UserPages */ = {
 			isa = PBXGroup;
 			children = (
-				5805832B23D73F23006930BB /* TabGuideController.swift */,
+				5805832B23D73F23006930BB /* TabBarUser.swift */,
 				58201BA623CFBC15001734D0 /* User.storyboard */,
 				5809EA3523D4E85C002AF4D9 /* FavouriteCompanies.swift */,
 			);
 			path = UserPages;
 			sourceTree = "<group>";
 		};
-		58201BA923CFD83C001734D0 /* AdminPages */ = {
+		58201BA923CFD83C001734D0 /* B.stationAdmin */ = {
 			isa = PBXGroup;
 			children = (
+				587567DC23DB8DEE00A7417F /* AdminLogin */,
 				58339E4123D89A9D00F68154 /* AdminSignUp */,
-				58201BAA23CFD856001734D0 /* Admin.storyboard */,
-				58E9BA57239B1D630028C572 /* Generate Path.swift */,
-				5809EA3923D5183C002AF4D9 /* CompanyPaths.swift */,
 			);
-			path = AdminPages;
-			sourceTree = "<group>";
-		};
-		582EC6532396C994006360F0 /* Shadows */ = {
-			isa = PBXGroup;
-			children = (
-				582EC6542396C9BE006360F0 /* ElementShadow.swift */,
-			);
-			path = Shadows;
+			path = B.stationAdmin;
 			sourceTree = "<group>";
 		};
 		58339E4123D89A9D00F68154 /* AdminSignUp */ = {
@@ -235,6 +227,26 @@
 				58F1756A23D67133004DA24C /* ActivateCompany.swift */,
 			);
 			path = AdminSignUp;
+			sourceTree = "<group>";
+		};
+		587567D723DB8C9700A7417F /* AdminPages */ = {
+			isa = PBXGroup;
+			children = (
+				58201BAA23CFD856001734D0 /* Admin.storyboard */,
+				58E9BA57239B1D630028C572 /* Generate Path.swift */,
+				5809EA3923D5183C002AF4D9 /* CompanyPaths.swift */,
+				587567D823DB8D7500A7417F /* TabAdminController.swift */,
+			);
+			path = AdminPages;
+			sourceTree = "<group>";
+		};
+		587567DC23DB8DEE00A7417F /* AdminLogin */ = {
+			isa = PBXGroup;
+			children = (
+				587567DA23DB8DDD00A7417F /* AdminLog.swift */,
+				587567DD23DB8E4D00A7417F /* AdminLog.storyboard */,
+			);
+			path = AdminLogin;
 			sourceTree = "<group>";
 		};
 		58C258432395C64300294ACE = {
@@ -258,10 +270,12 @@
 		58C2584E2395C64300294ACE /* B.Station_IOS */ = {
 			isa = PBXGroup;
 			children = (
+				587567D523DB8B9D00A7417F /* ShadowClasses.swift */,
 				58D9943C23D4895500A54AD9 /* Models */,
 				58080C0623D21221004F1FCA /* Network */,
 				58080C0123D20D34004F1FCA /* Entities */,
-				58201BA923CFD83C001734D0 /* AdminPages */,
+				58201BA923CFD83C001734D0 /* B.stationAdmin */,
+				587567D723DB8C9700A7417F /* AdminPages */,
 				58201BA823CFD81A001734D0 /* UserPages */,
 				580687F723AFB2FC00DE5839 /* B.StationUser */,
 				580687F423AFB2B700DE5839 /* Shared */,
@@ -284,8 +298,6 @@
 				58D9943F23D4895500A54AD9 /* ErrorHandel.swift */,
 				58D9944023D4895500A54AD9 /* Item.swift */,
 				58D9944123D4895500A54AD9 /* MainGuide.swift */,
-				58D9944223D4895500A54AD9 /* UserSign.swift */,
-				58F54E0123D7A53700416746 /* UserLog.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -372,6 +384,7 @@
 				58C2585A2395C64400294ACE /* LaunchScreen.storyboard in Resources */,
 				5806880423AFC3DD00DE5839 /* CompanyPage.storyboard in Resources */,
 				58C258572395C64400294ACE /* Assets.xcassets in Resources */,
+				587567DE23DB8E4D00A7417F /* AdminLog.storyboard in Resources */,
 				5806880723AFC59300DE5839 /* Searching.storyboard in Resources */,
 				580687FD23AFB40000DE5839 /* Setting.storyboard in Resources */,
 				58201BA723CFBC15001734D0 /* User.storyboard in Resources */,
@@ -456,6 +469,7 @@
 				58D9944323D4895500A54AD9 /* AboutUsDataClass.swift in Sources */,
 				58D9944723D4895500A54AD9 /* MainGuide.swift in Sources */,
 				58CF5D2623966982003BCB28 /* AllCompanies.swift in Sources */,
+				587567DB23DB8DDD00A7417F /* AdminLog.swift in Sources */,
 				58D9944423D4895500A54AD9 /* CarToUpload.swift in Sources */,
 				58F54E0223D7A53700416746 /* UserLog.swift in Sources */,
 				5809EA3823D4F944002AF4D9 /* Fav.swift in Sources */,
@@ -469,18 +483,20 @@
 				58E9BA58239B1D630028C572 /* Generate Path.swift in Sources */,
 				58D9944623D4895500A54AD9 /* Item.swift in Sources */,
 				58F1756923D65B42004DA24C /* AboutUsViewController.swift in Sources */,
-				5805832C23D73F23006930BB /* TabGuideController.swift in Sources */,
+				5805832C23D73F23006930BB /* TabBarUser.swift in Sources */,
 				584BE55823D2C2A800F677B4 /* CompanyCell.swift in Sources */,
 				58F1755B23D63DF6004DA24C /* AlamofireRequest.swift in Sources */,
+				587567E023DBB30500A7417F /* AdminData.swift in Sources */,
 				58080C0A23D21221004F1FCA /* NetworkError.swift in Sources */,
 				5809EA3623D4E85C002AF4D9 /* FavouriteCompanies.swift in Sources */,
 				58F1756523D6501F004DA24C /* SocialCell.swift in Sources */,
 				5886001123DA777300424D1F /* CompanyImageCell.swift in Sources */,
+				587567D623DB8B9D00A7417F /* ShadowClasses.swift in Sources */,
 				5809EA3A23D5183C002AF4D9 /* CompanyPaths.swift in Sources */,
-				582EC6552396C9BE006360F0 /* ElementShadow.swift in Sources */,
 				58F1756323D6501F004DA24C /* SettingController.swift in Sources */,
 				58F1756423D6501F004DA24C /* ContactusController.swift in Sources */,
 				58FA80D823D39A540058B4F5 /* trafficRoutes.swift in Sources */,
+				587567D923DB8D7500A7417F /* TabAdminController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

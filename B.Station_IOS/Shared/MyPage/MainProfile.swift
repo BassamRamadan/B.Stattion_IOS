@@ -9,7 +9,7 @@
 import UIKit
 import Cosmos
 import SDWebImage
-class MainProfile: UIViewController {
+class MainProfile: common {
     var CompanyInfo : RoutesDetails?
     @IBOutlet var PhotosCollection : UICollectionView!
     @IBOutlet var PhotosCollectionWidth : NSLayoutConstraint!
@@ -62,10 +62,13 @@ class MainProfile: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       RatingsClicked(RatingsButton)
-       setupValues()
-       setTowImages()
+        if AppDelegate.normalUser == false{
+            loadingProfile()
+        }else{
+           RatingsClicked(RatingsButton)
+           setupValues()
+           setTowImages()
+        }
     }
     fileprivate func setupValues(){
         CompanyName.text = CompanyInfo?.name
@@ -88,6 +91,40 @@ class MainProfile: UIViewController {
         self.PathsTableHeight.constant = self.PathsTableView.contentSize.height
         self.RatingsTableHeight.constant = self.RatingsTableView.contentSize.height
       //  self.PhotosCollectionWidth.constant = self.PhotosCollection.contentSize.width
+    }
+    fileprivate func loadingProfile(){
+        self.loading()
+        let url = "https://services-apps.net/bstation/public/api/companies/\(CashedData.getAdminID() ?? 0)"
+        let headers = [ "Content-Type": "application/json" ,
+                        "Accept" : "application/json"
+        ]
+        AlamofireRequests.getMethod(url: url, headers: headers){
+            (error, success, jsonData) in
+            do {
+                self.stopAnimating()
+                let decoder = JSONDecoder()
+                if error == nil{
+                    if success{
+                        let propertiesRecived = try decoder.decode(Paths.self, from: jsonData)
+                        self.CompanyInfo = propertiesRecived.data
+                        self.RatingsClicked(self.RatingsButton)
+                        self.setupValues()
+                        self.setTowImages()
+                        self.PathsTableView.reloadData()
+                        self.RatingsTableView.reloadData()
+                        self.PhotosCollection.reloadData()
+                    }else{
+                        let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
+                        self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
+                    }
+                }else{
+                    self.present(common.makeAlert(), animated: true, completion: nil)
+                }
+            } catch {
+                self.present(common.makeAlert(message: error.localizedDescription), animated: true, completion: nil)
+                
+            }
+        }
     }
 
 }
@@ -125,9 +162,6 @@ extension MainProfile : UITableViewDataSource , UITableViewDelegate{
             cell.Date.text = CompanyInfo?.userRates[indexPath.row].createdAt
               return cell
         }
-        
-    
-   
     }
 }
 extension MainProfile : UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{
