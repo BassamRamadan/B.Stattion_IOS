@@ -138,7 +138,9 @@ class GeneratePath: common {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        self.navigationItem.title = "إضافة مسار"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
         GetDataForPaths.loadOnLineCities { (success : [Details]) in
             self.CitiesObjects = success
         }
@@ -189,6 +191,7 @@ class GeneratePath: common {
                 let decoder = JSONDecoder()
                 if error == nil{
                     if success{
+                        AppDelegate.addPath = true
                         self.present(common.makeAlert(message: "تم إضافةالمسار بنجاح"), animated: true, completion: nil)
                     }else{
                         let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)

@@ -24,10 +24,15 @@ class FavouriteCompanies: common {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "مفضلتي"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadingCompanies()
+        if AppDelegate.addToFavourite == true{
+            loadingCompanies()
+        }
     }
     fileprivate func DeleteCompany(_ Id : Int){
         self.loading()
@@ -43,6 +48,7 @@ class FavouriteCompanies: common {
                 let decoder = JSONDecoder()
                 if error == nil{
                     if success{
+                       
                         self.loadingCompanies()
                     }else{
                         let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
@@ -72,6 +78,7 @@ class FavouriteCompanies: common {
                 let decoder = JSONDecoder()
                 if error == nil{
                     if success{
+                         AppDelegate.addToFavourite = false
                         let propertiesRecived = try decoder.decode(FavList.self, from: jsonData)
                         self.TrashingCompanies.append(contentsOf: propertiesRecived.data)
                         if self.TrashingCompanies.count == 0{

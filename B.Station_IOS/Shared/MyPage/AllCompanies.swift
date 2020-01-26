@@ -19,15 +19,19 @@ class TransportCompanies : common {
     var search : Bool! = false
     override func viewDidLoad() {
         super.viewDidLoad()
-
         if search == true {
-            print(AllCompanies.count)
+            self.navigationItem.title =  "نتائج البحث"
+            let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+            navigationController?.navigationBar.titleTextAttributes = textAttributes
             searchName.text = name
             searchPath.text = path
             SearchDetails.isHidden = false
         }else{
-              SearchDetails.isHidden = true
-              loadingCompanies()
+            self.navigationItem.title =   "شركات النقل"
+            let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+            navigationController?.navigationBar.titleTextAttributes = textAttributes
+            SearchDetails.isHidden = true
+            loadingCompanies()
         }
     }
     fileprivate func loadingCompanies(){

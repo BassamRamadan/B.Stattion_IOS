@@ -241,7 +241,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="utf-dw-xdW">
                                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                                                         <subviews>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRS-E1-mxD">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRS-E1-mxD" customClass="ButtonShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="50"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="50" id="1bW-ee-fCn"/>
@@ -254,7 +254,7 @@
                                                                                     <action selector="RatingsClicked:" destination="nug-SC-n9W" eventType="touchUpInside" id="yKB-1q-iYb"/>
                                                                                 </connections>
                                                                             </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrl-Wc-hd2">
+                                                                            <button opaque="NO" contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrl-Wc-hd2" customClass="ButtonShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                                 <rect key="frame" x="207" y="0.0" width="207" height="50"/>
                                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                                                 <state key="normal" title="مسارات النقل">
@@ -290,7 +290,7 @@
                                                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="281"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                     <subviews>
-                                                                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jAv-YN-Q6y" userLabel="Paths_View">
+                                                                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jAv-YN-Q6y" userLabel="Paths_View" customClass="ViewShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                                             <rect key="frame" x="8" y="8" width="398" height="264.5"/>
                                                                                             <subviews>
                                                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lgz-Th-BVG">
@@ -640,7 +640,7 @@
                                                                     </tableView>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgo-4d-vsV" customClass="DesignableButton" customModule="Spring">
                                                                         <rect key="frame" x="0.0" y="890" width="414" height="60"/>
-                                                                        <color key="backgroundColor" red="0.29040652509999998" green="0.61932605500000004" blue="0.38798922299999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        <color key="backgroundColor" name="green"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="60" id="3wc-jM-jAP"/>
                                                                         </constraints>
@@ -726,6 +726,7 @@
                         <outlet property="RatingsTableHeight" destination="7PL-wi-5VX" id="6TG-3D-LSS"/>
                         <outlet property="RatingsTableView" destination="oau-CX-ChM" id="01T-rd-Wpw"/>
                         <outlet property="TestData" destination="ZyH-DI-wjX" id="ACO-Nl-XxB"/>
+                        <outlet property="addRating" destination="mgo-4d-vsV" id="Rrv-fO-FsJ"/>
                         <outlet property="bio" destination="uvk-D0-Iuf" id="XyU-Jf-KJi"/>
                         <outlet property="image1" destination="xds-Bu-RTh" id="OhH-Mk-s06"/>
                         <outlet property="image2" destination="5tc-mU-b61" id="URJ-lh-QJD"/>
@@ -764,6 +765,9 @@
         </namedColor>
         <namedColor name="gray text">
             <color red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="green">
+            <color red="0.396078431372549" green="0.81568627450980391" blue="0.44705882352941179" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="separator">
             <color red="0.80000000000000004" green="0.80000000000000004" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

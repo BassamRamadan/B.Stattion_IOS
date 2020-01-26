@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ActivateCompany: UIViewController {
+class ActivateCompany: common {
     @IBOutlet weak var appPhone: UILabel!
     @IBOutlet weak var appWhats: UILabel!
     @IBOutlet weak var appTelegram: UIButton!
@@ -26,7 +26,9 @@ class ActivateCompany: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.title =  "تفعيل العضوية"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
       //  getContactsData()
      }
     fileprivate func getContactsData() {

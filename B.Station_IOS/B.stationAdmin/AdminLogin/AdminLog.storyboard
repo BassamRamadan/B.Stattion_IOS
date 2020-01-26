@@ -207,7 +207,7 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
-                                                                            <action selector="Sign:" destination="dOb-CF-Bxh" eventType="touchUpInside" id="coq-uG-5Vz"/>
+                                                                            <segue destination="WfZ-FN-z9Z" kind="show" id="lMC-bN-XBJ"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -254,15 +254,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sXb-cV-nEI"/>
                     </view>
+                    <navigationItem key="navigationItem" id="RAC-WS-fbe"/>
                     <connections>
                         <outlet property="name" destination="rEk-oU-o2W" id="b2M-nC-kaT"/>
                         <outlet property="password" destination="35Q-6R-4qq" id="1oC-b5-PFP"/>
-                        <segue destination="d70-l5-BdB" kind="show" id="7oi-de-LG8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ovc-ce-48J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-86164" y="795"/>
+            <point key="canvasLocation" x="-85822" y="844"/>
         </scene>
         <!--AdminSign-->
         <scene sceneID="kiz-XG-7NL">
@@ -272,7 +272,29 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lba-aR-RPQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-85599" y="1043"/>
+            <point key="canvasLocation" x="-83772.463768115951" y="1051.3392857142858"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ktn-PC-mhe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WfZ-FN-z9Z" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="44p-wY-KmT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="red"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="d70-l5-BdB" kind="relationship" relationship="rootViewController" id="yDn-ld-Fvq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2m9-2h-SfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-84682.608695652176" y="1051.3392857142858"/>
         </scene>
     </scenes>
     <resources>

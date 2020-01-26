@@ -23,10 +23,16 @@ class CompanyPaths:  common {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "مسارات النقل"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-         loadingPaths()
+        if AppDelegate.addPath == true{
+            loadingPaths()
+        }
     }
     fileprivate func DeletePaths(_ Id : Int){
          self.loading()
@@ -71,6 +77,7 @@ class CompanyPaths:  common {
                 let decoder = JSONDecoder()
                 if error == nil{
                     if success{
+                        AppDelegate.addPath = false
                         let propertiesRecived = try decoder.decode(Paths.self, from: jsonData)
                         self.AllPaths = propertiesRecived.data
                         if self.AllPaths.trafficRoutes.count == 0{

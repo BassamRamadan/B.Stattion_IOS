@@ -20,32 +20,42 @@ class AdminLog: common {
         }
     }
     @IBAction func Log(_ sender: Any) {
-        CashedData.saveAdminUserName(name: name.text ?? "")
-        CashedData.saveAdminPassword(name: password.text ?? "")
-        login("oldAdmin")
+        login()
     }
     @IBAction func Sign(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "AdminSign", bundle: nil)
+        let linkingVC = storyboard.instantiateViewController(withIdentifier: "CompanyInfo")
+        self.present(linkingVC, animated: true,completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(CashedData.getAdminID() as Any)
-      
+        self.navigationItem.title =  "تسجيل شركات النقل"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        setupBackButton()
     }
-    fileprivate func login(_ userType : String) {
-        self.loading()
-        var url : String
-        var info : [String : Any]
-        if userType == "newAdmin"{
-            url = "https://services-apps.net/bstation/public/api/company-signup"
-            info = ["phone": CashedData.getUserPhone() ?? "",
-                    "code": CashedData.getUserCode() as Any
-            ]
-        }else{
-            url = "https://services-apps.net/bstation/public/api/company-login"
-            info = ["username": CashedData.getAdminUserName() ?? "",
-                    "password": CashedData.getAdminPassword() as Any
-            ]
+    private func setupBackButton(){
+        self.navigationItem.hidesBackButton = true
+        let backBtn: UIButton = common.drowbackButton()
+        let backButton = UIBarButtonItem(customView: backBtn)
+        self.navigationItem.setRightBarButton(backButton, animated: true)
+        backBtn.addTarget(self, action: #selector(back), for: UIControl.Event.touchUpInside)
+    }
+    @objc func back(){
+        print("accessed")
+        for controller in self.navigationController!.viewControllers as Array {
+            if controller.isKind(of: AdminLog.self) {
+                self.navigationController!.popToViewController(controller, animated: true)
+                break
+            }
         }
+    }
+    fileprivate func login() {
+        self.loading()
+        let url : String = "https://services-apps.net/bstation/public/api/company-login"
+        let info : [String : Any] = ["username": name.text ?? "",
+                                     "password": password.text ?? ""
+                                    ]
         let headers = [ "Content-Type": "application/json" ,
                         "Accept" : "application/json"
         ]
@@ -62,9 +72,9 @@ class AdminLog: common {
                                     CashedData.saveAdminUpdateKey(token: (Admin.accessToken ?? ""))
                                     CashedData.saveAdminData(admin: Admin)
                                     CashedData.saveAdminPhone(name: Admin.phone )
-                               //     CashedData.saveAdminPassword(name: Admin.password )
                                     CashedData.saveAdminID(name: Admin.id )
-                                    CashedData.saveAdminUserName(name: Admin.username )
+                                    CashedData.saveAdminUserName(name: Admin.username)
+                                    CashedData.saveAdminName(name: Admin.name)
                                     AppDelegate.normalUser = false
                                 }
                             }

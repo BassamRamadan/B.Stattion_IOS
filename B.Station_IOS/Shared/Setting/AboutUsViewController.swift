@@ -13,6 +13,10 @@ class AboutUsViewController: common {
     var socialLinks: [SocialLinksDetails]?
     var aboutData: AboutUSDataDetails?
     override func viewDidLoad() {
+     
+        self.navigationItem.title = "حول التطبيق"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
         super.viewDidLoad()
         common.setNavigationShadow(navigationController: self.navigationController)
         self.tabBarController?.tabBar.isHidden = false
@@ -92,17 +96,7 @@ class AboutUsViewController: common {
         }
     }
         
-    func setupBackButton(){
-        self.navigationItem.hidesBackButton = true
-        let backBtn: UIButton = common.drowbackButton()
-        let backButton = UIBarButtonItem(customView: backBtn)
-        self.navigationItem.setRightBarButton(backButton, animated: true)
-        backBtn.addTarget(self, action: #selector(back), for: UIControl.Event.touchUpInside)
-    }
-    @objc func back(){
-        print("accessed")
-        common.openback(sender: self.navigationController!)
-    }
+    
     fileprivate func setupShadowViewtop(){
         common.setNavigationShadow(navigationController: self.navigationController)
     }

@@ -36,10 +36,14 @@
             <objects>
                 <navigationController title="MyPageNav" id="dHK-yo-7bT" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="ic_bus_icon" selectedImage="ic_bus_icon_active" id="Oot-oE-kFd"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DI4-bu-Psd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="DI4-bu-Psd">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" name="red"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="white"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="x2B-VP-LoP" kind="relationship" relationship="rootViewController" id="HAv-2C-rQh"/>
@@ -64,10 +68,14 @@
             <objects>
                 <navigationController title="PathsNav" id="U0O-cS-VFX" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="ic_direction" selectedImage="ic_direction_active" id="a5S-xq-KJd"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ujH-rG-6RW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="ujH-rG-6RW">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" name="red"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="white"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="rLR-OK-Exv" kind="relationship" relationship="rootViewController" id="D9h-Hv-3WI"/>
@@ -82,10 +90,14 @@
             <objects>
                 <navigationController title="AddPathsNav" id="WkQ-4k-yBU" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="ic_add_dir" selectedImage="ic_add_dir_active" id="7CG-AH-0SQ"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nq9-XG-tGR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="nq9-XG-tGR">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" name="red"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="white"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="cjr-at-NIZ" kind="relationship" relationship="rootViewController" id="A4t-3j-cVe"/>
@@ -103,7 +115,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c8F-az-VoY">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="white"/>
                         <color key="barTintColor" name="red"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="white"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="6GQ-8o-CZA" kind="relationship" relationship="rootViewController" id="d7s-Ez-3Z1"/>
@@ -128,11 +144,11 @@
             <objects>
                 <viewController title="إضافة مسار" id="cjr-at-NIZ" customClass="GeneratePath" customModule="B_Station_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9qE-lF-rU4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="936"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p3f-RZ-B6j">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="936"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SEz-7d-FU8">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="853"/>
@@ -640,11 +656,11 @@
             <objects>
                 <viewController title=" مسارات النقل" id="rLR-OK-Exv" customClass="CompanyPaths" customModule="B_Station_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pv3-WK-8Km">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="HKU-Z1-uVd">
-                                <rect key="frame" x="0.0" y="50" width="320" height="469"/>
+                                <rect key="frame" x="0.0" y="50" width="320" height="405"/>
                                 <color key="backgroundColor" name="dark light"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Paths" rowHeight="526" id="9cs-Zx-fZ8" customClass="CompanyCell" customModule="B_Station_IOS" customModuleProvider="target">
@@ -931,6 +947,9 @@
         </namedColor>
         <namedColor name="textFieldBackground">
             <color red="0.89411764705882357" green="0.89411764705882357" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="white">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

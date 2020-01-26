@@ -26,6 +26,7 @@
 		584BE55423D29FF900F677B4 /* ClassesGetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584BE55323D29FF900F677B4 /* ClassesGetData.swift */; };
 		584BE55623D2B9C700F677B4 /* SearchingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584BE55523D2B9C700F677B4 /* SearchingController.swift */; };
 		584BE55823D2C2A800F677B4 /* CompanyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584BE55723D2C2A800F677B4 /* CompanyCell.swift */; };
+		585292D323DC7E4C00A97D49 /* AdminSgn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585292D223DC7E4C00A97D49 /* AdminSgn.swift */; };
 		587567D623DB8B9D00A7417F /* ShadowClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587567D523DB8B9D00A7417F /* ShadowClasses.swift */; };
 		587567D923DB8D7500A7417F /* TabAdminController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587567D823DB8D7500A7417F /* TabAdminController.swift */; };
 		587567DB23DB8DDD00A7417F /* AdminLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587567DA23DB8DDD00A7417F /* AdminLog.swift */; };
@@ -77,6 +78,7 @@
 		584BE55323D29FF900F677B4 /* ClassesGetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesGetData.swift; sourceTree = "<group>"; };
 		584BE55523D2B9C700F677B4 /* SearchingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingController.swift; sourceTree = "<group>"; };
 		584BE55723D2C2A800F677B4 /* CompanyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCell.swift; sourceTree = "<group>"; };
+		585292D223DC7E4C00A97D49 /* AdminSgn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSgn.swift; sourceTree = "<group>"; };
 		587567D523DB8B9D00A7417F /* ShadowClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowClasses.swift; sourceTree = "<group>"; };
 		587567D823DB8D7500A7417F /* TabAdminController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabAdminController.swift; sourceTree = "<group>"; };
 		587567DA23DB8DDD00A7417F /* AdminLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminLog.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			children = (
 				5806880A23AFC76B00DE5839 /* AdminSign.storyboard */,
 				58F1756A23D67133004DA24C /* ActivateCompany.swift */,
+				585292D223DC7E4C00A97D49 /* AdminSgn.swift */,
 			);
 			path = AdminSignUp;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				5886001123DA777300424D1F /* CompanyImageCell.swift in Sources */,
 				587567D623DB8B9D00A7417F /* ShadowClasses.swift in Sources */,
 				5809EA3A23D5183C002AF4D9 /* CompanyPaths.swift in Sources */,
+				585292D323DC7E4C00A97D49 /* AdminSgn.swift in Sources */,
 				58F1756323D6501F004DA24C /* SettingController.swift in Sources */,
 				58F1756423D6501F004DA24C /* ContactusController.swift in Sources */,
 				58FA80D823D39A540058B4F5 /* trafficRoutes.swift in Sources */,

@@ -23,7 +23,8 @@ struct AdminLogin: Codable {
 struct AdminLoginDetails: Codable {
     
     let id: Int
-    let name, phone,status,username: String
+    let status : String?
+    let name, phone,username: String
     let accessToken,imagePath: String?
     
     enum CodingKeys: String, CodingKey {
@@ -32,7 +33,7 @@ struct AdminLoginDetails: Codable {
         case accessToken = "access_token"
     }
     
-    init(id: Int, name: String, phone: String, imagePath: String?, status: String,accessToken: String?,username : String) {
+    init(id: Int, name: String, phone: String, imagePath: String?, status: String?,accessToken: String?,username : String) {
         self.id = id
         self.name = name
         self.phone = phone
@@ -40,6 +41,5 @@ struct AdminLoginDetails: Codable {
         self.status = status
         self.accessToken = accessToken
         self.username = username
-       // self.password = password
     }
 }

@@ -25,6 +25,10 @@ class ContactusController: common {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.navigationItem.title = "مراسلة الإدارة"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
         setupShadowViewtop()
         Modules()
         let tap = UITapGestureRecognizer(target: self, action: #selector(ok(reg:)))

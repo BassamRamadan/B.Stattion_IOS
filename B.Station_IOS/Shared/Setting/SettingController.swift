@@ -17,6 +17,10 @@ class SettingController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUserData()
+       
+        self.navigationItem.title =  "الإعدادات"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
         // Do any additional setup after loading the view.
     }
     

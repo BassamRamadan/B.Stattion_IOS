@@ -14,6 +14,10 @@ class UsagePolicy: common {
     var aboutData: AboutUSDataDetails?
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        self.navigationItem.title =   "سياسة الإستخدام"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
         common.setNavigationShadow(navigationController: self.navigationController)
         self.tabBarController?.tabBar.isHidden = false
         self.getAboutData()

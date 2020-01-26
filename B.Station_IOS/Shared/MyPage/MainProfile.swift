@@ -9,10 +9,13 @@
 import UIKit
 import Cosmos
 import SDWebImage
+import Spring
 class MainProfile: common {
+    
     var CompanyInfo : RoutesDetails?
     @IBOutlet var PhotosCollection : UICollectionView!
     @IBOutlet var PhotosCollectionWidth : NSLayoutConstraint!
+    @IBOutlet weak var addRating: DesignableButton!
     @IBOutlet weak var image1: UIImageView!
     @IBOutlet weak var image2: UIImageView!
     @IBOutlet weak var TestData: UILabel!
@@ -46,6 +49,7 @@ class MainProfile: common {
             TestData.isHidden = false
             TestData.text = "لا يوجد مسارات بالشركة"
         }
+        addRating.isHidden = true
     }
     @IBAction func RatingsClicked(_ sender : UIButton!){
         RatingsTableView.isHidden = false
@@ -58,16 +62,30 @@ class MainProfile: common {
             TestData.isHidden = false
             TestData.text = "لا يوجد تقييمات للشركة"
         }
+        
+        if AppDelegate.normalUser == true{
+             addRating.isHidden = false
+        }else{
+              addRating.isHidden = true
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if AppDelegate.normalUser == false{
-            loadingProfile()
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if AppDelegate.normalUser == true{
+            self.navigationItem.title =  "بروفيل الشركة"
+            
+            RatingsClicked(RatingsButton)
+            setupValues()
+            setTowImages()
         }else{
-           RatingsClicked(RatingsButton)
-           setupValues()
-           setTowImages()
+            self.navigationItem.title =   "صفحتي"
+            loadingProfile()
         }
     }
     fileprivate func setupValues(){

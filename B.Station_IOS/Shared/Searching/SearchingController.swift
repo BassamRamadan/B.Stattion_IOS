@@ -13,7 +13,7 @@ import DropDown
 class SearchingController: common {
     
     var AllCompanies = [RoutesDetails]()
-    
+   
     let CityDrop = DropDown()
     let RouteDrop = DropDown()
     let StartPointDrop = DropDown()
@@ -126,7 +126,9 @@ class SearchingController: common {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.title =  "بحث عن مواصلات"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
         GetDataForPaths.loadOnLineCities { (success : [Details]) in
             self.CitiesObjects.removeAll()
             self.CitiesObjects.append(contentsOf: success)
