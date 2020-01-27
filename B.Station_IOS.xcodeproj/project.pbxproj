@@ -23,6 +23,7 @@
 		5809EA3A23D5183C002AF4D9 /* CompanyPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5809EA3923D5183C002AF4D9 /* CompanyPaths.swift */; };
 		58201BA723CFBC15001734D0 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58201BA623CFBC15001734D0 /* User.storyboard */; };
 		58201BAB23CFD856001734D0 /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58201BAA23CFD856001734D0 /* Admin.storyboard */; };
+		5849E8F423DE414900C7B231 /* PhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5849E8F323DE414900C7B231 /* PhotosCell.swift */; };
 		584BE55423D29FF900F677B4 /* ClassesGetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584BE55323D29FF900F677B4 /* ClassesGetData.swift */; };
 		584BE55623D2B9C700F677B4 /* SearchingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584BE55523D2B9C700F677B4 /* SearchingController.swift */; };
 		584BE55823D2C2A800F677B4 /* CompanyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584BE55723D2C2A800F677B4 /* CompanyCell.swift */; };
@@ -39,7 +40,6 @@
 		58CF5D2623966982003BCB28 /* AllCompanies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CF5D2523966982003BCB28 /* AllCompanies.swift */; };
 		58D9943B23D488A500A54AD9 /* CashedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D9943A23D488A500A54AD9 /* CashedData.swift */; };
 		58D9944323D4895500A54AD9 /* AboutUsDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D9943D23D4895500A54AD9 /* AboutUsDataClass.swift */; };
-		58D9944423D4895500A54AD9 /* CarToUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D9943E23D4895500A54AD9 /* CarToUpload.swift */; };
 		58D9944523D4895500A54AD9 /* ErrorHandel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D9943F23D4895500A54AD9 /* ErrorHandel.swift */; };
 		58D9944623D4895500A54AD9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D9944023D4895500A54AD9 /* Item.swift */; };
 		58D9944723D4895500A54AD9 /* MainGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D9944123D4895500A54AD9 /* MainGuide.swift */; };
@@ -75,6 +75,7 @@
 		5809EA3923D5183C002AF4D9 /* CompanyPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyPaths.swift; sourceTree = "<group>"; };
 		58201BA623CFBC15001734D0 /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		58201BAA23CFD856001734D0 /* Admin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
+		5849E8F323DE414900C7B231 /* PhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCell.swift; sourceTree = "<group>"; };
 		584BE55323D29FF900F677B4 /* ClassesGetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesGetData.swift; sourceTree = "<group>"; };
 		584BE55523D2B9C700F677B4 /* SearchingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingController.swift; sourceTree = "<group>"; };
 		584BE55723D2C2A800F677B4 /* CompanyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCell.swift; sourceTree = "<group>"; };
@@ -93,7 +94,6 @@
 		58CF5D2523966982003BCB28 /* AllCompanies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCompanies.swift; sourceTree = "<group>"; };
 		58D9943A23D488A500A54AD9 /* CashedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashedData.swift; sourceTree = "<group>"; };
 		58D9943D23D4895500A54AD9 /* AboutUsDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsDataClass.swift; sourceTree = "<group>"; };
-		58D9943E23D4895500A54AD9 /* CarToUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarToUpload.swift; sourceTree = "<group>"; };
 		58D9943F23D4895500A54AD9 /* ErrorHandel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandel.swift; sourceTree = "<group>"; };
 		58D9944023D4895500A54AD9 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		58D9944123D4895500A54AD9 /* MainGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainGuide.swift; sourceTree = "<group>"; };
@@ -228,6 +228,7 @@
 				5806880A23AFC76B00DE5839 /* AdminSign.storyboard */,
 				58F1756A23D67133004DA24C /* ActivateCompany.swift */,
 				585292D223DC7E4C00A97D49 /* AdminSgn.swift */,
+				5849E8F323DE414900C7B231 /* PhotosCell.swift */,
 			);
 			path = AdminSignUp;
 			sourceTree = "<group>";
@@ -297,7 +298,6 @@
 				58D9943A23D488A500A54AD9 /* CashedData.swift */,
 				58F1756C23D6799E004DA24C /* common.swift */,
 				58D9943D23D4895500A54AD9 /* AboutUsDataClass.swift */,
-				58D9943E23D4895500A54AD9 /* CarToUpload.swift */,
 				58D9943F23D4895500A54AD9 /* ErrorHandel.swift */,
 				58D9944023D4895500A54AD9 /* Item.swift */,
 				58D9944123D4895500A54AD9 /* MainGuide.swift */,
@@ -473,7 +473,6 @@
 				58D9944723D4895500A54AD9 /* MainGuide.swift in Sources */,
 				58CF5D2623966982003BCB28 /* AllCompanies.swift in Sources */,
 				587567DB23DB8DDD00A7417F /* AdminLog.swift in Sources */,
-				58D9944423D4895500A54AD9 /* CarToUpload.swift in Sources */,
 				58F54E0223D7A53700416746 /* UserLog.swift in Sources */,
 				5809EA3823D4F944002AF4D9 /* Fav.swift in Sources */,
 				58080C0323D20D55004F1FCA /* City.swift in Sources */,
@@ -486,6 +485,7 @@
 				58E9BA58239B1D630028C572 /* Generate Path.swift in Sources */,
 				58D9944623D4895500A54AD9 /* Item.swift in Sources */,
 				58F1756923D65B42004DA24C /* AboutUsViewController.swift in Sources */,
+				5849E8F423DE414900C7B231 /* PhotosCell.swift in Sources */,
 				5805832C23D73F23006930BB /* TabBarUser.swift in Sources */,
 				584BE55823D2C2A800F677B4 /* CompanyCell.swift in Sources */,
 				58F1755B23D63DF6004DA24C /* AlamofireRequest.swift in Sources */,

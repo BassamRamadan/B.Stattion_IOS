@@ -10,11 +10,15 @@ import UIKit
 import Spring
 import MapKit
 import DropDown
+import Photos
 class AdminSgn: common {
     var CitiesObjects = [Details]()
     let CityDrop = DropDown()
     var cityID : Int!
     var counter = 1
+    var CompanyImage : UIImage?
+    var images : [UIImage] = []
+    let myPicController = UIImagePickerController()
     @IBOutlet weak var name: DesignableTextField!
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var whatsapp: UITextField!
@@ -31,8 +35,35 @@ class AdminSgn: common {
         }
         CityDrop.show()
     }
+    func checkPermission() {
+        let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
+        switch photoAuthorizationStatus {
+        case .authorized:
+            print("Access is granted by user")
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization({
+                (newStatus) in
+                print("status is \(newStatus)")
+                if newStatus ==  PHAuthorizationStatus.authorized {
+                    /* do stuff here */
+                    print("success")
+                }
+            })
+            print("It is not determined until now")
+        case .restricted:
+            // same same
+            print("User do not have access to photo album.")
+        case .denied:
+            // same same
+            print("User has denied the permission.")
+        @unknown default:
+            print("User has denied the permission.")
+        }
+    }
     @IBAction func AddImage(_ sender: UIButton) {
-        
+            checkPermission()
+            myPicController.sourceType = UIImagePickerController.SourceType.photoLibrary
+            self.present(myPicController , animated: true, completion: nil)
     }
     @IBOutlet weak var map: MKMapView!
   
@@ -58,8 +89,10 @@ class AdminSgn: common {
     @IBOutlet weak var ViewLocation: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-         ViewLocation.isHidden = true
-         setupBackButton()
+        
+        self.myPicController.delegate = self
+        ViewLocation.isHidden = true
+        setupBackButton()
         self.navigationItem.title = "معلومات الشركة"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
@@ -114,7 +147,10 @@ class AdminSgn: common {
         let headers = [ "Content-Type": "application/json" ,
                         "Accept" : "application/json"
         ]
-        AlamofireRequests.PostMethod( methodType: "POST", url: url, info: info, headers: headers) { (error, success , jsonData) in
+        if self.images.count > 0{
+            self.CompanyImage = self.images[0]
+        }
+        AlamofireRequests.adminSignUp(url: url, info: info, images: self.images, CompanyImage: self.CompanyImage, coverImage: nil, idImage: nil, licenseImage: nil, headers: headers){ (error, success , jsonData) in
             do {
                 self.stopAnimating()
                 let decoder = JSONDecoder()
@@ -155,4 +191,32 @@ class AdminSgn: common {
         }
     }
 
+}
+extension AdminSgn : UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.images.count
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (collectionView.frame.width)/3, height:  collectionView.frame.height)
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photos", for: indexPath) as! PhotosCell
+        cell.image.image = self.images[indexPath.row]
+        cell.deletButton.tag = indexPath.row
+        cell.backgroundColor = .yellow
+        return cell
+    }
+}
+extension AdminSgn :UIImagePickerControllerDelegate ,
+UINavigationControllerDelegate{
+    @objc  func imagePickerController(_ picker: UIImagePickerController,
+                                      didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image =  info[.originalImage] as? UIImage   {
+                images.append(image)
+                self.PhotosCollection.reloadData()
+        }
+        
+        picker.dismiss(animated: true, completion: nil);
+    }
+    
 }

@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="1922"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zw5-O8-2vy">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1606"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1626"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rXG-i8-rQG">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1606"/>
@@ -37,7 +37,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NOi-dj-0It">
                                                                         <rect key="frame" x="0.0" y="0.0" width="384" height="60"/>
                                                                         <subviews>
-                                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jxz-KV-CQe" customClass="DesignableTextField" customModule="Spring">
+                                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jxz-KV-CQe" customClass="TextFieldShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="249" height="60"/>
                                                                                 <color key="backgroundColor" name="dark light"/>
                                                                                 <constraints>
@@ -78,10 +78,10 @@
                                                                             <constraint firstItem="VKX-fk-2Ig" firstAttribute="width" secondItem="NOi-dj-0It" secondAttribute="width" multiplier="0.3" id="T8P-bG-DCm"/>
                                                                         </constraints>
                                                                     </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YaA-5L-J6d">
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YaA-5L-J6d">
                                                                         <rect key="frame" x="0.0" y="80" width="384" height="60"/>
                                                                         <subviews>
-                                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cdx-pR-KSt" userLabel="City View" customClass="DesignableView" customModule="Spring">
+                                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cdx-pR-KSt" userLabel="City View" customClass="ViewShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="249" height="60"/>
                                                                                 <subviews>
                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_list_down" translatesAutoresizingMaskIntoConstraints="NO" id="gFo-Te-HzY">
@@ -122,14 +122,14 @@
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </view>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3v-p3-jaH">
-                                                                                <rect key="frame" x="254" y="0.0" width="10" height="27.5"/>
+                                                                                <rect key="frame" x="254" y="0.0" width="10" height="60"/>
                                                                                 <color key="backgroundColor" name="white"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                                                 <color key="textColor" name="red"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="المدينة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3c-Oy-HG2">
-                                                                                <rect key="frame" x="269" y="0.0" width="115" height="20.5"/>
+                                                                                <rect key="frame" x="269" y="0.0" width="115" height="60"/>
                                                                                 <color key="backgroundColor" name="white"/>
                                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                                                 <color key="textColor" name="dark text"/>
@@ -141,7 +141,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="K18-3F-ebr">
                                                                         <rect key="frame" x="0.0" y="160" width="384" height="60"/>
                                                                         <subviews>
-                                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eXa-n9-C3m" userLabel="Phone View" customClass="DesignableView" customModule="Spring">
+                                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eXa-n9-C3m" userLabel="Phone View" customClass="ViewShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="249" height="60"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fkM-1k-1rH">
@@ -211,7 +211,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9SG-fV-KVx">
                                                                         <rect key="frame" x="0.0" y="240" width="384" height="60"/>
                                                                         <subviews>
-                                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GXX-S2-Juu" userLabel="Wats View" customClass="DesignableView" customModule="Spring">
+                                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GXX-S2-Juu" userLabel="Wats View" customClass="ViewShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="249" height="60"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Mkw-d0-aK5">
@@ -281,7 +281,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mUk-5Q-zZm">
                                                                         <rect key="frame" x="0.0" y="320" width="384" height="60"/>
                                                                         <subviews>
-                                                                            <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vMc-9c-Xhz" userLabel="email TextField" customClass="DesignableTextField" customModule="Spring">
+                                                                            <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vMc-9c-Xhz" userLabel="email TextField" customClass="TextFieldShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="249" height="60"/>
                                                                                 <color key="backgroundColor" name="dark light"/>
                                                                                 <constraints>
@@ -321,7 +321,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VHb-P4-Jax">
                                                                         <rect key="frame" x="0.0" y="400" width="384" height="100"/>
                                                                         <subviews>
-                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9K4-Kn-TDX" userLabel="AboutCompany TextView" customClass="DesignableTextView" customModule="Spring">
+                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9K4-Kn-TDX" userLabel="AboutCompany TextView" customClass="TextViewShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="249" height="100"/>
                                                                                 <color key="backgroundColor" name="dark light"/>
                                                                                 <constraints>
@@ -359,7 +359,7 @@
                                                                         </subviews>
                                                                         <color key="backgroundColor" name="white"/>
                                                                     </stackView>
-                                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcv-kW-etT" userLabel="AddImage View" customClass="DesignableView" customModule="Spring">
+                                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcv-kW-etT" userLabel="AddImage View" customClass="ViewShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="520" width="384" height="50"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_upload_img_bg" translatesAutoresizingMaskIntoConstraints="NO" id="eQQ-pb-Esv">
@@ -431,25 +431,25 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="128" id="toV-rm-M9Q"/>
                                                                         </constraints>
-                                                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JO4-IO-zqT">
+                                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JO4-IO-zqT">
                                                                             <size key="itemSize" width="150" height="96"/>
                                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                         </collectionViewFlowLayout>
                                                                         <cells>
-                                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" id="Osi-xq-nod">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="150" height="96"/>
+                                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photos" id="Osi-xq-nod" customClass="PhotosCell" customModule="B_Station_IOS" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="16" width="150" height="96"/>
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="96"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                     <subviews>
                                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iBk-nC-rCI" customClass="DesignableView" customModule="Spring">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="392"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="96"/>
                                                                                             <subviews>
-                                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dkF-P1-Lcb">
-                                                                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="392"/>
+                                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dkF-P1-Lcb" customClass="imageShadow" customModule="B_Station_IOS" customModuleProvider="target">
+                                                                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="96"/>
                                                                                                     <color key="backgroundColor" name="clear color"/>
                                                                                                 </imageView>
                                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sj3-Rv-8cN">
@@ -492,10 +492,18 @@
                                                                                     <constraint firstItem="iBk-nC-rCI" firstAttribute="top" secondItem="Osi-xq-nod" secondAttribute="top" id="ics-dS-hI1"/>
                                                                                     <constraint firstAttribute="bottom" secondItem="iBk-nC-rCI" secondAttribute="bottom" id="u9o-GL-8nw"/>
                                                                                 </constraints>
+                                                                                <connections>
+                                                                                    <outlet property="deletButton" destination="Sj3-Rv-8cN" id="cC4-9P-jDW"/>
+                                                                                    <outlet property="image" destination="dkF-P1-Lcb" id="Pg5-7I-dSO"/>
+                                                                                </connections>
                                                                             </collectionViewCell>
                                                                         </cells>
+                                                                        <connections>
+                                                                            <outlet property="dataSource" destination="1LT-Lf-tzG" id="aab-jT-F2O"/>
+                                                                            <outlet property="delegate" destination="1LT-Lf-tzG" id="JKJ-W2-IQv"/>
+                                                                        </connections>
                                                                     </collectionView>
-                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDC-ah-90i" customClass="DesignableButton" customModule="Spring">
+                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDC-ah-90i" customClass="ButtonShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="738" width="384" height="50"/>
                                                                         <color key="backgroundColor" name="green"/>
                                                                         <constraints>
@@ -563,7 +571,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="14l-GW-2hj">
                                                                         <rect key="frame" x="0.0" y="93" width="374" height="60"/>
                                                                         <subviews>
-                                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GZf-tB-Xwn" customClass="DesignableTextField" customModule="Spring">
+                                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GZf-tB-Xwn" customClass="TextFieldShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="242" height="60"/>
                                                                                 <color key="backgroundColor" name="dark light"/>
                                                                                 <constraints>
@@ -607,7 +615,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="SrY-bT-0Vg">
                                                                         <rect key="frame" x="0.0" y="173" width="374" height="60"/>
                                                                         <subviews>
-                                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dbz-n0-HQB" customClass="DesignableTextField" customModule="Spring">
+                                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dbz-n0-HQB" customClass="TextFieldShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="242" height="60"/>
                                                                                 <color key="backgroundColor" name="dark light"/>
                                                                                 <constraints>
@@ -648,7 +656,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lEg-wc-7yX">
                                                                         <rect key="frame" x="0.0" y="253" width="374" height="60"/>
                                                                         <subviews>
-                                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K7D-Ng-ppa" customClass="DesignableTextField" customModule="Spring">
+                                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K7D-Ng-ppa" customClass="TextFieldShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="242" height="60"/>
                                                                                 <color key="backgroundColor" name="dark light"/>
                                                                                 <constraints>
@@ -686,7 +694,7 @@
                                                                         </subviews>
                                                                         <color key="backgroundColor" name="white"/>
                                                                     </stackView>
-                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0NG-lj-Y8V" customClass="DesignableButton" customModule="Spring">
+                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0NG-lj-Y8V" customClass="ButtonShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="333" width="374" height="50"/>
                                                                         <color key="backgroundColor" name="green"/>
                                                                         <constraints>
@@ -740,7 +748,7 @@
                                             <constraint firstAttribute="trailing" secondItem="rXG-i8-rQG" secondAttribute="trailing" id="2ut-Wv-tDj"/>
                                             <constraint firstItem="rXG-i8-rQG" firstAttribute="leading" secondItem="zw5-O8-2vy" secondAttribute="leading" id="4bB-TM-AYL"/>
                                             <constraint firstItem="rXG-i8-rQG" firstAttribute="top" secondItem="zw5-O8-2vy" secondAttribute="top" id="V6q-2q-6Ro"/>
-                                            <constraint firstAttribute="height" secondItem="rXG-i8-rQG" secondAttribute="height" id="nai-Y1-BCn"/>
+                                            <constraint firstAttribute="height" secondItem="rXG-i8-rQG" secondAttribute="height" constant="20" id="nai-Y1-BCn"/>
                                         </constraints>
                                     </view>
                                 </subviews>

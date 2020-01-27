@@ -97,7 +97,7 @@ class trafficRoutes: Codable{
 }
 class imageDetails: Codable{
     let id: Int
-    let companyId,imagePath:String
+    let companyId,imagePath:String?
     enum CodingKeys: String,CodingKey{
         case id
         case companyId = "company_id"

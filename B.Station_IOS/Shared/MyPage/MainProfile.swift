@@ -66,7 +66,7 @@ class MainProfile: common {
         if AppDelegate.normalUser == true{
              addRating.isHidden = false
         }else{
-              addRating.isHidden = true
+             addRating.isHidden = true
         }
     }
     
@@ -79,7 +79,6 @@ class MainProfile: common {
         super.viewDidAppear(animated)
         if AppDelegate.normalUser == true{
             self.navigationItem.title =  "بروفيل الشركة"
-            
             RatingsClicked(RatingsButton)
             setupValues()
             setTowImages()
@@ -187,7 +186,7 @@ extension MainProfile : UICollectionViewDelegate , UICollectionViewDataSource , 
         return max((self.CompanyInfo?.images.count ?? 0)-2, 0)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 150)
+       return CGSize(width: (collectionView.frame.width)/3, height:  collectionView.frame.height)
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photos", for: indexPath) as! CompanyImageCell

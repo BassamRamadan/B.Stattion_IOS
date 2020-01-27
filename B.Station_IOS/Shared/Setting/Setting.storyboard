@@ -62,7 +62,7 @@
                                                                                 </subviews>
                                                                                 <color key="backgroundColor" name="clear color"/>
                                                                             </stackView>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_img" translatesAutoresizingMaskIntoConstraints="NO" id="Kth-Lq-z32">
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_img" translatesAutoresizingMaskIntoConstraints="NO" id="Kth-Lq-z32" customClass="imageShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                                 <rect key="frame" x="293" y="0.0" width="60" height="60"/>
                                                                                 <color key="backgroundColor" name="clear color"/>
                                                                                 <constraints>

@@ -33,4 +33,5 @@ target 'B.Station_IOS' do
   pod 'MOLH'
   pod 'Firebase'
   pod 'SDWebImage'
+  pod 'Photos'
 end

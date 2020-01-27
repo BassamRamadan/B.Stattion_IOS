@@ -86,12 +86,12 @@ extension TransportCompanies: UITableViewDelegate , UITableViewDataSource {
                 cell.EndPoint.text = "اي مسارات"
             }
         }
-        
         cell.companyName.text = AllCompanies[indexPath.row].name
         cell.ratePercentage.text = "\(AllCompanies[indexPath.row].avgRate ?? 0)"
         cell.rateLevel.text = RatingLevel.Level(AllCompanies[indexPath.row].avgRate!)
         cell.rateView.rating = AllCompanies[indexPath.row].avgRate ?? 0
         cell.bio.text = AllCompanies[indexPath.row].bio
+        cell.cityName.text = AllCompanies[indexPath.row].cityName
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
