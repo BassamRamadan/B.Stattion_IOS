@@ -16,12 +16,12 @@ class UserLogin: common {
     @IBOutlet weak var NewUser: UIButton!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var phone: UITextField!
+    @IBOutlet weak var stack: UIStackView!
     @IBAction func Old(_ sender: Any) {
         if CashedData.getUserPhone() != ""{
             phone.text = CashedData.getUserPhone()
         }
-        Label.isHidden = false
-        astric.isHidden = false
+        stack.isHidden = false
         name.isHidden = true
         Submit.setTitle("دخول", for: .normal)
         NewUser.backgroundColor = UIColor(named: "dark light")
@@ -30,8 +30,7 @@ class UserLogin: common {
     }
     @IBAction func New(_ sender: Any) {
         phone.text = ""
-        Label.isHidden = true
-        astric.isHidden = true
+        stack.isHidden = true
         name.isHidden = false
         Submit.setTitle("تسجيل", for: .normal)
         OldUser.backgroundColor = UIColor(named: "dark light")
@@ -114,6 +113,7 @@ class UserLogin: common {
                                     CashedData.saveUserCode(token: Int(user.code!) )
                                     CashedData.saveUserUpdateCode(token: Int(user.code!) )
                                     CashedData.saveUserPhone(name: user.phone)
+                                    AppDelegate.normalUser = true
                                 }
                             }
                         }

@@ -17,6 +17,9 @@ class TransportCompanies : common {
     var name : String!
     var path : String!
     var search : Bool! = false
+    
+    private final let stringWithLink = "Please download B.Station app here from Tamkeen Site: http://support@tamkeen-apps.com"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if search == true {
@@ -34,6 +37,34 @@ class TransportCompanies : common {
             loadingCompanies()
         }
     }
+    @IBAction func shareAppAction(_ sender: Any) {
+        print(12)
+        let activityController = UIActivityViewController(activityItems: [stringWithLink], applicationActivities: nil)
+        activityController.completionWithItemsHandler = { _, completed, _, _
+            in
+            if completed {
+                print("completed")
+            } else {
+                print("canceled")
+            }
+        }
+        if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad {
+            let activityVC: UIActivityViewController = UIActivityViewController(activityItems: [stringWithLink], applicationActivities: nil)
+            
+            // ios > 8.0
+            if activityVC.responds(to: #selector(getter: UIViewController.popoverPresentationController)) {
+                activityVC.popoverPresentationController?.sourceView = super.view
+                
+                //                activityVC.popoverPresentationController?.sourceRect = super.view.frame
+            }
+            present(activityVC, animated: true, completion: nil)
+        } else {
+            present(activityController, animated: true) {
+                print("presented")
+            }
+        }
+    }
+    
     fileprivate func loadingCompanies(){
         self.loading()
         let url = "https://services-apps.net/bstation/public/api/companies"
@@ -92,6 +123,7 @@ extension TransportCompanies: UITableViewDelegate , UITableViewDataSource {
         cell.rateView.rating = AllCompanies[indexPath.row].avgRate ?? 0
         cell.bio.text = AllCompanies[indexPath.row].bio
         cell.cityName.text = AllCompanies[indexPath.row].cityName
+        cell.ShareButton.tag = indexPath.row
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

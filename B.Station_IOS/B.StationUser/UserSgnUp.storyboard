@@ -35,8 +35,8 @@
                                                             <constraint firstAttribute="height" constant="180" id="Q7o-HF-R8o"/>
                                                         </constraints>
                                                     </view>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_sms_confirm" translatesAutoresizingMaskIntoConstraints="NO" id="gdc-jt-dDp">
-                                                        <rect key="frame" x="199" y="120" width="16" height="16"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_sms_confirm" translatesAutoresizingMaskIntoConstraints="NO" id="gdc-jt-dDp" customClass="imageShadow" customModule="B_Station_IOS" customModuleProvider="target">
+                                                        <rect key="frame" x="132" y="120" width="150" height="150"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -105,7 +105,7 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Kiy-1m-bcU">
                                                                         <rect key="frame" x="0.0" y="41.5" width="220" height="40"/>
                                                                         <subviews>
-                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dN9-Ir-2fx" customClass="DesignableTextField" customModule="Spring">
+                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dN9-Ir-2fx" customClass="TextFieldShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="40" id="Xab-z2-E25"/>
@@ -126,7 +126,7 @@
                                                                                     </userDefinedRuntimeAttribute>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </textField>
-                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mwp-Ri-5pk" customClass="DesignableTextField" customModule="Spring">
+                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mwp-Ri-5pk" customClass="TextFieldShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                                 <rect key="frame" x="60" y="0.0" width="40" height="40"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="40" id="aYp-ob-9KT"/>
@@ -147,7 +147,7 @@
                                                                                     </userDefinedRuntimeAttribute>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </textField>
-                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZy-mS-Qgi" customClass="DesignableTextField" customModule="Spring">
+                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NZy-mS-Qgi" customClass="TextFieldShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                                 <rect key="frame" x="120" y="0.0" width="40" height="40"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="40" id="K3k-gt-jtZ"/>
@@ -168,7 +168,7 @@
                                                                                     </userDefinedRuntimeAttribute>
                                                                                 </userDefinedRuntimeAttributes>
                                                                             </textField>
-                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qz1-Ef-uBw" customClass="DesignableTextField" customModule="Spring">
+                                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qz1-Ef-uBw" customClass="TextFieldShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                                 <rect key="frame" x="180" y="0.0" width="40" height="40"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="40" id="f7D-lv-rrH"/>
@@ -193,7 +193,7 @@
                                                                     </stackView>
                                                                 </subviews>
                                                             </stackView>
-                                                            <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Um-xT-yL7" customClass="DesignableButton" customModule="Spring">
+                                                            <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Um-xT-yL7" customClass="ButtonShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                 <rect key="frame" x="62" y="222.5" width="250" height="60"/>
                                                                 <color key="backgroundColor" name="green"/>
                                                                 <constraints>
@@ -216,8 +216,8 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </button>
-                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHX-lN-Dtc">
-                                                                <rect key="frame" x="135.5" y="312.5" width="103" height="60"/>
+                                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHX-lN-Dtc" customClass="ButtonShadow" customModule="B_Station_IOS" customModuleProvider="target">
+                                                                <rect key="frame" x="131.5" y="312.5" width="111" height="60"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="60" id="mae-BI-rXU"/>
                                                                 </constraints>

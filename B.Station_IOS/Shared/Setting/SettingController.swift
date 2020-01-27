@@ -12,25 +12,30 @@ class SettingController: UIViewController {
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var editStack: UIStackView!
+    private final let stringWithLink = "Please download B.Station app here from Tamkeen Site: http://support@tamkeen-apps.com"
     
-    private final let stringWithLink = "Please download Tourist Guide app here from Tamkeen Site: http://support@tamkeen-apps.com"
     override func viewDidLoad() {
         super.viewDidLoad()
         setUserData()
-       
         self.navigationItem.title =  "الإعدادات"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         // Do any additional setup after loading the view.
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
     func setUserData() {
         if AppDelegate.normalUser {
+            editStack.isHidden = true
             name.text = CashedData.getUserName()
             AlamofireRequests.getPhoto(url: (CashedData.getUserImage() ?? "")) { (error , success, image ) in
                 self.imageView.image = image
             }
         }else{
+            editStack.isHidden = false
             name.text = CashedData.getAdminName()
             AlamofireRequests.getPhoto(url: (CashedData.getAdminImage() ?? "")) { (error , success, image ) in
                 self.imageView.image = image

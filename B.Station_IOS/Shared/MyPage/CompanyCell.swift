@@ -28,7 +28,7 @@ class CompanyCell: UITableViewCell {
     @IBOutlet weak var EndPoint: UILabel!
     @IBOutlet weak var DeleteButton: UIButton!
     @IBOutlet weak var Date: UILabel!
-    
+    @IBOutlet weak var ShareButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

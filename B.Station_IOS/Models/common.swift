@@ -29,6 +29,13 @@ class common : UIViewController , NVActivityIndicatorViewable{
         return notifBtn
         // Do any additional setup after loading the view
     }
+    class func drowFavButton()->UIButton {
+        let notifBtn: UIButton = UIButton(type: UIButton.ButtonType.custom)
+        notifBtn.setImage(UIImage(named: "ic_fav_white"), for: [])
+        notifBtn.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        return notifBtn
+        // Do any additional setup after loading the view
+    }
     class func openback(sender : UINavigationController){
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let linkingVC = storyboard.instantiateViewController(withIdentifier: "LanuchScreenViewController")
@@ -44,7 +51,6 @@ class common : UIViewController , NVActivityIndicatorViewable{
         navigationController?.navigationBar.layer.shadowOpacity = 0.7
         navigationController?.navigationBar.layer.masksToBounds = false
     }
-    
     class func isSaloonLogedin()-> Bool{
         let token = CashedData.getAdminApiKey() ?? ""
         if token.isEmpty{

@@ -11,7 +11,7 @@ import Cosmos
 import SDWebImage
 import Spring
 class MainProfile: common {
-    
+    var backBtn : UIButton!
     var CompanyInfo : RoutesDetails?
     @IBOutlet var PhotosCollection : UICollectionView!
     @IBOutlet var PhotosCollectionWidth : NSLayoutConstraint!
@@ -79,6 +79,7 @@ class MainProfile: common {
         super.viewDidAppear(animated)
         if AppDelegate.normalUser == true{
             self.navigationItem.title =  "بروفيل الشركة"
+            setupFavoriteButton()
             RatingsClicked(RatingsButton)
             setupValues()
             setTowImages()
@@ -87,6 +88,18 @@ class MainProfile: common {
             loadingProfile()
         }
     }
+    private func setupFavoriteButton(){
+        self.navigationItem.hidesBackButton = true
+        backBtn = common.drowFavButton()
+        let backButton = UIBarButtonItem(customView: backBtn)
+        self.navigationItem.setRightBarButton(backButton, animated: true)
+        backBtn.addTarget(self, action: #selector(addFav), for: UIControl.Event.touchUpInside)
+    }
+    @objc func addFav(){
+        if self.backBtn.imageView?.image == UIImage(named: "ic_fav_white"){
+            AddToFavorite(CompanyInfo?.id ?? 0)
+        }
+     }
     fileprivate func setupValues(){
         CompanyName.text = CompanyInfo?.name
         CityName.text = CompanyInfo?.cityName
@@ -108,6 +121,38 @@ class MainProfile: common {
         self.PathsTableHeight.constant = self.PathsTableView.contentSize.height
         self.RatingsTableHeight.constant = self.RatingsTableView.contentSize.height
       //  self.PhotosCollectionWidth.constant = self.PhotosCollection.contentSize.width
+    }
+    fileprivate func AddToFavorite(_ CompanyId : Int){
+        self.loading()
+        let url = "https://services-apps.net/bstation/public/api/user/add-to-favourite"
+        let headers = [ "Content-Type": "application/json" ,
+                        "Accept" : "application/json",
+                        "Authorization" : "Bearer \(CashedData.getUserApiKey() ?? "")"
+        ]
+        let params = [
+            "company_id":CompanyId
+        ]
+        AlamofireRequests.PostMethod(methodType: "POST", url: url, info: params, headers: headers){
+            (error, success, jsonData) in
+            do {
+                self.stopAnimating()
+                let decoder = JSONDecoder()
+                if error == nil{
+                    if success{
+                         AppDelegate.addToFavourite = true
+                         self.backBtn.setImage(UIImage(named: "ic_fav_white_active"), for: [])
+                    }else{
+                        let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
+                        self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
+                    }
+                }else{
+                    self.present(common.makeAlert(), animated: true, completion: nil)
+                }
+            } catch {
+                self.present(common.makeAlert(message: error.localizedDescription), animated: true, completion: nil)
+                
+            }
+        }
     }
     fileprivate func loadingProfile(){
         self.loading()

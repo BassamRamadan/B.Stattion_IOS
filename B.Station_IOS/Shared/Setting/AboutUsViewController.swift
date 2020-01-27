@@ -133,5 +133,7 @@ extension AboutUsViewController : UICollectionViewDelegate , UICollectionViewDat
         cell.link.addTarget(self, action: #selector(Link(sender:)), for: .touchUpInside)
         return cell
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+    }
 }

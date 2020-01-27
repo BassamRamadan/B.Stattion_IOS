@@ -72,7 +72,7 @@
                                                                         <color key="textColor" name="dark text"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="أسم المستخدم" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rEk-oU-o2W">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="أسم المستخدم" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rEk-oU-o2W" customClass="TextFieldShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="70" width="384" height="60"/>
                                                                         <color key="backgroundColor" name="dark light"/>
                                                                         <constraints>
@@ -87,7 +87,7 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textField>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="كلمة المرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="35Q-6R-4qq">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="كلمة المرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="35Q-6R-4qq" customClass="TextFieldShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="150" width="384" height="60"/>
                                                                         <color key="backgroundColor" name="dark light"/>
                                                                         <constraints>
@@ -126,7 +126,7 @@
                                                                                     <color key="titleColor" name="gray text"/>
                                                                                 </state>
                                                                             </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBA-61-ATU">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBA-61-ATU" customClass="ButtonShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                                 <rect key="frame" x="359" y="12.5" width="25" height="25"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="25" id="Vm5-Ez-IXP"/>
@@ -144,7 +144,7 @@
                                                                             <constraint firstAttribute="height" constant="50" id="dbW-5n-wTz"/>
                                                                         </constraints>
                                                                     </stackView>
-                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z8A-Mx-A4x">
+                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z8A-Mx-A4x" customClass="ButtonShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="300" width="384" height="60"/>
                                                                         <color key="backgroundColor" name="green"/>
                                                                         <constraints>
@@ -191,7 +191,7 @@
                                                                             </view>
                                                                         </subviews>
                                                                     </stackView>
-                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYG-7x-2oD">
+                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYG-7x-2oD" customClass="ButtonShadow" customModule="B_Station_IOS" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="460" width="384" height="60"/>
                                                                         <color key="backgroundColor" red="0.35294117650000001" green="0.38431372549999998" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>

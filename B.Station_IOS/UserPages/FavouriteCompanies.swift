@@ -78,7 +78,7 @@ class FavouriteCompanies: common {
                 let decoder = JSONDecoder()
                 if error == nil{
                     if success{
-                         AppDelegate.addToFavourite = false
+                        AppDelegate.addToFavourite = false
                         let propertiesRecived = try decoder.decode(FavList.self, from: jsonData)
                         self.TrashingCompanies.append(contentsOf: propertiesRecived.data)
                         if self.TrashingCompanies.count == 0{
@@ -114,6 +114,9 @@ extension FavouriteCompanies: UITableViewDelegate , UITableViewDataSource {
         cell.cityName.text = TrashingCompanies[indexPath.row].CityName
         cell.DeleteButton.tag = indexPath.row
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }
