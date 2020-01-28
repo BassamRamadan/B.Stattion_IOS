@@ -265,7 +265,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <view userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="wpu-mB-ol0" customClass="CosmosView" customModule="Cosmos">
-                                                                            <rect key="frame" x="234" y="38.5" width="120" height="20"/>
+                                                                            <rect key="frame" x="234" y="23.5" width="120" height="50"/>
                                                                             <color key="backgroundColor" name="white"/>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
@@ -359,7 +359,7 @@
         <!--شركات النقل-->
         <scene sceneID="1p7-Ve-0mo">
             <objects>
-                <viewController title="شركات النقل" id="a21-c1-49y" customClass="TransportCompanies" customModule="B_Station_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchResults" title="شركات النقل" useStoryboardIdentifierAsRestorationIdentifier="YES" id="a21-c1-49y" customClass="TransportCompanies" customModule="B_Station_IOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eua-jo-kFv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -541,6 +541,7 @@
                                                                         </stackView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aeQ-Ue-KIG">
                                                                             <rect key="frame" x="0.0" y="117" width="348" height="62"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             <subviews>
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nOO-zP-zS5">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="312" height="62"/>
@@ -691,43 +692,46 @@
                                                                             <color key="backgroundColor" name="clear color"/>
                                                                         </stackView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bio" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y97-ex-W7G">
-                                                                            <rect key="frame" x="0.0" y="194" width="348" height="21.5"/>
+                                                                            <rect key="frame" x="0.0" y="117" width="348" height="21.5"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PnJ-Qs-kkj">
-                                                                            <rect key="frame" x="0.0" y="230.5" width="348" height="1"/>
+                                                                            <rect key="frame" x="0.0" y="153.5" width="348" height="1"/>
                                                                             <color key="backgroundColor" name="separator"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="1" id="jaC-pu-FfT"/>
                                                                             </constraints>
                                                                         </view>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xNs-DU-DQF">
-                                                                            <rect key="frame" x="0.0" y="246.5" width="348" height="200"/>
+                                                                            <rect key="frame" x="0.0" y="169.5" width="348" height="277"/>
                                                                             <subviews>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVK-bw-cd7">
-                                                                                    <rect key="frame" x="0.0" y="88" width="33" height="24"/>
+                                                                                    <rect key="frame" x="0.0" y="126.5" width="33" height="24"/>
                                                                                     <color key="backgroundColor" name="clear color"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" secondItem="AVK-bw-cd7" secondAttribute="height" multiplier="11:8" id="rdV-a6-NFD"/>
                                                                                     </constraints>
                                                                                     <state key="normal" backgroundImage="ic_share_gray"/>
+                                                                                    <connections>
+                                                                                        <action selector="shareAppAction:" destination="a21-c1-49y" eventType="touchUpInside" id="mKo-29-D4b"/>
+                                                                                    </connections>
                                                                                 </button>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="جيدة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h37-5c-Rj2">
-                                                                                    <rect key="frame" x="43" y="90.5" width="117.5" height="19.5"/>
+                                                                                    <rect key="frame" x="43" y="129" width="117.5" height="19.5"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                                                     <color key="textColor" name="gray text"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="2.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OlR-e3-av7">
-                                                                                    <rect key="frame" x="170.5" y="90.5" width="22.5" height="19.5"/>
+                                                                                    <rect key="frame" x="170.5" y="129" width="22.5" height="19.5"/>
                                                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                                                     <color key="textColor" name="gray text"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <view userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="2BX-SE-F9r" customClass="CosmosView" customModule="Cosmos">
-                                                                                    <rect key="frame" x="203" y="87.5" width="145" height="25"/>
+                                                                                    <rect key="frame" x="203" y="126" width="145" height="25"/>
                                                                                     <color key="backgroundColor" name="white"/>
                                                                                     <userDefinedRuntimeAttributes>
                                                                                         <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
@@ -760,6 +764,7 @@
                                                                     <color key="backgroundColor" name="clear color"/>
                                                                     <variation key="default">
                                                                         <mask key="subviews">
+                                                                            <exclude reference="aeQ-Ue-KIG"/>
                                                                             <exclude reference="02W-WJ-ZjR"/>
                                                                         </mask>
                                                                     </variation>
@@ -789,21 +794,14 @@
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" name="dark light"/>
                                                 <connections>
-                                                    <outlet property="EndPoint" destination="XEZ-QE-fUP" id="cHa-KH-wv5"/>
-                                                    <outlet property="StartPoint" destination="Oxe-KW-dhR" id="4bs-vX-tzC"/>
-                                                    <outlet property="air" destination="nQu-ce-oRb" id="IRK-1N-0xJ"/>
+                                                    <outlet property="ShareButton" destination="AVK-bw-cd7" id="TEa-ur-bX2"/>
                                                     <outlet property="bio" destination="Y97-ex-W7G" id="5GR-XN-Mir"/>
-                                                    <outlet property="carModeling" destination="h8o-EM-ghs" id="5lg-q6-7s6"/>
                                                     <outlet property="cityName" destination="QF7-cx-aD4" id="F1z-nd-QuJ"/>
                                                     <outlet property="companyImage" destination="5hu-lQ-jce" id="BzF-Cr-rVA"/>
                                                     <outlet property="companyName" destination="kbS-rE-wQT" id="cWk-q0-LL8"/>
-                                                    <outlet property="path" destination="aeQ-Ue-KIG" id="Ujm-KO-pO0"/>
-                                                    <outlet property="phone" destination="9qv-Kl-I1j" id="RBi-XC-CTX"/>
                                                     <outlet property="rateLevel" destination="h37-5c-Rj2" id="Nqn-XH-Q6I"/>
                                                     <outlet property="ratePercentage" destination="OlR-e3-av7" id="lTF-jT-bVr"/>
                                                     <outlet property="rateView" destination="2BX-SE-F9r" id="VTq-nJ-BUD"/>
-                                                    <outlet property="shading" destination="bOh-rf-9ex" id="sqF-fW-pkZ"/>
-                                                    <outlet property="wifi" destination="gTq-UQ-2MJ" id="U8x-7J-6BT"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -835,7 +833,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BhO-KC-zNU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-93271" y="1260"/>
+            <point key="canvasLocation" x="-93271" y="1266"/>
         </scene>
         <!--CompanyPage-->
         <scene sceneID="sJb-hk-iB2">
@@ -845,7 +843,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rwI-QJ-Q6n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-93270" y="1754"/>
+            <point key="canvasLocation" x="-93270" y="1814"/>
         </scene>
     </scenes>
     <resources>

@@ -39,7 +39,7 @@ class FavouriteCompanies: common {
         let url = "https://services-apps.net/bstation/public/api/user/delete-from-favourite/\(Id)"
         let headers = [ "Content-Type": "application/json" ,
                         "Accept" : "application/json",
-                        "Authorization" : "Bearer \(CashedData.getUserApiKey() ?? "")"
+                        "Authorization" : "Bearer \(CashedData.getUserUpdateKey() ?? "")"
         ]
         AlamofireRequests.PostMethod(methodType: "DELETE", url: url, info: [:], headers: headers){
             (error, success, jsonData) in
@@ -68,7 +68,7 @@ class FavouriteCompanies: common {
         let url = "https://services-apps.net/bstation/public/api/user/favourite-list"
         let headers = [ "Content-Type": "application/json" ,
                         "Accept" : "application/json",
-                         "Authorization" : "Bearer \(CashedData.getUserApiKey() ?? "")"
+                         "Authorization" : "Bearer \(CashedData.getUserUpdateKey() ?? "")"
         ]
         self.TrashingCompanies.removeAll()
         AlamofireRequests.getMethod(url: url, headers: headers){

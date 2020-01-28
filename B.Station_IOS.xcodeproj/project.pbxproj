@@ -78,7 +78,7 @@
 		5849E8F323DE414900C7B231 /* PhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCell.swift; sourceTree = "<group>"; };
 		584BE55323D29FF900F677B4 /* ClassesGetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesGetData.swift; sourceTree = "<group>"; };
 		584BE55523D2B9C700F677B4 /* SearchingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingController.swift; sourceTree = "<group>"; };
-		584BE55723D2C2A800F677B4 /* CompanyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCell.swift; sourceTree = "<group>"; };
+		584BE55723D2C2A800F677B4 /* CompanyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CompanyCell.swift; path = ../Shared/MyPage/CompanyCell.swift; sourceTree = "<group>"; };
 		585292D223DC7E4C00A97D49 /* AdminSgn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSgn.swift; sourceTree = "<group>"; };
 		587567D523DB8B9D00A7417F /* ShadowClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowClasses.swift; sourceTree = "<group>"; };
 		587567D823DB8D7500A7417F /* TabAdminController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabAdminController.swift; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 		58C258562395C64400294ACE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58C258592395C64400294ACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58C2585B2395C64400294ACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		58CF5D2523966982003BCB28 /* AllCompanies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCompanies.swift; sourceTree = "<group>"; };
+		58CF5D2523966982003BCB28 /* AllCompanies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AllCompanies.swift; path = ../Shared/MyPage/AllCompanies.swift; sourceTree = "<group>"; };
 		58D9943A23D488A500A54AD9 /* CashedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashedData.swift; sourceTree = "<group>"; };
 		58D9943D23D4895500A54AD9 /* AboutUsDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsDataClass.swift; sourceTree = "<group>"; };
 		58D9943F23D4895500A54AD9 /* ErrorHandel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandel.swift; sourceTree = "<group>"; };
@@ -141,8 +141,6 @@
 			children = (
 				58A3943323AE38E000A40508 /* MainProfile.swift */,
 				5806880323AFC3DD00DE5839 /* CompanyPage.storyboard */,
-				584BE55723D2C2A800F677B4 /* CompanyCell.swift */,
-				58CF5D2523966982003BCB28 /* AllCompanies.swift */,
 				5886001023DA777300424D1F /* CompanyImageCell.swift */,
 			);
 			path = MyPage;
@@ -208,6 +206,8 @@
 			children = (
 				5805832B23D73F23006930BB /* TabBarUser.swift */,
 				58201BA623CFBC15001734D0 /* User.storyboard */,
+				584BE55723D2C2A800F677B4 /* CompanyCell.swift */,
+				58CF5D2523966982003BCB28 /* AllCompanies.swift */,
 				5809EA3523D4E85C002AF4D9 /* FavouriteCompanies.swift */,
 			);
 			path = UserPages;

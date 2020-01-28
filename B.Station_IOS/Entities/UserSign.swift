@@ -27,7 +27,6 @@ struct SignDetails: Codable {
     let imagePath: String?
     let code: Int?
     let accessToken: String?
-    
     enum CodingKeys: String, CodingKey {
         case id, name, phone, code
         case imagePath = "image_path"
@@ -43,3 +42,4 @@ struct SignDetails: Codable {
         self.accessToken = accessToken
     }
 }
+

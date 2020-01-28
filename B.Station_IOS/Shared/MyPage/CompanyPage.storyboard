@@ -508,7 +508,7 @@
                                                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="249"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                                     <subviews>
-                                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AaT-50-49K" userLabel="Ratings_View" customClass="ViewShadow" customModule="B_Station_IOS" customModuleProvider="target">
+                                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AaT-50-49K" userLabel="Ratings_View">
                                                                                             <rect key="frame" x="20" y="11" width="374" height="227"/>
                                                                                             <subviews>
                                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_img" translatesAutoresizingMaskIntoConstraints="NO" id="rQs-of-PJE">

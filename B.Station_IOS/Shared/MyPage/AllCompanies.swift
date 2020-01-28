@@ -37,8 +37,7 @@ class TransportCompanies : common {
             loadingCompanies()
         }
     }
-    @IBAction func shareAppAction(_ sender: Any) {
-        print(12)
+    @IBAction func shareAppAction(_ sender: UIButton) {
         let activityController = UIActivityViewController(activityItems: [stringWithLink], applicationActivities: nil)
         activityController.completionWithItemsHandler = { _, completed, _, _
             in
@@ -105,25 +104,13 @@ extension TransportCompanies: UITableViewDelegate , UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Companies", for: indexPath) as! CompanyCell
-        cell.companyImage.isHidden = search
-        cell.path.isHidden = search
-        if search == false{
-            cell.companyImage.sd_setImage(with: URL(string: "https://services-apps.net/bstation/public/images/users/"+(AllCompanies[indexPath.row].image ?? "") ) )
-            if AllCompanies[indexPath.row].trafficRoutes.count > 0{
-                cell.StartPoint.text = AllCompanies[indexPath.row].trafficRoutes[0].fromStation
-                cell.EndPoint.text = AllCompanies[indexPath.row].trafficRoutes[0].toStation
-            }else{
-                cell.StartPoint.text = "لم تحدد الشركة"
-                cell.EndPoint.text = "اي مسارات"
-            }
-        }
+        cell.companyImage.sd_setImage(with: URL(string:(AllCompanies[indexPath.row].imagePath ?? "") ) )
         cell.companyName.text = AllCompanies[indexPath.row].name
         cell.ratePercentage.text = "\(AllCompanies[indexPath.row].avgRate ?? 0)"
         cell.rateLevel.text = RatingLevel.Level(AllCompanies[indexPath.row].avgRate!)
         cell.rateView.rating = AllCompanies[indexPath.row].avgRate ?? 0
         cell.bio.text = AllCompanies[indexPath.row].bio
         cell.cityName.text = AllCompanies[indexPath.row].cityName
-        cell.ShareButton.tag = indexPath.row
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -149,7 +136,7 @@ class RatingLevel{
         case 2.1...3.0:
             return "جيد جدا"
         case 3.1...5.0:
-            return "أمتياز"
+            return "ممتاز"
         default:
             return "مقبول"
         }

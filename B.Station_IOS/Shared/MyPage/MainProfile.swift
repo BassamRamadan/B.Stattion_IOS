@@ -13,6 +13,7 @@ import Spring
 class MainProfile: common {
     var backBtn : UIButton!
     var CompanyInfo : RoutesDetails?
+    var AllFavIds = [FavID]()
     @IBOutlet var PhotosCollection : UICollectionView!
     @IBOutlet var PhotosCollectionWidth : NSLayoutConstraint!
     @IBOutlet weak var addRating: DesignableButton!
@@ -92,8 +93,9 @@ class MainProfile: common {
         self.navigationItem.hidesBackButton = true
         backBtn = common.drowFavButton()
         let backButton = UIBarButtonItem(customView: backBtn)
-        self.navigationItem.setRightBarButton(backButton, animated: true)
+        self.navigationItem.setLeftBarButton(backButton, animated: true)
         backBtn.addTarget(self, action: #selector(addFav), for: UIControl.Event.touchUpInside)
+        self.loadingFav()
     }
     @objc func addFav(){
         if self.backBtn.imageView?.image == UIImage(named: "ic_fav_white"){
@@ -120,14 +122,13 @@ class MainProfile: common {
         super.updateViewConstraints()
         self.PathsTableHeight.constant = self.PathsTableView.contentSize.height
         self.RatingsTableHeight.constant = self.RatingsTableView.contentSize.height
-      //  self.PhotosCollectionWidth.constant = self.PhotosCollection.contentSize.width
     }
     fileprivate func AddToFavorite(_ CompanyId : Int){
         self.loading()
         let url = "https://services-apps.net/bstation/public/api/user/add-to-favourite"
         let headers = [ "Content-Type": "application/json" ,
                         "Accept" : "application/json",
-                        "Authorization" : "Bearer \(CashedData.getUserApiKey() ?? "")"
+                        "Authorization" : "Bearer \(CashedData.getUserUpdateKey() ?? "")"
         ]
         let params = [
             "company_id":CompanyId
@@ -175,6 +176,43 @@ class MainProfile: common {
                         self.PathsTableView.reloadData()
                         self.RatingsTableView.reloadData()
                         self.PhotosCollection.reloadData()
+                        self.setupFavoriteButton()
+                    }else{
+                        let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
+                        self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
+                    }
+                }else{
+                    self.present(common.makeAlert(), animated: true, completion: nil)
+                }
+            } catch {
+                self.present(common.makeAlert(message: error.localizedDescription), animated: true, completion: nil)
+                
+            }
+        }
+    }
+    fileprivate func loadingFav(){
+        self.loading()
+        let url = "https://services-apps.net/bstation/public/api/user/favourite-list"
+        let headers = [ "Content-Type": "application/json" ,
+                        "Accept" : "application/json",
+                        "Authorization" : "Bearer \(CashedData.getUserUpdateKey() ?? "")"
+        ]
+        self.AllFavIds.removeAll()
+        AlamofireRequests.getMethod(url: url, headers: headers){
+            (error, success, jsonData) in
+            do {
+                self.stopAnimating()
+                let decoder = JSONDecoder()
+                if error == nil{
+                    if success{
+                        let propertiesRecived = try decoder.decode(FavoritesID.self, from: jsonData)
+                        self.AllFavIds.append(contentsOf: propertiesRecived.data)
+                        for x in self.AllFavIds{
+                            if x.CompanyId == String(self.CompanyInfo?.id ?? 0){
+                                self.backBtn.setImage(UIImage(named: "ic_fav_white_active"), for: [])
+                                break
+                            }
+                        }
                     }else{
                         let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
                         self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)

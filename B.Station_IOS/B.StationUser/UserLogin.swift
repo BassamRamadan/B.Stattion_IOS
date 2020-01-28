@@ -90,6 +90,9 @@ class UserLogin: common {
             ]
         }else{
             url = "https://services-apps.net/bstation/public/api/user-login"
+            if CashedData.getUserPhone() == ""{
+                CashedData.saveUserPhone(name: phone.text ?? "")
+            }
             info = ["phone": CashedData.getUserPhone() ?? "",
                     "code": CashedData.getUserCode() as Any
             ]
@@ -110,8 +113,21 @@ class UserLogin: common {
                                     CashedData.saveUserApiKey(token: (user.accessToken ?? ""))
                                     CashedData.saveUserUpdateKey(token: (user.accessToken ?? ""))
                                     CashedData.saveUserData(SignAdmin: user)
-                                    CashedData.saveUserCode(token: Int(user.code!) )
+                                    CashedData.saveUserCode(token: Int(user.code!))
                                     CashedData.saveUserUpdateCode(token: Int(user.code!) )
+                                    CashedData.saveUserPhone(name: user.phone)
+                                    AppDelegate.normalUser = true
+                                }
+                            }
+                        }else{
+                            let dataRecived = try decoder.decode(UserLog.self, from: jsonData)
+                            if dataRecived.code >= 201 && dataRecived.code < 300{
+                                if let user = dataRecived.data{
+                                    CashedData.saveUserApiKey(token: (user.accessToken ?? ""))
+                                    CashedData.saveUserUpdateKey(token: (user.accessToken ?? ""))
+                                  //  CashedData.saveUserData(SignAdmin: user)
+                                    CashedData.saveUserCode(token: Int(user.code ?? "") ?? 0)
+                                    CashedData.saveUserUpdateCode(token: Int(user.code ?? "") ?? 0 )
                                     CashedData.saveUserPhone(name: user.phone)
                                     AppDelegate.normalUser = true
                                 }

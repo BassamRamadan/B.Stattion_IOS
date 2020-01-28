@@ -18,6 +18,7 @@ class FavList: Codable{
         self.data = data
     }
 }
+
 class FavDetails: Codable{
     let id , AvgRate: Int
     let CompanyId, name,ImagePath , CityName: String?
@@ -33,5 +34,24 @@ class FavDetails: Codable{
         self.CompanyId = CompanyId
         self.name = name
         self.ImagePath = ImagePath
+    }
+}
+class FavoritesID: Codable{
+    let code: Int?
+    let message: String?
+    let data: [FavID]
+    init(code: Int , message: String , data: [FavID]) {
+        self.code = code
+        self.message = message
+        self.data = data
+    }
+}
+class FavID : Codable{
+    let CompanyId: String
+    enum CodingKeys: String , CodingKey{
+        case CompanyId = "company_id"
+    }
+    init(CompanyId: String) {
+        self.CompanyId = CompanyId
     }
 }
