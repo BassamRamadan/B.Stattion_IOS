@@ -25,7 +25,7 @@ class ContactusController: common {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupBackButton()
         self.navigationItem.title = "مراسلة الإدارة"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
@@ -107,10 +107,16 @@ class ContactusController: common {
     
     
    
-    @objc func back(){
-        print("accessed")
-        common.openback(sender: self.navigationController!)
-    }
+     func setupBackButton() {
+           self.navigationItem.hidesBackButton = true
+           let backBtn: UIButton = common.drowbackButton()
+           let backButton = UIBarButtonItem(customView: backBtn)
+           self.navigationItem.setRightBarButton(backButton, animated: true)
+           backBtn.addTarget(self, action: #selector(self.back), for: UIControl.Event.touchUpInside)
+       }
+       @objc func back() {
+           self.navigationController?.popViewController(animated: true)
+          }
     fileprivate func setupShadowViewtop(){
         common.setNavigationShadow(navigationController: self.navigationController)
     }

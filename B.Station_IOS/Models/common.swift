@@ -11,7 +11,6 @@
 import Foundation
 import UIKit
 import NVActivityIndicatorView
-import MOLH
 import Firebase
 import DropDown
 class common : UIViewController , NVActivityIndicatorViewable{
@@ -99,27 +98,7 @@ class common : UIViewController , NVActivityIndicatorViewable{
             }}))
         return alert
     }
-    class func changeLanguage(language: String) {
-         
-        // change the language.
-        MOLH.setLanguageTo(language)
-        MOLHLanguage.setDefaultLanguage(language)
-    }
-    
-    class func ConvertImageToBase64String (img: UIImage) -> String {
-        let imageData:NSData = img.jpegData(compressionQuality: 0.50)! as NSData //UIImagePNGRepresentation(img)
-        let imgString = imageData.base64EncodedString(options: .init(rawValue: 0))
-        return imgString
-    }
 
-    //
-    // Convert a base64 representation to a UIImage
-    //
-    class func ConvertBase64StringToImage (imageBase64String:String) -> UIImage {
-        let imageData = Data.init(base64Encoded: imageBase64String, options: .init(rawValue: 0))
-        let image = UIImage(data: imageData!)
-        return image  ?? #imageLiteral(resourceName: "test")
-    }
     
    
 }

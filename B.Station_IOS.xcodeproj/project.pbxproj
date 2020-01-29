@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04B001D423E0C90A00D134F2 /* AlamofireRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B001D323E0C90A00D134F2 /* AlamofireRequest.swift */; };
+		04B001D623E0C94200D134F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B001D523E0C94200D134F2 /* AppDelegate.swift */; };
 		4E857BBDBC7BA90DA2B4022C /* Pods_B_Station_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B61752634DE1CCF822675ABE /* Pods_B_Station_IOS.framework */; };
 		5805832A23D73D6C006930BB /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5805832923D73D6C006930BB /* UserLogin.swift */; };
 		5805832C23D73F23006930BB /* TabBarUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5805832B23D73F23006930BB /* TabBarUser.swift */; };
@@ -17,7 +19,6 @@
 		5806880923AFC66100DE5839 /* UserSgnUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5806880823AFC66100DE5839 /* UserSgnUp.storyboard */; };
 		5806880B23AFC76B00DE5839 /* AdminSign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5806880A23AFC76B00DE5839 /* AdminSign.storyboard */; };
 		58080C0323D20D55004F1FCA /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58080C0223D20D55004F1FCA /* City.swift */; };
-		58080C0A23D21221004F1FCA /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58080C0823D21221004F1FCA /* NetworkError.swift */; };
 		5809EA3623D4E85C002AF4D9 /* FavouriteCompanies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5809EA3523D4E85C002AF4D9 /* FavouriteCompanies.swift */; };
 		5809EA3823D4F944002AF4D9 /* Fav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5809EA3723D4F944002AF4D9 /* Fav.swift */; };
 		5809EA3A23D5183C002AF4D9 /* CompanyPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5809EA3923D5183C002AF4D9 /* CompanyPaths.swift */; };
@@ -45,12 +46,10 @@
 		58D9944723D4895500A54AD9 /* MainGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D9944123D4895500A54AD9 /* MainGuide.swift */; };
 		58D9944823D4895500A54AD9 /* UserSign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D9944223D4895500A54AD9 /* UserSign.swift */; };
 		58E9BA58239B1D630028C572 /* Generate Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E9BA57239B1D630028C572 /* Generate Path.swift */; };
-		58F1755B23D63DF6004DA24C /* AlamofireRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F1755A23D63DF6004DA24C /* AlamofireRequest.swift */; };
 		58F1756123D6501F004DA24C /* UsagePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F1755C23D6501E004DA24C /* UsagePolicy.swift */; };
 		58F1756323D6501F004DA24C /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F1755E23D6501F004DA24C /* SettingController.swift */; };
 		58F1756423D6501F004DA24C /* ContactusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F1755F23D6501F004DA24C /* ContactusController.swift */; };
 		58F1756523D6501F004DA24C /* SocialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F1756023D6501F004DA24C /* SocialCell.swift */; };
-		58F1756723D65736004DA24C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F1756623D65735004DA24C /* AppDelegate.swift */; };
 		58F1756923D65B42004DA24C /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F1756823D65B42004DA24C /* AboutUsViewController.swift */; };
 		58F1756B23D67133004DA24C /* ActivateCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F1756A23D67133004DA24C /* ActivateCompany.swift */; };
 		58F1756D23D6799E004DA24C /* common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F1756C23D6799E004DA24C /* common.swift */; };
@@ -59,6 +58,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04B001D323E0C90A00D134F2 /* AlamofireRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireRequest.swift; sourceTree = "<group>"; };
+		04B001D523E0C94200D134F2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		549B74C2F02C1E847A5F2772 /* Pods-B.Station_IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-B.Station_IOS.debug.xcconfig"; path = "Target Support Files/Pods-B.Station_IOS/Pods-B.Station_IOS.debug.xcconfig"; sourceTree = "<group>"; };
 		5805832923D73D6C006930BB /* UserLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
 		5805832B23D73F23006930BB /* TabBarUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarUser.swift; sourceTree = "<group>"; };
@@ -69,7 +70,6 @@
 		5806880823AFC66100DE5839 /* UserSgnUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserSgnUp.storyboard; sourceTree = "<group>"; };
 		5806880A23AFC76B00DE5839 /* AdminSign.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminSign.storyboard; sourceTree = "<group>"; };
 		58080C0223D20D55004F1FCA /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
-		58080C0823D21221004F1FCA /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		5809EA3523D4E85C002AF4D9 /* FavouriteCompanies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCompanies.swift; sourceTree = "<group>"; };
 		5809EA3723D4F944002AF4D9 /* Fav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fav.swift; sourceTree = "<group>"; };
 		5809EA3923D5183C002AF4D9 /* CompanyPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyPaths.swift; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		587567DF23DBB30500A7417F /* AdminData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminData.swift; sourceTree = "<group>"; };
 		5886001023DA777300424D1F /* CompanyImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyImageCell.swift; sourceTree = "<group>"; };
 		58A3943323AE38E000A40508 /* MainProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProfile.swift; sourceTree = "<group>"; };
-		58C2584C2395C64300294ACE /* B.Station_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = B.Station_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		58C2584C2395C64300294ACE /* B.Station.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = B.Station.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58C258562395C64400294ACE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58C258592395C64400294ACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58C2585B2395C64400294ACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,15 +99,13 @@
 		58D9944123D4895500A54AD9 /* MainGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainGuide.swift; sourceTree = "<group>"; };
 		58D9944223D4895500A54AD9 /* UserSign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSign.swift; sourceTree = "<group>"; };
 		58E9BA57239B1D630028C572 /* Generate Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Generate Path.swift"; sourceTree = "<group>"; };
-		58F1755A23D63DF6004DA24C /* AlamofireRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireRequest.swift; sourceTree = "<group>"; };
 		58F1755C23D6501E004DA24C /* UsagePolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsagePolicy.swift; sourceTree = "<group>"; };
 		58F1755E23D6501F004DA24C /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		58F1755F23D6501F004DA24C /* ContactusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactusController.swift; sourceTree = "<group>"; };
 		58F1756023D6501F004DA24C /* SocialCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialCell.swift; sourceTree = "<group>"; };
-		58F1756623D65735004DA24C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "../../../AllFinishedProjects/TouristGuide/Tourist-Guide/AppDelegate.swift"; sourceTree = "<group>"; };
 		58F1756823D65B42004DA24C /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		58F1756A23D67133004DA24C /* ActivateCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivateCompany.swift; sourceTree = "<group>"; };
-		58F1756C23D6799E004DA24C /* common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = common.swift; sourceTree = "<group>"; };
+		58F1756C23D6799E004DA24C /* common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = common.swift; path = Models/common.swift; sourceTree = "<group>"; };
 		58F54E0123D7A53700416746 /* UserLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLog.swift; sourceTree = "<group>"; };
 		58FA80D723D39A540058B4F5 /* trafficRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trafficRoutes.swift; sourceTree = "<group>"; };
 		8D5375C387F3E86ADDF009AD /* Pods-B.Station_IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-B.Station_IOS.release.xcconfig"; path = "Target Support Files/Pods-B.Station_IOS/Pods-B.Station_IOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +124,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04B001D223E0C82200D134F2 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				04B001D323E0C90A00D134F2 /* AlamofireRequest.swift */,
+			);
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
 		580687F423AFB2B700DE5839 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +168,7 @@
 		580687F723AFB2FC00DE5839 /* B.StationUser */ = {
 			isa = PBXGroup;
 			children = (
+				5806880023AFC29600DE5839 /* Main.storyboard */,
 				5806880823AFC66100DE5839 /* UserSgnUp.storyboard */,
 				5805832923D73D6C006930BB /* UserLogin.swift */,
 			);
@@ -176,29 +183,6 @@
 				584BE55523D2B9C700F677B4 /* SearchingController.swift */,
 			);
 			path = Searching;
-			sourceTree = "<group>";
-		};
-		58080C0123D20D34004F1FCA /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				58F54E0123D7A53700416746 /* UserLog.swift */,
-				58D9944223D4895500A54AD9 /* UserSign.swift */,
-				58080C0223D20D55004F1FCA /* City.swift */,
-				58FA80D723D39A540058B4F5 /* trafficRoutes.swift */,
-				5809EA3723D4F944002AF4D9 /* Fav.swift */,
-				587567DF23DBB30500A7417F /* AdminData.swift */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
-		58080C0623D21221004F1FCA /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				58F1755A23D63DF6004DA24C /* AlamofireRequest.swift */,
-				58080C0823D21221004F1FCA /* NetworkError.swift */,
-			);
-			name = Network;
-			path = ../../../AllFinishedProjects/Salonatcom/salonatcom/Model/Network;
 			sourceTree = "<group>";
 		};
 		58201BA823CFD81A001734D0 /* UserPages */ = {
@@ -216,6 +200,7 @@
 		58201BA923CFD83C001734D0 /* B.stationAdmin */ = {
 			isa = PBXGroup;
 			children = (
+				587567D723DB8C9700A7417F /* AdminPages */,
 				587567DC23DB8DEE00A7417F /* AdminLogin */,
 				58339E4123D89A9D00F68154 /* AdminSignUp */,
 			);
@@ -266,7 +251,7 @@
 		58C2584D2395C64300294ACE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				58C2584C2395C64300294ACE /* B.Station_IOS.app */,
+				58C2584C2395C64300294ACE /* B.Station.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -274,20 +259,19 @@
 		58C2584E2395C64300294ACE /* B.Station_IOS */ = {
 			isa = PBXGroup;
 			children = (
+				58C2585B2395C64400294ACE /* Info.plist */,
 				587567D523DB8B9D00A7417F /* ShadowClasses.swift */,
+				04B001D523E0C94200D134F2 /* AppDelegate.swift */,
+				58F1756C23D6799E004DA24C /* common.swift */,
+				58D9943A23D488A500A54AD9 /* CashedData.swift */,
+				58C258582395C64400294ACE /* LaunchScreen.storyboard */,
+				58C258562395C64400294ACE /* Assets.xcassets */,
+				04B001D223E0C82200D134F2 /* Alamofire */,
 				58D9943C23D4895500A54AD9 /* Models */,
-				58080C0623D21221004F1FCA /* Network */,
-				58080C0123D20D34004F1FCA /* Entities */,
 				58201BA923CFD83C001734D0 /* B.stationAdmin */,
-				587567D723DB8C9700A7417F /* AdminPages */,
 				58201BA823CFD81A001734D0 /* UserPages */,
 				580687F723AFB2FC00DE5839 /* B.StationUser */,
 				580687F423AFB2B700DE5839 /* Shared */,
-				58F1756623D65735004DA24C /* AppDelegate.swift */,
-				5806880023AFC29600DE5839 /* Main.storyboard */,
-				58C258562395C64400294ACE /* Assets.xcassets */,
-				58C258582395C64400294ACE /* LaunchScreen.storyboard */,
-				58C2585B2395C64400294ACE /* Info.plist */,
 			);
 			path = B.Station_IOS;
 			sourceTree = "<group>";
@@ -295,11 +279,15 @@
 		58D9943C23D4895500A54AD9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				58D9943A23D488A500A54AD9 /* CashedData.swift */,
-				58F1756C23D6799E004DA24C /* common.swift */,
 				58D9943D23D4895500A54AD9 /* AboutUsDataClass.swift */,
 				58D9943F23D4895500A54AD9 /* ErrorHandel.swift */,
 				58D9944023D4895500A54AD9 /* Item.swift */,
+				58F54E0123D7A53700416746 /* UserLog.swift */,
+				58D9944223D4895500A54AD9 /* UserSign.swift */,
+				58FA80D723D39A540058B4F5 /* trafficRoutes.swift */,
+				5809EA3723D4F944002AF4D9 /* Fav.swift */,
+				587567DF23DBB30500A7417F /* AdminData.swift */,
+				58080C0223D20D55004F1FCA /* City.swift */,
 				58D9944123D4895500A54AD9 /* MainGuide.swift */,
 			);
 			path = Models;
@@ -342,7 +330,7 @@
 			);
 			name = B.Station_IOS;
 			productName = B.Station_IOS;
-			productReference = 58C2584C2395C64300294ACE /* B.Station_IOS.app */;
+			productReference = 58C2584C2395C64300294ACE /* B.Station.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -353,7 +341,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1030;
 				LastUpgradeCheck = 1030;
-				ORGANIZATIONNAME = "Bassam Ramadan";
+				ORGANIZATIONNAME = Tamkeen;
 				TargetAttributes = {
 					58C2584B2395C64300294ACE = {
 						CreatedOnToolsVersion = 10.3;
@@ -468,7 +456,6 @@
 				58F1756123D6501F004DA24C /* UsagePolicy.swift in Sources */,
 				58F1756B23D67133004DA24C /* ActivateCompany.swift in Sources */,
 				58D9944823D4895500A54AD9 /* UserSign.swift in Sources */,
-				58F1756723D65736004DA24C /* AppDelegate.swift in Sources */,
 				58D9944323D4895500A54AD9 /* AboutUsDataClass.swift in Sources */,
 				58D9944723D4895500A54AD9 /* MainGuide.swift in Sources */,
 				58CF5D2623966982003BCB28 /* AllCompanies.swift in Sources */,
@@ -477,6 +464,7 @@
 				5809EA3823D4F944002AF4D9 /* Fav.swift in Sources */,
 				58080C0323D20D55004F1FCA /* City.swift in Sources */,
 				58D9943B23D488A500A54AD9 /* CashedData.swift in Sources */,
+				04B001D623E0C94200D134F2 /* AppDelegate.swift in Sources */,
 				58A3943423AE38E000A40508 /* MainProfile.swift in Sources */,
 				58F1756D23D6799E004DA24C /* common.swift in Sources */,
 				584BE55423D29FF900F677B4 /* ClassesGetData.swift in Sources */,
@@ -488,14 +476,13 @@
 				5849E8F423DE414900C7B231 /* PhotosCell.swift in Sources */,
 				5805832C23D73F23006930BB /* TabBarUser.swift in Sources */,
 				584BE55823D2C2A800F677B4 /* CompanyCell.swift in Sources */,
-				58F1755B23D63DF6004DA24C /* AlamofireRequest.swift in Sources */,
 				587567E023DBB30500A7417F /* AdminData.swift in Sources */,
-				58080C0A23D21221004F1FCA /* NetworkError.swift in Sources */,
 				5809EA3623D4E85C002AF4D9 /* FavouriteCompanies.swift in Sources */,
 				58F1756523D6501F004DA24C /* SocialCell.swift in Sources */,
 				5886001123DA777300424D1F /* CompanyImageCell.swift in Sources */,
 				587567D623DB8B9D00A7417F /* ShadowClasses.swift in Sources */,
 				5809EA3A23D5183C002AF4D9 /* CompanyPaths.swift in Sources */,
+				04B001D423E0C90A00D134F2 /* AlamofireRequest.swift in Sources */,
 				585292D323DC7E4C00A97D49 /* AdminSgn.swift in Sources */,
 				58F1756323D6501F004DA24C /* SettingController.swift in Sources */,
 				58F1756423D6501F004DA24C /* ContactusController.swift in Sources */,
@@ -648,13 +635,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DATQ4VHWY9;
 				INFOPLIST_FILE = B.Station_IOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Bassam.B-Station-IOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tamkeen.bstation;
+				PRODUCT_NAME = B.Station;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -666,13 +654,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DATQ4VHWY9;
 				INFOPLIST_FILE = B.Station_IOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Bassam.B-Station-IOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tamkeen.bstation;
+				PRODUCT_NAME = B.Station;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

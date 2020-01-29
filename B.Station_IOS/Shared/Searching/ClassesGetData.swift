@@ -55,7 +55,7 @@ class GetDataForPaths : NSObject{
                           "start_point":0
             ]
         }
-        AlamofireRequests.PostMethod(methodType: "Get", url: url, info: params as [String : Any], headers: headers)
+        AlamofireRequests.getMethod(url: url,params , headers: headers)
         { (error, success, jsonData) in
             do {
                 let decoder = JSONDecoder()

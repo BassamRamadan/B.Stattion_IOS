@@ -73,6 +73,7 @@ class MainProfile: common {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupBackButton()
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
@@ -80,15 +81,18 @@ class MainProfile: common {
         super.viewDidAppear(animated)
         if AppDelegate.normalUser == true{
             self.navigationItem.title =  "بروفيل الشركة"
+            
             setupFavoriteButton()
             RatingsClicked(RatingsButton)
             setupValues()
             setTowImages()
         }else{
             self.navigationItem.title =   "صفحتي"
+            
             loadingProfile()
         }
     }
+   
     private func setupFavoriteButton(){
         self.navigationItem.hidesBackButton = true
         backBtn = common.drowFavButton()
@@ -123,6 +127,24 @@ class MainProfile: common {
         self.PathsTableHeight.constant = self.PathsTableView.contentSize.height
         self.RatingsTableHeight.constant = self.RatingsTableView.contentSize.height
     }
+    func setupBackButton() {
+        self.navigationItem.hidesBackButton = true
+        let backBtn: UIButton = common.drowbackButton()
+        let backButton = UIBarButtonItem(customView: backBtn)
+        self.navigationItem.setRightBarButton(backButton, animated: true)
+        backBtn.addTarget(self, action: #selector(self.back), for: UIControl.Event.touchUpInside)
+    }
+     required init?(coder aDecoder: NSCoder) {
+          super.init(coder: aDecoder)
+           if AppDelegate.normalUser {
+               hidesBottomBarWhenPushed = true
+           }else{
+               hidesBottomBarWhenPushed = false
+           }
+       }
+    @objc func back() {
+        self.navigationController?.popViewController(animated: true)
+       }
     fileprivate func AddToFavorite(_ CompanyId : Int){
         self.loading()
         let url = "https://services-apps.net/bstation/public/api/user/add-to-favourite"
@@ -176,7 +198,6 @@ class MainProfile: common {
                         self.PathsTableView.reloadData()
                         self.RatingsTableView.reloadData()
                         self.PhotosCollection.reloadData()
-                        self.setupFavoriteButton()
                     }else{
                         let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
                         self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)

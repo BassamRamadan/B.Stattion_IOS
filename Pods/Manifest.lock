@@ -5,17 +5,9 @@ PODS:
   - AlamofireObjectMapper (5.2.0):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
-  - Amplitude-iOS (4.0.4)
   - Cosmos (19.0.3)
-  - Crashlytics (3.13.4):
-    - Fabric (~> 1.10.2)
-  - DLRadioButton (1.4.12)
   - DropDown (2.3.13)
   - DynamicBlurView (3.0.1)
-  - EVReflection (5.10.1):
-    - EVReflection/Core (= 5.10.1)
-  - EVReflection/Core (5.10.1)
-  - Fabric (1.10.2)
   - Firebase (6.6.0):
     - Firebase/Core (= 6.6.0)
   - Firebase/Core (6.6.0):
@@ -82,13 +74,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.2.5):
     - GoogleUtilities/Logger
-  - ImageSlideshow (1.8.0):
-    - ImageSlideshow/Core (= 1.8.0)
-  - ImageSlideshow/Core (1.8.0)
   - IQKeyboardManagerSwift (6.4.1)
-  - JTAppleCalendar (7.1.7)
-  - MBRadioButton (1.4)
-  - MOLH (1.0)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -103,54 +89,34 @@ PODS:
   - SDWebImage (5.1.0):
     - SDWebImage/Core (= 5.1.0)
   - SDWebImage/Core (5.1.0)
-  - SnapKit (4.0.1)
   - Spring (1.0.6)
   - SwiftLint (0.34.0)
-  - SwiftyMenu (0.1.3)
-  - UIColor_Hex_Swift (4.0.2)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - AlamofireObjectMapper
-  - Amplitude-iOS (~> 4.0.4)
   - Cosmos
-  - Crashlytics
-  - DLRadioButton
   - DropDown
-  - EVReflection
-  - Fabric
   - Firebase
   - GoogleMaps
   - GooglePlaces
-  - ImageSlideshow
   - IQKeyboardManagerSwift
-  - JTAppleCalendar (= 7.1.7)
-  - MBRadioButton
-  - MOLH
   - NVActivityIndicatorView
   - ObjectMapper
   - PopupDialog
   - SDWebImage
-  - SnapKit (~> 4.0.0)
   - Spring (from `https://github.com/MengTo/Spring.git`)
   - SwiftLint
-  - SwiftyMenu
-  - UIColor_Hex_Swift (~> 4.0.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireImage
     - AlamofireObjectMapper
-    - Amplitude-iOS
     - Cosmos
-    - Crashlytics
-    - DLRadioButton
     - DropDown
     - DynamicBlurView
-    - EVReflection
-    - Fabric
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -163,20 +129,13 @@ SPEC REPOS:
     - GoogleMaps
     - GooglePlaces
     - GoogleUtilities
-    - ImageSlideshow
     - IQKeyboardManagerSwift
-    - JTAppleCalendar
-    - MBRadioButton
-    - MOLH
     - nanopb
     - NVActivityIndicatorView
     - ObjectMapper
     - PopupDialog
     - SDWebImage
-    - SnapKit
     - SwiftLint
-    - SwiftyMenu
-    - UIColor_Hex_Swift
 
 EXTERNAL SOURCES:
   Spring:
@@ -191,14 +150,9 @@ SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
   AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
-  Amplitude-iOS: 2ad4d7270c99186236c1272a3a9425463b1ae1a7
   Cosmos: a6fb17284281fa12cf4c85c2efecd440a215ec44
-  Crashlytics: 2dfd686bcb918dc10ee0e76f7f853fe42c7bd552
-  DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   DynamicBlurView: b1df5415f9bd31897549e5d7077e5ec120a4d636
-  EVReflection: 8124de482178d34ccd56473e16cd95990f9a1113
-  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   Firebase: a2b5951f30ff38fd3b3bdae9c7d340f940fd3c51
   FirebaseAnalytics: 48414ae5cbf6976d8a2f7177e0466540e5ab33ce
   FirebaseCore: 8c9e08bce0c72a3affd83927d8184cf244918bc8
@@ -211,22 +165,15 @@ SPEC CHECKSUMS:
   GoogleMaps: cfee83da305b9aaeccf92c24ac79df11c3003492
   GooglePlaces: 1e2a87bd9efee9623ee65d44ecc35ebfecd7b13c
   GoogleUtilities: e7dc37039b19df7fe543479d3e4a02ac8d11bb69
-  ImageSlideshow: 197130fe349aafa9446f54277c792551d41eadf9
   IQKeyboardManagerSwift: d2df660d0b8d64a15cb2537c9ff303213fa515b2
-  JTAppleCalendar: 96da4d8388fa6dc82d6a60d41ef36a015e167e2f
-  MBRadioButton: dcf111c9bb633d4cf6e83200d804af6e025033c8
-  MOLH: 2492e7f8fe3400580832312dc0fb9e05d7e92726
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   NVActivityIndicatorView: b19ddab2576f805cbe0fb2306cba3476e09a1dea
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   PopupDialog: 42fb7a0bc4fafdf89fef8b5b2b127a6023f3e1cc
   SDWebImage: fb387001955223213dde14bc08c8b73f371f8d8f
-  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
   SwiftLint: 79d48a17c6565dc286c37efb8322c7b450f95c67
-  SwiftyMenu: 6d436a5455de0df3b1bb24274d93b2c27475f29d
-  UIColor_Hex_Swift: 2fb123c7d864994a5137ef57c4dc55e17a657d29
 
-PODFILE CHECKSUM: 34b748cc2b6507745d34ba4c58cd8909cb3c2548
+PODFILE CHECKSUM: 449015cde141756647e797e90fe1ded552fdb1df
 
 COCOAPODS: 1.7.5

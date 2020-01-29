@@ -37,6 +37,7 @@ class TransportCompanies : common {
             loadingCompanies()
         }
     }
+ 
     @IBAction func shareAppAction(_ sender: UIButton) {
         let activityController = UIActivityViewController(activityItems: [stringWithLink], applicationActivities: nil)
         activityController.completionWithItemsHandler = { _, completed, _, _
@@ -119,6 +120,7 @@ extension TransportCompanies: UITableViewDelegate , UITableViewDataSource {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CompanyPage"{
+            
             if let destination = segue.destination as? MainProfile{
                 destination.CompanyInfo = sender as! RoutesDetails?
             }

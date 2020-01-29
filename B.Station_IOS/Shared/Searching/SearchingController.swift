@@ -177,7 +177,7 @@ class SearchingController: common {
             params.updateValue(String(self.EndPointId), forKey: "to_station_id")
         }
          self.AllCompanies.removeAll()
-        AlamofireRequests.PostMethod(methodType: "Get", url: url, info: params as [String : Any], headers: headers)
+        AlamofireRequests.getMethod(url: url,params , headers: headers)
         { (error, success, jsonData) in
             do {
                 self.stopAnimating()

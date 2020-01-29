@@ -90,10 +90,8 @@ class UserLogin: common {
             ]
         }else{
             url = "https://services-apps.net/bstation/public/api/user-login"
-            if CashedData.getUserPhone() == ""{
-                CashedData.saveUserPhone(name: phone.text ?? "")
-            }
-            info = ["phone": CashedData.getUserPhone() ?? "",
+            
+            info = ["phone": self.phone.text ?? "",
                     "code": CashedData.getUserCode() as Any
             ]
         }
