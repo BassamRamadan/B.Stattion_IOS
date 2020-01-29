@@ -14,7 +14,7 @@ class UsagePolicy: common {
     var aboutData: AboutUSDataDetails?
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        setupBackButton()
         self.navigationItem.title =   "سياسة الإستخدام"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
@@ -53,6 +53,19 @@ class UsagePolicy: common {
             }
         }
     }
-  
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        hidesBottomBarWhenPushed = true
+    }
+    func setupBackButton() {
+        self.navigationItem.hidesBackButton = true
+        let backBtn: UIButton = common.drowbackButton()
+        let backButton = UIBarButtonItem(customView: backBtn)
+        self.navigationItem.setRightBarButton(backButton, animated: true)
+        backBtn.addTarget(self, action: #selector(self.back), for: UIControl.Event.touchUpInside)
+    }
+    @objc func back() {
+        self.navigationController?.popViewController(animated: true)
+    }
 
 }

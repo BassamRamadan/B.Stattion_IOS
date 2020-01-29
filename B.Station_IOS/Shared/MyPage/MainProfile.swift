@@ -11,7 +11,9 @@ import Cosmos
 import SDWebImage
 import Spring
 class MainProfile: common {
-    var backBtn : UIButton!
+   
+    var FavBtn : UIButton!
+    var ShareBtn : UIButton!
     var CompanyInfo : RoutesDetails?
     var AllFavIds = [FavID]()
     @IBOutlet var PhotosCollection : UICollectionView!
@@ -73,7 +75,7 @@ class MainProfile: common {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupBackButton()
+        
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
@@ -81,31 +83,19 @@ class MainProfile: common {
         super.viewDidAppear(animated)
         if AppDelegate.normalUser == true{
             self.navigationItem.title =  "بروفيل الشركة"
-            
+            self.setupBackButton()
             setupFavoriteButton()
+            setupShareButton()
             RatingsClicked(RatingsButton)
             setupValues()
             setTowImages()
         }else{
             self.navigationItem.title =   "صفحتي"
-            
             loadingProfile()
         }
     }
    
-    private func setupFavoriteButton(){
-        self.navigationItem.hidesBackButton = true
-        backBtn = common.drowFavButton()
-        let backButton = UIBarButtonItem(customView: backBtn)
-        self.navigationItem.setLeftBarButton(backButton, animated: true)
-        backBtn.addTarget(self, action: #selector(addFav), for: UIControl.Event.touchUpInside)
-        self.loadingFav()
-    }
-    @objc func addFav(){
-        if self.backBtn.imageView?.image == UIImage(named: "ic_fav_white"){
-            AddToFavorite(CompanyInfo?.id ?? 0)
-        }
-     }
+   
     fileprivate func setupValues(){
         CompanyName.text = CompanyInfo?.name
         CityName.text = CompanyInfo?.cityName
@@ -134,17 +124,18 @@ class MainProfile: common {
         self.navigationItem.setRightBarButton(backButton, animated: true)
         backBtn.addTarget(self, action: #selector(self.back), for: UIControl.Event.touchUpInside)
     }
-     required init?(coder aDecoder: NSCoder) {
+    @objc func back() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    required init?(coder aDecoder: NSCoder) {
           super.init(coder: aDecoder)
            if AppDelegate.normalUser {
                hidesBottomBarWhenPushed = true
            }else{
                hidesBottomBarWhenPushed = false
            }
-       }
-    @objc func back() {
-        self.navigationController?.popViewController(animated: true)
-       }
+    }
+   
     fileprivate func AddToFavorite(_ CompanyId : Int){
         self.loading()
         let url = "https://services-apps.net/bstation/public/api/user/add-to-favourite"
@@ -163,7 +154,7 @@ class MainProfile: common {
                 if error == nil{
                     if success{
                          AppDelegate.addToFavourite = true
-                         self.backBtn.setImage(UIImage(named: "ic_fav_white_active"), for: [])
+                         self.FavBtn.setImage(UIImage(named: "ic_fav_white_active"), for: [])
                     }else{
                         let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
                         self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
@@ -230,7 +221,7 @@ class MainProfile: common {
                         self.AllFavIds.append(contentsOf: propertiesRecived.data)
                         for x in self.AllFavIds{
                             if x.CompanyId == String(self.CompanyInfo?.id ?? 0){
-                                self.backBtn.setImage(UIImage(named: "ic_fav_white_active"), for: [])
+                                self.FavBtn.setImage(UIImage(named: "ic_fav_white_active"), for: [])
                                 break
                             }
                         }
@@ -247,7 +238,54 @@ class MainProfile: common {
             }
         }
     }
-
+    private func setupFavoriteButton(){
+        self.navigationItem.hidesBackButton = true
+        FavBtn = common.drowFavButton()
+        let backButton = UIBarButtonItem(customView: FavBtn)
+      //  self.navigationItem.leftBarButtonItems?.append(backButton)
+        self.navigationItem.setLeftBarButton(backButton, animated: true)
+        FavBtn.addTarget(self, action: #selector(addFav), for: UIControl.Event.touchUpInside)
+        self.loadingFav()
+    }
+    @objc func addFav(){
+        if self.FavBtn.imageView?.image == UIImage(named: "ic_fav_white"){
+            AddToFavorite(CompanyInfo?.id ?? 0)
+        }
+    }
+    private func setupShareButton(){
+        self.navigationItem.hidesBackButton = true
+        ShareBtn = common.drowShareButton()
+        let backButton = UIBarButtonItem(customView: ShareBtn)
+        self.navigationItem.leftBarButtonItems?.append(backButton)
+     //   self.navigationItem.setLeftBarButton(backButton, animated: true)
+        ShareBtn.addTarget(self, action: #selector(addShare), for: UIControl.Event.touchUpInside)
+    }
+    @objc func addShare(){
+            let activityController = UIActivityViewController(activityItems: [AppDelegate.stringWithLink], applicationActivities: nil)
+            activityController.completionWithItemsHandler = { _, completed, _, _
+                in
+                if completed {
+                    print("completed")
+                } else {
+                    print("canceled")
+                }
+            }
+            if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad {
+                let activityVC: UIActivityViewController = UIActivityViewController(activityItems: [AppDelegate.stringWithLink], applicationActivities: nil)
+                
+                // ios > 8.0
+                if activityVC.responds(to: #selector(getter: UIViewController.popoverPresentationController)) {
+                    activityVC.popoverPresentationController?.sourceView = super.view
+                    
+                    //                activityVC.popoverPresentationController?.sourceRect = super.view.frame
+                }
+                present(activityVC, animated: true, completion: nil)
+            } else {
+                present(activityController, animated: true) {
+                    print("presented")
+                }
+            }
+    }
 }
 
 extension MainProfile : UITableViewDataSource , UITableViewDelegate{

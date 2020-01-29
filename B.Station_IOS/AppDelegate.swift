@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static var normalUser = true
     static var addPath = true
     static var addToFavourite = true
+    static let stringWithLink = "Please download B.Station app here from Tamkeen Site: http://support@tamkeen-apps.com"
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

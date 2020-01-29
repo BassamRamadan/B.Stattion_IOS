@@ -28,9 +28,8 @@ class SearchingController: common {
     var RouteId : Int! = nil
     var StartPointId : Int! = nil
     var EndPointId : Int! = nil
-    
-    var StartPointText : String! = "......"
-    var EndPointText  : String! = "......"
+    var StartPointText : String! = "لم يتم تحديد نقطة"
+    var EndPointText  : String! = " بداية أو نهاية"
     
     @IBOutlet weak var CityButton: DesignableButton!
     @IBOutlet weak var RouteButton: DesignableButton!
@@ -66,13 +65,13 @@ class SearchingController: common {
                 self.CityId = self.CitiesObjects[index].id
                 // startPoint
                 self.StartPointObjects.removeAll()
-                GetDataForPaths.loadOnLinePoints(self.CityId,-1){ (success : [Details]) in
+            GetDataForPaths.loadOnLinePoints(self,self.CityId,-1){ (success : [Details]) in
                    self.StartPointObjects.append(contentsOf: success)
                 }
                 // endPoint
                 if self.RouteId != nil{
                     self.EndPointObjects.removeAll()
-                    GetDataForPaths.loadOnLinePoints(self.CityId, self.RouteId){ (success : [Details]) in
+                    GetDataForPaths.loadOnLinePoints(self,self.CityId, self.RouteId){ (success : [Details]) in
                         self.EndPointObjects.append(contentsOf: success)
                     }
                 }
@@ -89,7 +88,7 @@ class SearchingController: common {
             
             self.RouteId = self.RoutesObjects[index].id
             if self.CityId != nil{
-                GetDataForPaths.loadOnLinePoints(self.CityId, self.RouteId){ (success : [Details]) in
+                GetDataForPaths.loadOnLinePoints(self,self.CityId, self.RouteId){ (success : [Details]) in
                     self.EndPointObjects.removeAll()
                     self.EndPointObjects.append(contentsOf: success)
                 }
@@ -129,11 +128,11 @@ class SearchingController: common {
         self.navigationItem.title =  "بحث عن مواصلات"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-        GetDataForPaths.loadOnLineCities { (success : [Details]) in
+        GetDataForPaths.loadOnLineCities(self) { (success : [Details]) in
             self.CitiesObjects.removeAll()
             self.CitiesObjects.append(contentsOf: success)
         }
-        GetDataForPaths.loadOnLineRoute { (success : [Details]) in
+        GetDataForPaths.loadOnLineRoute(self) { (success : [Details]) in
             self.RoutesObjects.removeAll()
             self.RoutesObjects.append(contentsOf: success)
         }
@@ -146,8 +145,8 @@ class SearchingController: common {
         EndPointButton.setTitle("", for: .normal)
         StartPointId = nil
         EndPointId = nil
-        StartPointText = "......"
-        EndPointText = "......"
+        StartPointText = "لم يتم تحديد نقطة"
+        EndPointText = " بداية أو نهاية"
     }
     fileprivate func parsingData(_ data : [Details])->[String]{
         var ResData = [String]()

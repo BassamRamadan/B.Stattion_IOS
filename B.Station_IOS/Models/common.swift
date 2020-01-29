@@ -35,6 +35,13 @@ class common : UIViewController , NVActivityIndicatorViewable{
         return notifBtn
         // Do any additional setup after loading the view
     }
+    class func drowShareButton()->UIButton {
+        let notifBtn: UIButton = UIButton(type: UIButton.ButtonType.custom)
+        notifBtn.setImage(#imageLiteral(resourceName: "ic_share_white"), for: [])
+        notifBtn.frame = CGRect(x: 0, y: 30, width: 30, height: 30)
+        return notifBtn
+        // Do any additional setup after loading the view
+    }
     class func openback(sender : UINavigationController){
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let linkingVC = storyboard.instantiateViewController(withIdentifier: "LanuchScreenViewController")
@@ -69,13 +76,16 @@ class common : UIViewController , NVActivityIndicatorViewable{
         
     }
     
-    class func adminLogout(currentController: UIViewController){
-        CashedData.saveAdminApiKey(token: "")
-        openMain(currentController: currentController)
-    }
     class func userLogout(currentController: UIViewController){
-         CashedData.saveUserApiKey(token: "")
-         CashedData.saveUserPhone(name: "")
+        if AppDelegate.normalUser{
+            CashedData.saveUserUpdateKey(token: "")
+            CashedData.saveUserApiKey(token: "")
+            CashedData.saveUserPhone(name: "")
+        }else{
+            CashedData.saveAdminUpdateKey(token: "")
+            CashedData.saveAdminApiKey(token: "")
+            CashedData.saveAdminPassword(name: "")
+        }
         openMain(currentController: currentController)
     }
     class func openMain(currentController: UIViewController){

@@ -104,19 +104,22 @@ class ContactusController: common {
         }
     }
     
-    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        hidesBottomBarWhenPushed = true
+    }
     
    
-     func setupBackButton() {
+    func setupBackButton() {
            self.navigationItem.hidesBackButton = true
            let backBtn: UIButton = common.drowbackButton()
            let backButton = UIBarButtonItem(customView: backBtn)
            self.navigationItem.setRightBarButton(backButton, animated: true)
            backBtn.addTarget(self, action: #selector(self.back), for: UIControl.Event.touchUpInside)
-       }
-       @objc func back() {
+    }
+    @objc func back() {
            self.navigationController?.popViewController(animated: true)
-          }
+    }
     fileprivate func setupShadowViewtop(){
         common.setNavigationShadow(navigationController: self.navigationController)
     }

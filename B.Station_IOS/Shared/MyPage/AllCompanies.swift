@@ -23,6 +23,7 @@ class TransportCompanies : common {
     override func viewDidLoad() {
         super.viewDidLoad()
         if search == true {
+            setupBackButton()
             self.navigationItem.title =  "نتائج البحث"
             let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
             navigationController?.navigationBar.titleTextAttributes = textAttributes
@@ -64,7 +65,16 @@ class TransportCompanies : common {
             }
         }
     }
-    
+    func setupBackButton() {
+        self.navigationItem.hidesBackButton = true
+        let backBtn: UIButton = common.drowbackButton()
+        let backButton = UIBarButtonItem(customView: backBtn)
+        self.navigationItem.setRightBarButton(backButton, animated: true)
+        backBtn.addTarget(self, action: #selector(self.back), for: UIControl.Event.touchUpInside)
+    }
+    @objc func back() {
+        self.navigationController?.popViewController(animated: true)
+    }
     fileprivate func loadingCompanies(){
         self.loading()
         let url = "https://services-apps.net/bstation/public/api/companies"

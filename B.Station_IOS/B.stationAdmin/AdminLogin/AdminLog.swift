@@ -32,6 +32,9 @@ class AdminLog: common {
         self.navigationItem.title =  "تسجيل شركات النقل"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
+        if CashedData.getAdminUserName() != ""{
+            name.text = CashedData.getAdminUserName()
+        }
         setupBackButton()
     }
     private func setupBackButton(){
@@ -42,13 +45,7 @@ class AdminLog: common {
         backBtn.addTarget(self, action: #selector(back), for: UIControl.Event.touchUpInside)
     }
     @objc func back(){
-        print("accessed")
-        for controller in self.navigationController!.viewControllers as Array {
-            if controller.isKind(of: AdminLog.self) {
-                self.navigationController!.popToViewController(controller, animated: true)
-                break
-            }
-        }
+       self.dismiss(animated: true)
     }
     fileprivate func login() {
         self.loading()

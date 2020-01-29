@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E9Z-Ct-e3M">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E9Z-Ct-e3M">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,7 +33,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3gR-db-gw7">
                                                 <rect key="frame" x="10" y="40" width="394" height="1047.5"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YpZ-xk-geh">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YpZ-xk-geh" customClass="ViewShadow" customModule="B_Station" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="394" height="241"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Mht-M3-Ihc">
@@ -86,21 +88,21 @@
                                                                                         <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
                                                                                         <subviews>
                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_go_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="M65-p1-r0Y" customClass="MoreAngle" customModule="B_Station" customModuleProvider="target">
-                                                                                                <rect key="frame" x="0.0" y="15" width="20" height="20"/>
+                                                                                                <rect key="frame" x="0.0" y="20" width="10" height="10"/>
                                                                                                 <color key="backgroundColor" name="clear color"/>
                                                                                                 <constraints>
                                                                                                     <constraint firstAttribute="width" secondItem="M65-p1-r0Y" secondAttribute="height" multiplier="1:1" id="BR3-Ao-Lf6"/>
                                                                                                 </constraints>
                                                                                             </imageView>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تعديل بياناتي" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBL-yD-zsO">
-                                                                                                <rect key="frame" x="40" y="15.5" width="245" height="19.5"/>
+                                                                                                <rect key="frame" x="30" y="15.5" width="279" height="19.5"/>
                                                                                                 <color key="backgroundColor" name="clear color"/>
                                                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                                                 <color key="textColor" name="dark text"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_edit" translatesAutoresizingMaskIntoConstraints="NO" id="23j-11-YdK" customClass="MoreAngle" customModule="B_Station" customModuleProvider="target">
-                                                                                                <rect key="frame" x="305" y="1" width="48" height="48"/>
+                                                                                                <rect key="frame" x="329" y="13" width="24" height="24"/>
                                                                                                 <color key="backgroundColor" name="clear color"/>
                                                                                                 <constraints>
                                                                                                     <constraint firstAttribute="width" secondItem="23j-11-YdK" secondAttribute="height" multiplier="1:1" id="6E7-Pb-7qW"/>
@@ -158,21 +160,21 @@
                                                                                         <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
                                                                                         <subviews>
                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_go_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="NbC-Wj-3Dj" customClass="MoreAngle" customModule="B_Station" customModuleProvider="target">
-                                                                                                <rect key="frame" x="0.0" y="15" width="20" height="20"/>
+                                                                                                <rect key="frame" x="0.0" y="20" width="10" height="10"/>
                                                                                                 <color key="backgroundColor" name="clear color"/>
                                                                                                 <constraints>
                                                                                                     <constraint firstAttribute="width" secondItem="NbC-Wj-3Dj" secondAttribute="height" multiplier="1:1" id="6fU-0u-mIu"/>
                                                                                                 </constraints>
                                                                                             </imageView>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الخروج" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7w9-EQ-gQ5">
-                                                                                                <rect key="frame" x="40" y="15.5" width="245" height="19.5"/>
+                                                                                                <rect key="frame" x="30" y="15.5" width="279" height="19.5"/>
                                                                                                 <color key="backgroundColor" name="clear color"/>
                                                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                                                 <color key="textColor" name="dark text"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logout" translatesAutoresizingMaskIntoConstraints="NO" id="JVp-YI-19r" customClass="MoreAngle" customModule="B_Station" customModuleProvider="target">
-                                                                                                <rect key="frame" x="305" y="1" width="48" height="48"/>
+                                                                                                <rect key="frame" x="329" y="13" width="24" height="24"/>
                                                                                                 <color key="backgroundColor" name="clear color"/>
                                                                                                 <constraints>
                                                                                                     <constraint firstAttribute="width" secondItem="JVp-YI-19r" secondAttribute="height" multiplier="1:1" id="cYp-OO-9kK"/>
@@ -220,7 +222,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4jJ-xo-GB4">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4jJ-xo-GB4" customClass="ViewShadow" customModule="B_Station" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="261" width="394" height="786.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="X8c-En-E9H">
@@ -240,21 +242,21 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="128"/>
                                                                                 <subviews>
                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_go_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="1Uo-8N-bsj" customClass="MoreAngle" customModule="B_Station" customModuleProvider="target">
-                                                                                        <rect key="frame" x="0.0" y="54" width="20" height="20"/>
+                                                                                        <rect key="frame" x="0.0" y="59" width="10" height="10"/>
                                                                                         <color key="backgroundColor" name="clear color"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" secondItem="1Uo-8N-bsj" secondAttribute="height" multiplier="1:1" id="7yb-Ij-5tu"/>
                                                                                         </constraints>
                                                                                     </imageView>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مراسلة الإدارة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w58-Ur-eg5">
-                                                                                        <rect key="frame" x="40" y="54.5" width="245" height="19.5"/>
+                                                                                        <rect key="frame" x="30" y="54.5" width="279" height="19.5"/>
                                                                                         <color key="backgroundColor" name="clear color"/>
                                                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                                         <color key="textColor" name="dark text"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_contacts" translatesAutoresizingMaskIntoConstraints="NO" id="xxv-xD-gXv" customClass="MoreAngle" customModule="B_Station" customModuleProvider="target">
-                                                                                        <rect key="frame" x="305" y="40" width="48" height="48"/>
+                                                                                        <rect key="frame" x="329" y="52" width="24" height="24"/>
                                                                                         <color key="backgroundColor" name="clear color"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" secondItem="xxv-xD-gXv" secondAttribute="height" multiplier="1:1" id="UDz-vH-7BR"/>
@@ -306,21 +308,21 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="128"/>
                                                                                 <subviews>
                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_go_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Ju9-qF-bnq" customClass="MoreAngle" customModule="B_Station" customModuleProvider="target">
-                                                                                        <rect key="frame" x="0.0" y="54" width="20" height="20"/>
+                                                                                        <rect key="frame" x="0.0" y="59" width="10" height="10"/>
                                                                                         <color key="backgroundColor" name="clear color"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" secondItem="Ju9-qF-bnq" secondAttribute="height" multiplier="1:1" id="VqG-L8-dyn"/>
                                                                                         </constraints>
                                                                                     </imageView>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="حول التطبيق" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="410-16-ysy">
-                                                                                        <rect key="frame" x="40" y="54.5" width="245" height="19.5"/>
+                                                                                        <rect key="frame" x="30" y="54.5" width="279" height="19.5"/>
                                                                                         <color key="backgroundColor" name="clear color"/>
                                                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                                         <color key="textColor" name="dark text"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_about" translatesAutoresizingMaskIntoConstraints="NO" id="KXT-h8-pF0" customClass="MoreAngle" customModule="B_Station" customModuleProvider="target">
-                                                                                        <rect key="frame" x="305" y="40" width="48" height="48"/>
+                                                                                        <rect key="frame" x="329" y="52" width="24" height="24"/>
                                                                                         <color key="backgroundColor" name="clear color"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" secondItem="KXT-h8-pF0" secondAttribute="height" multiplier="1:1" id="qty-iH-nTj"/>
@@ -372,21 +374,21 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="128"/>
                                                                                 <subviews>
                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_go_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="wyG-lJ-6UW" customClass="MoreAngle" customModule="B_Station" customModuleProvider="target">
-                                                                                        <rect key="frame" x="0.0" y="54" width="20" height="20"/>
+                                                                                        <rect key="frame" x="0.0" y="59" width="10" height="10"/>
                                                                                         <color key="backgroundColor" name="clear color"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" secondItem="wyG-lJ-6UW" secondAttribute="height" multiplier="1:1" id="PQt-NM-qib"/>
                                                                                         </constraints>
                                                                                     </imageView>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سياسة الإستخدام" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGY-Zl-Dnf">
-                                                                                        <rect key="frame" x="40" y="54.5" width="245" height="19.5"/>
+                                                                                        <rect key="frame" x="30" y="54.5" width="279" height="19.5"/>
                                                                                         <color key="backgroundColor" name="clear color"/>
                                                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                                         <color key="textColor" name="dark text"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_ruls" translatesAutoresizingMaskIntoConstraints="NO" id="6Bb-St-dwu" customClass="MoreAngle" customModule="B_Station" customModuleProvider="target">
-                                                                                        <rect key="frame" x="305" y="40" width="48" height="48"/>
+                                                                                        <rect key="frame" x="329" y="52" width="24" height="24"/>
                                                                                         <color key="backgroundColor" name="clear color"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" secondItem="6Bb-St-dwu" secondAttribute="height" multiplier="1:1" id="veF-Up-JDn"/>
@@ -438,21 +440,21 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="353" height="188"/>
                                                                                 <subviews>
                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_go_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="AIK-N7-g7o" customClass="MoreAngle" customModule="B_Station" customModuleProvider="target">
-                                                                                        <rect key="frame" x="0.0" y="84" width="20" height="20"/>
+                                                                                        <rect key="frame" x="0.0" y="89" width="10" height="10"/>
                                                                                         <color key="backgroundColor" name="clear color"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" secondItem="AIK-N7-g7o" secondAttribute="height" multiplier="1:1" id="OD5-hh-Eb3"/>
                                                                                         </constraints>
                                                                                     </imageView>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مشاركة التطبيق" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3e0-u3-Qlz">
-                                                                                        <rect key="frame" x="40" y="84.5" width="245" height="19.5"/>
+                                                                                        <rect key="frame" x="30" y="84.5" width="279" height="19.5"/>
                                                                                         <color key="backgroundColor" name="clear color"/>
                                                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                                         <color key="textColor" name="dark text"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_share_gray" translatesAutoresizingMaskIntoConstraints="NO" id="MUD-q2-qHX" customClass="MoreAngle" customModule="B_Station" customModuleProvider="target">
-                                                                                        <rect key="frame" x="305" y="70" width="48" height="48"/>
+                                                                                        <rect key="frame" x="329" y="82" width="24" height="24"/>
                                                                                         <color key="backgroundColor" name="clear color"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" secondItem="MUD-q2-qHX" secondAttribute="height" multiplier="1:1" id="deS-Ir-e68"/>
@@ -532,7 +534,7 @@
                     <navigationItem key="navigationItem" title="المزيد" id="UNO-17-wbb"/>
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
-                        <outlet property="editStack" destination="jyu-Ck-RiQ" id="rdq-D6-i7h"/>
+                        <outlet property="EditData" destination="BIH-kx-Jky" id="arz-Ff-pzc"/>
                         <outlet property="imageView" destination="Kth-Lq-z32" id="lb6-S2-cDf"/>
                         <outlet property="name" destination="Wpa-x2-KoP" id="fpn-jR-RCB"/>
                     </connections>
@@ -546,11 +548,11 @@
             <objects>
                 <viewController title="سياسة الاستخدام" id="lOW-tI-KHU" customClass="UsagePolicy" customModule="B_Station" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3c5-2l-Iwc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zx-Qc-AIs">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KyJ-cB-xWH">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="162.5"/>
@@ -613,14 +615,14 @@
             <objects>
                 <viewController title="حول التطبيق" id="eHM-oU-Stc" customClass="AboutUsViewController" customModule="B_Station" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cu1-xL-vR3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iKN-Ob-tz4">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N2w-Ca-LUM">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GmS-mx-DdP">
                                                 <rect key="frame" x="0.0" y="30" width="414" height="160"/>
@@ -751,11 +753,11 @@
             <objects>
                 <viewController title="مراسلة الإدارة" id="l1a-dH-t4f" customClass="ContactusController" customModule="B_Station" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jCm-Kh-k7F">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HLr-LT-ro8">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wcx-GW-7JN">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="795"/>
@@ -771,7 +773,7 @@
                                                         </constraints>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_send_mail" translatesAutoresizingMaskIntoConstraints="NO" id="Cfb-IT-sra">
-                                                        <rect key="frame" x="57" y="120" width="300" height="300"/>
+                                                        <rect key="frame" x="132" y="120" width="150" height="150"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -860,7 +862,7 @@
                                                                                         <color key="backgroundColor" name="textFieldBackground"/>
                                                                                         <color key="textColor" name="dark text"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                                        <textInputTraits key="textInputTraits"/>
+                                                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                                                     </textField>
                                                                                 </subviews>
                                                                             </stackView>

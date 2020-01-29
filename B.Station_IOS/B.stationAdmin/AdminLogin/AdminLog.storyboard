@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dOb-CF-Bxh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uep-6F-dqA">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,7 +19,7 @@
         <!--تسجيل شركات النقل-->
         <scene sceneID="foB-YR-e4Q">
             <objects>
-                <viewController storyboardIdentifier="AdminLog" title="تسجيل شركات النقل" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dOb-CF-Bxh" customClass="AdminLog" customModule="B_Station_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="تسجيل شركات النقل" id="dOb-CF-Bxh" customClass="AdminLog" customModule="B_Station" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="19U-VA-NDN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,7 +72,7 @@
                                                                         <color key="textColor" name="dark text"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="أسم المستخدم" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rEk-oU-o2W" customClass="TextFieldShadow" customModule="B_Station_IOS" customModuleProvider="target">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="أسم المستخدم" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rEk-oU-o2W" customClass="TextFieldShadow" customModule="B_Station" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="70" width="384" height="60"/>
                                                                         <color key="backgroundColor" name="dark light"/>
                                                                         <constraints>
@@ -87,7 +87,7 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textField>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="كلمة المرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="35Q-6R-4qq" customClass="TextFieldShadow" customModule="B_Station_IOS" customModuleProvider="target">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="كلمة المرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="35Q-6R-4qq" customClass="TextFieldShadow" customModule="B_Station" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="150" width="384" height="60"/>
                                                                         <color key="backgroundColor" name="dark light"/>
                                                                         <constraints>
@@ -126,13 +126,13 @@
                                                                                     <color key="titleColor" name="gray text"/>
                                                                                 </state>
                                                                             </button>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBA-61-ATU" customClass="ButtonShadow" customModule="B_Station_IOS" customModuleProvider="target">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBA-61-ATU" customClass="ButtonShadow" customModule="B_Station" customModuleProvider="target">
                                                                                 <rect key="frame" x="359" y="12.5" width="25" height="25"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="25" id="Vm5-Ez-IXP"/>
                                                                                     <constraint firstAttribute="height" constant="25" id="ZWA-8d-oSZ"/>
                                                                                 </constraints>
-                                                                                <state key="normal" image="ic_unchecked">
+                                                                                <state key="normal" image="ic_checked">
                                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 </state>
                                                                                 <connections>
@@ -144,7 +144,7 @@
                                                                             <constraint firstAttribute="height" constant="50" id="dbW-5n-wTz"/>
                                                                         </constraints>
                                                                     </stackView>
-                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z8A-Mx-A4x" customClass="ButtonShadow" customModule="B_Station_IOS" customModuleProvider="target">
+                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z8A-Mx-A4x" customClass="ButtonShadow" customModule="B_Station" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="300" width="384" height="60"/>
                                                                         <color key="backgroundColor" name="green"/>
                                                                         <constraints>
@@ -191,7 +191,7 @@
                                                                             </view>
                                                                         </subviews>
                                                                     </stackView>
-                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYG-7x-2oD" customClass="ButtonShadow" customModule="B_Station_IOS" customModuleProvider="target">
+                                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYG-7x-2oD" customClass="ButtonShadow" customModule="B_Station" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="460" width="384" height="60"/>
                                                                         <color key="backgroundColor" red="0.35294117650000001" green="0.38431372549999998" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
@@ -207,7 +207,7 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
-                                                                            <segue destination="WfZ-FN-z9Z" kind="show" id="lMC-bN-XBJ"/>
+                                                                            <segue destination="d70-l5-BdB" kind="show" id="xEZ-cS-m2d"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -262,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ovc-ce-48J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-85822" y="844"/>
+            <point key="canvasLocation" x="-84520" y="933"/>
         </scene>
         <!--AdminSign-->
         <scene sceneID="kiz-XG-7NL">
@@ -272,34 +272,31 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lba-aR-RPQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-83772.463768115951" y="1051.3392857142858"/>
+            <point key="canvasLocation" x="-83733" y="933"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="ktn-PC-mhe">
+        <scene sceneID="kRA-R0-FRM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WfZ-FN-z9Z" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AdminLog" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Uep-6F-dqA" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="44p-wY-KmT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sb4-1G-NrC">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="red"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="d70-l5-BdB" kind="relationship" relationship="rootViewController" id="yDn-ld-Fvq"/>
+                        <segue destination="dOb-CF-Bxh" kind="relationship" relationship="rootViewController" id="Ban-IM-iGG"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2m9-2h-SfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dYO-s5-Zkp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-84682.608695652176" y="1051.3392857142858"/>
+            <point key="canvasLocation" x="-85513" y="933"/>
         </scene>
     </scenes>
     <resources>
         <image name="ic_bus_img" width="150" height="150"/>
-        <image name="ic_unchecked" width="24" height="24"/>
+        <image name="ic_checked" width="24" height="24"/>
         <namedColor name="dark light">
             <color red="0.89411764705882357" green="0.89411764705882357" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

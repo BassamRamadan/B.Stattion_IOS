@@ -114,6 +114,7 @@ class UserLogin: common {
                                     CashedData.saveUserCode(token: Int(user.code!))
                                     CashedData.saveUserUpdateCode(token: Int(user.code!) )
                                     CashedData.saveUserPhone(name: user.phone)
+                                    CashedData.saveUserName(name: user.name)
                                     AppDelegate.normalUser = true
                                 }
                             }
@@ -126,7 +127,8 @@ class UserLogin: common {
                                   //  CashedData.saveUserData(SignAdmin: user)
                                     CashedData.saveUserCode(token: Int(user.code ?? "") ?? 0)
                                     CashedData.saveUserUpdateCode(token: Int(user.code ?? "") ?? 0 )
-                                    CashedData.saveUserPhone(name: user.phone)
+                                    CashedData.saveUserPhone(name: user.phone )
+                                    CashedData.saveUserName(name: user.name )
                                     AppDelegate.normalUser = true
                                 }
                             }

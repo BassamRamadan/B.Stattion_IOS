@@ -13,7 +13,9 @@ class SettingController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var editStack: UIStackView!
-    private final let stringWithLink = "Please download B.Station app here from Tamkeen Site: http://support@tamkeen-apps.com"
+    @IBOutlet var EditData: UIView!
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +31,13 @@ class SettingController: UIViewController {
     }
     func setUserData() {
         if AppDelegate.normalUser {
-            editStack.isHidden = true
+            EditData.isHidden = true
             name.text = CashedData.getUserName()
             AlamofireRequests.getPhoto(url: (CashedData.getUserImage() ?? "")) { (error , success, image ) in
                 self.imageView.image = image
             }
         }else{
-            editStack.isHidden = false
+            EditData.isHidden = false
             name.text = CashedData.getAdminName()
             AlamofireRequests.getPhoto(url: (CashedData.getAdminImage() ?? "")) { (error , success, image ) in
                 self.imageView.image = image
@@ -45,10 +47,9 @@ class SettingController: UIViewController {
     
     @IBAction func logoutUser(_ sender: Any){
         common.userLogout(currentController: self)
-        
     }
     @IBAction func shareAppAction(_ sender: Any) {
-        let activityController = UIActivityViewController(activityItems: [stringWithLink], applicationActivities: nil)
+        let activityController = UIActivityViewController(activityItems: [AppDelegate.stringWithLink], applicationActivities: nil)
         activityController.completionWithItemsHandler = { _, completed, _, _
             in
             if completed {
@@ -58,7 +59,7 @@ class SettingController: UIViewController {
             }
         }
         if UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad {
-            let activityVC: UIActivityViewController = UIActivityViewController(activityItems: [stringWithLink], applicationActivities: nil)
+            let activityVC: UIActivityViewController = UIActivityViewController(activityItems: [AppDelegate.stringWithLink], applicationActivities: nil)
             
             // ios > 8.0
             if activityVC.responds(to: #selector(getter: UIViewController.popoverPresentationController)) {

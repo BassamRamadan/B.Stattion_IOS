@@ -14,6 +14,7 @@ class AboutUsViewController: common {
     var aboutData: AboutUSDataDetails?
     override func viewDidLoad() {
      
+        setupBackButton()
         self.navigationItem.title = "حول التطبيق"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
@@ -22,9 +23,22 @@ class AboutUsViewController: common {
         self.tabBarController?.tabBar.isHidden = false
         getAboutData()
         getLinksData()
-    
+        
     }
-    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        hidesBottomBarWhenPushed = true
+    }
+    func setupBackButton() {
+        self.navigationItem.hidesBackButton = true
+        let backBtn: UIButton = common.drowbackButton()
+        let backButton = UIBarButtonItem(customView: backBtn)
+        self.navigationItem.setRightBarButton(backButton, animated: true)
+        backBtn.addTarget(self, action: #selector(self.back), for: UIControl.Event.touchUpInside)
+    }
+    @objc func back() {
+        self.navigationController?.popViewController(animated: true)
+    }
     fileprivate func getAboutData(){
         self.loading()
          let url = "https://services-apps.net/bstation/public/api/aboutus"

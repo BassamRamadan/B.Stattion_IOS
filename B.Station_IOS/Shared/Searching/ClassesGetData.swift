@@ -8,8 +8,8 @@
 
 import UIKit
 import Alamofire
-class GetDataForPaths : NSObject{
-     class func loadOnLineCities(completion : @escaping (_ success:[Details]) -> Void ){
+class GetDataForPaths : common{
+    class func loadOnLineCities(_ parent:common?,completion : @escaping (_ success:[Details]) -> Void ){
         let url = "https://services-apps.net/bstation/public/api/cities"
         let headers = [ "Content-Type": "application/json" ,
                         "Accept" : "application/json"
@@ -17,14 +17,23 @@ class GetDataForPaths : NSObject{
         AlamofireRequests.getMethod(url: url, headers: headers) { (error, success, jsonData) in
             do {
                 let decoder = JSONDecoder()
-                let propertiesRecived = try decoder.decode(City.self, from: jsonData)
-                completion(propertiesRecived.data)
+                if error == nil{
+                    if success{
+                        let propertiesRecived = try decoder.decode(City.self, from: jsonData)
+                        completion(propertiesRecived.data)
+                    }else{
+                        let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
+                        parent?.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
+                    }
+                }else{
+                        parent?.present(common.makeAlert(), animated: true, completion: nil)
+                }
             } catch {
-                print(error.localizedDescription)
+                    parent?.present(common.makeAlert(message: error.localizedDescription), animated: true, completion: nil)
             }
         }
     }
-    class func loadOnLineRoute(completion : @escaping (_ success:[Details]) -> Void ){
+    class func loadOnLineRoute(_ parent:common?,completion : @escaping (_ success:[Details]) -> Void ){
        let url = "https://services-apps.net/bstation/public/api/main-traffic"
         let headers = [ "Content-Type": "application/json" ,
                         "Accept" : "application/json"
@@ -32,14 +41,23 @@ class GetDataForPaths : NSObject{
         AlamofireRequests.getMethod(url: url, headers: headers) { (error, success, jsonData) in
             do {
                 let decoder = JSONDecoder()
-                let propertiesRecived = try decoder.decode(City.self, from: jsonData)
-                completion(propertiesRecived.data)
+                if error == nil{
+                    if success{
+                        let propertiesRecived = try decoder.decode(City.self, from: jsonData)
+                        completion(propertiesRecived.data)
+                    }else{
+                        let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
+                        parent?.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
+                    }
+                }else{
+                    parent?.present(common.makeAlert(), animated: true, completion: nil)
+                }
             } catch {
-                print(error.localizedDescription)
+                parent?.present(common.makeAlert(message: error.localizedDescription), animated: true, completion: nil)
             }
         }
     }
-    class func loadOnLinePoints(_ cityId:Int ,_ RouteId : Int,completion : @escaping (_ success:[Details]) -> Void ){
+    class func loadOnLinePoints(_ parent:common?,_ cityId:Int ,_ RouteId : Int,completion : @escaping (_ success:[Details]) -> Void ){
         let url = "https://services-apps.net/bstation/public/api/traffic-stations"
         let headers = [ "Content-Type": "application/json" ,
                         "Accept" : "application/json"
@@ -59,10 +77,19 @@ class GetDataForPaths : NSObject{
         { (error, success, jsonData) in
             do {
                 let decoder = JSONDecoder()
-                let propertiesRecived = try decoder.decode(City.self, from: jsonData)
-                completion(propertiesRecived.data)
+                if error == nil{
+                    if success{
+                        let propertiesRecived = try decoder.decode(City.self, from: jsonData)
+                        completion(propertiesRecived.data)
+                    }else{
+                        let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
+                        parent?.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)
+                    }
+                }else{
+                    parent?.present(common.makeAlert(), animated: true, completion: nil)
+                }
             } catch {
-                print(error.localizedDescription)
+                parent?.present(common.makeAlert(message: error.localizedDescription), animated: true, completion: nil)
             }
         }
     }

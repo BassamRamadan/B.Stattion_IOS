@@ -29,7 +29,7 @@
         <!--البحث عن مواصلات-->
         <scene sceneID="kIo-Kt-GVI">
             <objects>
-                <viewController title="البحث عن مواصلات" id="9Bz-pe-spQ" customClass="SearchingController" customModule="B_Station_IOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="البحث عن مواصلات" id="9Bz-pe-spQ" customClass="SearchingController" customModule="B_Station" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FSB-3p-nG4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,7 +52,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="agW-K3-OnL">
                                                         <rect key="frame" x="0.0" y="39.5" width="394" height="60"/>
                                                         <subviews>
-                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDv-B5-uRs" customClass="ViewShadow" customModule="B_Station_IOS" customModuleProvider="target">
+                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDv-B5-uRs" customClass="ViewShadow" customModule="B_Station" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="350" height="60"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_list_down" translatesAutoresizingMaskIntoConstraints="NO" id="WAc-Y6-43r">
@@ -65,7 +65,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="342" height="60"/>
                                                                         <color key="backgroundColor" name="clear color"/>
                                                                         <fontDescription key="fontDescription" name=".ArabicUIText-Regular" family=".Arabic UI Text" pointSize="14"/>
-                                                                        <state key="normal">
+                                                                        <state key="normal" title="مدينة">
                                                                             <color key="titleColor" name="dark text"/>
                                                                         </state>
                                                                         <connections>
@@ -98,7 +98,7 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_se_location" translatesAutoresizingMaskIntoConstraints="NO" id="bX9-fi-vxH" customClass="imageShadow" customModule="B_Station_IOS" customModuleProvider="target">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_se_location" translatesAutoresizingMaskIntoConstraints="NO" id="bX9-fi-vxH" customClass="imageShadow" customModule="B_Station" customModuleProvider="target">
                                                                 <rect key="frame" x="370" y="18" width="24" height="24"/>
                                                             </imageView>
                                                         </subviews>
@@ -106,7 +106,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ejf-bN-caR">
                                                         <rect key="frame" x="0.0" y="119.5" width="394" height="60"/>
                                                         <subviews>
-                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="akV-To-Kde" customClass="ViewShadow" customModule="B_Station_IOS" customModuleProvider="target">
+                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="akV-To-Kde" customClass="ViewShadow" customModule="B_Station" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="350" height="60"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_list_down" translatesAutoresizingMaskIntoConstraints="NO" id="ib4-fu-cAa">
@@ -119,7 +119,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="342" height="60"/>
                                                                         <color key="backgroundColor" name="clear color"/>
                                                                         <fontDescription key="fontDescription" name=".ArabicUIText-Regular" family=".Arabic UI Text" pointSize="14"/>
-                                                                        <state key="normal">
+                                                                        <state key="normal" title="المسار">
                                                                             <color key="titleColor" name="dark text"/>
                                                                         </state>
                                                                         <connections>
@@ -152,7 +152,7 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_se_dir" translatesAutoresizingMaskIntoConstraints="NO" id="ieP-Ui-LZJ" customClass="imageShadow" customModule="B_Station_IOS" customModuleProvider="target">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_se_dir" translatesAutoresizingMaskIntoConstraints="NO" id="ieP-Ui-LZJ" customClass="imageShadow" customModule="B_Station" customModuleProvider="target">
                                                                 <rect key="frame" x="370" y="18" width="24" height="24"/>
                                                             </imageView>
                                                         </subviews>
@@ -172,7 +172,7 @@
                                                                                 <color key="textColor" name="gray text"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6TL-IN-clv" userLabel="StartPoint" customClass="ViewShadow" customModule="B_Station_IOS" customModuleProvider="target">
+                                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6TL-IN-clv" userLabel="StartPoint" customClass="ViewShadow" customModule="B_Station" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="30.5" width="358" height="70"/>
                                                                                 <subviews>
                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_list_down" translatesAutoresizingMaskIntoConstraints="NO" id="Bur-Bk-gQc">
@@ -185,7 +185,7 @@
                                                                                         <rect key="frame" x="0.0" y="0.0" width="350" height="70"/>
                                                                                         <color key="backgroundColor" name="clear color"/>
                                                                                         <fontDescription key="fontDescription" name=".ArabicUIText-Regular" family=".Arabic UI Text" pointSize="14"/>
-                                                                                        <state key="normal">
+                                                                                        <state key="normal" title="أختر">
                                                                                             <color key="titleColor" name="dark text"/>
                                                                                         </state>
                                                                                         <connections>
@@ -236,7 +236,7 @@
                                                                                 <color key="textColor" name="gray text"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hff-Wn-Z0d" userLabel="EndPoint" customClass="ViewShadow" customModule="B_Station_IOS" customModuleProvider="target">
+                                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hff-Wn-Z0d" userLabel="EndPoint" customClass="ViewShadow" customModule="B_Station" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="30.5" width="358" height="70"/>
                                                                                 <subviews>
                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_list_down" translatesAutoresizingMaskIntoConstraints="NO" id="gae-zp-akU">
@@ -249,7 +249,7 @@
                                                                                         <rect key="frame" x="0.0" y="0.0" width="350" height="70"/>
                                                                                         <color key="backgroundColor" name="clear color"/>
                                                                                         <fontDescription key="fontDescription" name=".ArabicUIText-Regular" family=".Arabic UI Text" pointSize="14"/>
-                                                                                        <state key="normal">
+                                                                                        <state key="normal" title="أختر">
                                                                                             <color key="titleColor" name="dark text"/>
                                                                                         </state>
                                                                                         <connections>
@@ -286,14 +286,14 @@
                                                                     </stackView>
                                                                 </subviews>
                                                             </stackView>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="ic_dir_points" translatesAutoresizingMaskIntoConstraints="NO" id="7ac-2c-QND" customClass="imageShadow" customModule="B_Station_IOS" customModuleProvider="target">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="251" image="ic_dir_points" translatesAutoresizingMaskIntoConstraints="NO" id="7ac-2c-QND" customClass="imageShadow" customModule="B_Station" customModuleProvider="target">
                                                                 <rect key="frame" x="378" y="81" width="16" height="70"/>
                                                             </imageView>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97m-xc-wmf" customClass="ButtonShadow" customModule="B_Station_IOS" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97m-xc-wmf" customClass="ButtonShadow" customModule="B_Station" customModuleProvider="target">
                                                 <rect key="frame" x="42" y="581.5" width="330" height="70"/>
                                                 <color key="backgroundColor" red="0.1450980392" green="0.82745098039999998" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -365,10 +365,10 @@
         <!--SearchResults-->
         <scene sceneID="g1o-RU-aq8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mfv-ZM-xRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="User" referencedIdentifier="SearchResults" id="SX4-Zu-GMk" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="aGh-fQ-oLw"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mfv-ZM-xRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-90050" y="1355"/>
         </scene>

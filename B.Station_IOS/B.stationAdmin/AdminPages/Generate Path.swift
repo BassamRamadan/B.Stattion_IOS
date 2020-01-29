@@ -26,9 +26,8 @@ class GeneratePath: common {
     var RouteId : Int! = nil
     var StartPointId : Int! = nil
     var EndPointId : Int! = nil
-    
-    var StartPointText : String! = "......"
-    var EndPointText  : String! = "......"
+    var StartPointText : String! = "لم يتم تحديد نقطة"
+    var EndPointText  : String! = " بداية أو نهاية"
     
     @IBOutlet weak var CityButton: DesignableButton!
     @IBOutlet weak var RouteButton: DesignableButton!
@@ -79,13 +78,13 @@ class GeneratePath: common {
             self.CityId = self.CitiesObjects[index].id
             // startPoint
             self.StartPointObjects.removeAll()
-            GetDataForPaths.loadOnLinePoints(self.CityId,-1){ (success : [Details]) in
+            GetDataForPaths.loadOnLinePoints(self,self.CityId,-1){ (success : [Details]) in
                 self.StartPointObjects.append(contentsOf: success)
             }
             // endPoint
             if self.RouteId != nil{
                 self.EndPointObjects.removeAll()
-                GetDataForPaths.loadOnLinePoints(self.CityId, self.RouteId){ (success : [Details]) in
+                GetDataForPaths.loadOnLinePoints(self,self.CityId, self.RouteId){ (success : [Details]) in
                     self.EndPointObjects.append(contentsOf: success)
                 }
             }
@@ -102,7 +101,7 @@ class GeneratePath: common {
             
             self.RouteId = self.RoutesObjects[index].id
             if self.CityId != nil{
-                GetDataForPaths.loadOnLinePoints(self.CityId, self.RouteId){ (success : [Details]) in
+                GetDataForPaths.loadOnLinePoints(self,self.CityId, self.RouteId){ (success : [Details]) in
                     self.EndPointObjects.removeAll()
                     self.EndPointObjects.append(contentsOf: success)
                 }
@@ -144,10 +143,10 @@ class GeneratePath: common {
         self.navigationItem.title = "إضافة مسار"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-        GetDataForPaths.loadOnLineCities { (success : [Details]) in
+        GetDataForPaths.loadOnLineCities(self) { (success : [Details]) in
             self.CitiesObjects = success
         }
-        GetDataForPaths.loadOnLineRoute { (success : [Details]) in
+        GetDataForPaths.loadOnLineRoute(self) { (success : [Details]) in
             self.RoutesObjects = success
         }
     }
@@ -165,8 +164,8 @@ class GeneratePath: common {
         EndPointButton.setTitle("", for: .normal)
         StartPointId = nil
         EndPointId = nil
-        StartPointText = "......"
-        EndPointText = "......"
+        StartPointText = "لم يتم تحديد نقطة"
+        EndPointText = " بداية أو نهاية"
     }
     fileprivate func Uploading(){
         self.loading()

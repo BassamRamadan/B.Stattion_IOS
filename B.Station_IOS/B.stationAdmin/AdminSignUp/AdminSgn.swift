@@ -35,6 +35,7 @@ class AdminSgn: common {
         }
         CityDrop.show()
     }
+    
     func checkPermission() {
         let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
         switch photoAuthorizationStatus {
@@ -96,7 +97,7 @@ class AdminSgn: common {
         self.navigationItem.title = "معلومات الشركة"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-        GetDataForPaths.loadOnLineCities { (success : [Details]) in
+        GetDataForPaths.loadOnLineCities(self) { (success : [Details]) in
             self.CitiesObjects.removeAll()
             self.CitiesObjects.append(contentsOf: success)
             print(self.CitiesObjects.count)
@@ -110,15 +111,24 @@ class AdminSgn: common {
         backBtn.addTarget(self, action: #selector(back), for: UIControl.Event.touchUpInside)
     }
     @objc func back(){
-        print("accessed")
         if counter == 1{
-           self.dismiss(animated: true, completion: nil)
+           self.navigationController?.popViewController(animated: true)
         }else{
             self.navigationItem.title = "معلومات الشركة"
             ViewInfomation.isHidden = false
             ViewLocation.isHidden = true
             counter = 1
         }
+    }
+    @IBAction func Delete(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Alert", message: "هل تريد حذف الصورة بالفعل" , preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "لا أوافق", style: .default, handler: { action in
+        }))
+        alert.addAction(UIAlertAction(title: "موافق", style: .default, handler: { action in
+            self.images.remove(at: sender.tag)
+            self.PhotosCollection.reloadData()
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     fileprivate func parsingData(_ data : [Details])->[String]{
         var ResData = [String]()
