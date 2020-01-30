@@ -109,6 +109,25 @@ class common : UIViewController , NVActivityIndicatorViewable{
         return alert
     }
 
+    class func callWhats(whats: String,currentController: UIViewController) {
+        var fullMob: String = whats
+        fullMob = fullMob.replacingOccurrences(of: " ", with: "")
+        fullMob = fullMob.replacingOccurrences(of: "+", with: "")
+        fullMob = fullMob.replacingOccurrences(of: "-", with: "")
+        let urlWhats = "whatsapp://send?phone=\(fullMob)"
+        
+        if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) {
+            if let whatsappURL = NSURL(string: urlString) {
+                if UIApplication.shared.canOpenURL(whatsappURL as URL) {
+                    UIApplication.shared.open(whatsappURL as URL, options: [:], completionHandler: { (Bool) in
+                    })
+                } else {
+                    currentController.present(common.makeAlert(message:NSLocalizedString("WhatsApp Not Found on your device", comment: "")), animated: true, completion: nil)
+                }
+            }
+        }
+    }
+   
     
    
 }

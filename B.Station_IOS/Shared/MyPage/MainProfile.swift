@@ -12,6 +12,8 @@ import SDWebImage
 import Spring
 class MainProfile: common {
    
+    var comeFromFavoritePage : Bool = false
+    var CompanyID : String = ""
     var FavBtn : UIButton!
     var ShareBtn : UIButton!
     var CompanyInfo : RoutesDetails?
@@ -26,10 +28,20 @@ class MainProfile: common {
     @IBOutlet weak var CompanyName: UILabel!
     @IBOutlet weak var bio: UILabel!
     @IBOutlet weak var CosmosRate: CosmosView!
-    
     @IBAction func WhatsuppCall(_ sender: Any) {
+        if CompanyInfo?.whatsapp ?? "" != "" {
+            common.callWhats(whats: CompanyInfo?.whatsapp ?? "", currentController: self)
+        }else{
+            self.present(common.makeAlert(message: "لم تحدد الشركة بعد"),animated: true,completion: nil)
+        }
     }
     @IBAction func PhoneCall(_ sender: Any) {
+        if CompanyInfo?.phone ?? "" != "" {
+            let url = NSURL(string: "tel://\(CompanyInfo?.phone ?? "")")!
+            UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
+        }else{
+            self.present(common.makeAlert(message: "لم تحدد الشركة بعد"),animated: true,completion: nil)
+        }
     }
     @IBOutlet weak var RatePercentage: UILabel!
     @IBOutlet weak var RateLevel: UILabel!
@@ -83,19 +95,36 @@ class MainProfile: common {
         super.viewDidAppear(animated)
         if AppDelegate.normalUser == true{
             self.navigationItem.title =  "بروفيل الشركة"
-            self.setupBackButton()
-            setupFavoriteButton()
-            setupShareButton()
-            RatingsClicked(RatingsButton)
-            setupValues()
-            setTowImages()
+            if comeFromFavoritePage{
+                loadingProfile()
+               
+            }else{
+                // come form All companies Page
+                self.setupBackButton()
+                setupFavoriteButton()
+                setupShareButton()
+                setupValues()
+                SetTwoImages()
+                UpdateConstraints()
+            }
         }else{
             self.navigationItem.title =   "صفحتي"
             loadingProfile()
         }
     }
-   
-   
+    fileprivate func UpdateConstraints(){
+       
+        self.PathsTableView.layoutIfNeeded()
+        self.PathsTableHeight.constant = self.PathsTableView.contentSize.height
+        
+        
+        self.RatingsTableView.layoutIfNeeded()
+        self.RatingsTableHeight.constant = self.RatingsTableView.contentSize.height
+       
+        
+        self.RatingsClicked(self.RatingsButton)
+    }
+    
     fileprivate func setupValues(){
         CompanyName.text = CompanyInfo?.name
         CityName.text = CompanyInfo?.cityName
@@ -104,7 +133,8 @@ class MainProfile: common {
         CosmosRate.rating = CompanyInfo?.avgRate ?? 0.0
         RateLevel.text = RatingLevel.Level(CompanyInfo?.avgRate ?? 0.0)
     }
-    fileprivate func setTowImages(){
+    
+    fileprivate func SetTwoImages(){
         if CompanyInfo?.images.count ?? 0 >= 1{
             image1.sd_setImage(with: URL(string: self.CompanyInfo?.images[0].imagePath ?? ""))
         }
@@ -112,11 +142,7 @@ class MainProfile: common {
             image2.sd_setImage(with: URL(string: self.CompanyInfo?.images[1].imagePath ?? ""))
         }
     }
-    override func viewWillLayoutSubviews() {
-        super.updateViewConstraints()
-        self.PathsTableHeight.constant = self.PathsTableView.contentSize.height
-        self.RatingsTableHeight.constant = self.RatingsTableView.contentSize.height
-    }
+  
     func setupBackButton() {
         self.navigationItem.hidesBackButton = true
         let backBtn: UIButton = common.drowbackButton()
@@ -170,7 +196,13 @@ class MainProfile: common {
     }
     fileprivate func loadingProfile(){
         self.loading()
-        let url = "https://services-apps.net/bstation/public/api/companies/\(CashedData.getAdminID() ?? 0)"
+        let url : String
+        if AppDelegate.normalUser && self.comeFromFavoritePage{
+            url = "https://services-apps.net/bstation/public/api/companies/\(self.CompanyID)"
+        }else{
+            url = "https://services-apps.net/bstation/public/api/companies/\(CashedData.getAdminID() ?? 0)"
+        }
+        
         let headers = [ "Content-Type": "application/json" ,
                         "Accept" : "application/json"
         ]
@@ -183,12 +215,19 @@ class MainProfile: common {
                     if success{
                         let propertiesRecived = try decoder.decode(Paths.self, from: jsonData)
                         self.CompanyInfo = propertiesRecived.data
-                        self.RatingsClicked(self.RatingsButton)
+                        if AppDelegate.normalUser && self.comeFromFavoritePage{
+                            self.setupBackButton()
+                            self.setupFavoriteButton()
+                            self.setupShareButton()
+                            self.comeFromFavoritePage = false
+                        }
+                        
                         self.setupValues()
-                        self.setTowImages()
-                        self.PathsTableView.reloadData()
+                        self.SetTwoImages()
                         self.RatingsTableView.reloadData()
+                        self.PathsTableView.reloadData()
                         self.PhotosCollection.reloadData()
+                        self.UpdateConstraints()
                     }else{
                         let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)
                         self.present(common.makeAlert(message: dataRecived.message ?? ""), animated: true, completion: nil)

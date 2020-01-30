@@ -75,11 +75,17 @@ class AdminLog: common {
                                     AppDelegate.normalUser = false
                                 }
                             }
-                        let storyboard = UIStoryboard(name: "Admin", bundle: nil)
-                        let linkingVC = storyboard.instantiateViewController(withIdentifier: "TabAdminController") as! TabAdminController
-                        let appDelegate = UIApplication.shared.delegate
-                        appDelegate?.window??.rootViewController = linkingVC
-                        
+                        if dataRecived.data?.status == "1"{
+                            let storyboard = UIStoryboard(name: "Admin", bundle: nil)
+                            let linkingVC = storyboard.instantiateViewController(withIdentifier: "TabAdminController") as! TabAdminController
+                            let appDelegate = UIApplication.shared.delegate
+                            appDelegate?.window??.rootViewController = linkingVC
+                        }else{
+                            let storyboard = UIStoryboard(name: "AdminLog", bundle: nil)
+                            let linkingVC = storyboard.instantiateViewController(withIdentifier: "AdminConfig")
+                            let appDelegate = UIApplication.shared.delegate
+                            appDelegate?.window??.rootViewController = linkingVC
+                        }
                     }
                     else{
                         let dataRecived = try decoder.decode(ErrorHandle.self, from: jsonData)

@@ -116,7 +116,16 @@ extension FavouriteCompanies: UITableViewDelegate , UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "CompanyFavorite", sender: TrashingCompanies[indexPath.row].CompanyId)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CompanyFavorite"{
+            if let destination = segue.destination as? MainProfile{
+                destination.comeFromFavoritePage = true
+                destination.CompanyID = sender as! String
+            }
+        }
     }
     
 }

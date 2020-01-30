@@ -9,47 +9,39 @@
 import UIKit
 
 class ActivateCompany: common {
-    @IBOutlet weak var appPhone: UILabel!
-    @IBOutlet weak var appWhats: UILabel!
-    @IBOutlet weak var appTelegram: UIButton!
+    var whatsApp : String!
     
     @IBAction func whatApp(_ sender: UIButton) {
-       
-    }
-    @IBAction func CallApp(_ sender: UIButton) {
-    }
-    
-    @IBAction func telegramApp(_ sender: UIButton) {
-        
+        common.callWhats(whats: whatsApp, currentController: self)
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBackButton()
         self.navigationItem.title =  "تفعيل العضوية"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-      //  getContactsData()
+        getContactsData()
      }
     fileprivate func getContactsData() {
+        self.loading()
         let headers = [
             "Content-Type": "application/json",
             "Accept": "application/json",
         ]
         AlamofireRequests.getMethod(url: "https://services-apps.net/bstation/public/api/app-contacts", headers: headers) { error, success, jsonData in
             do {
+                self.stopAnimating()
                 let decoder = JSONDecoder()
                 if success{
                     let dataReceived = try decoder.decode(AppContacts.self, from: jsonData)
-                    self.appPhone.text = dataReceived.data.phone
-                    self.appWhats.text = dataReceived.data.whatsapp
-                    self.appTelegram.setTitle(dataReceived.data.telegram,for: .normal)
+                    self.whatsApp = dataReceived.data.whatsapp
                 } else {
                     let dataReceived = try decoder.decode(ErrorHandle.self, from: jsonData)
                     let alert = common.makeAlert(message: dataReceived.message ?? "")
                     self.present(alert, animated: true, completion: nil)
                 }
-                
             } catch {
                 let alert = common.makeAlert()
                 self.present(alert, animated: true, completion: nil)
@@ -57,7 +49,16 @@ class ActivateCompany: common {
             }
         }
     }
-
+    private func setupBackButton(){
+        self.navigationItem.hidesBackButton = true
+        let backBtn: UIButton = common.drowbackButton()
+        let backButton = UIBarButtonItem(customView: backBtn)
+        self.navigationItem.setRightBarButton(backButton, animated: true)
+        backBtn.addTarget(self, action: #selector(back), for: UIControl.Event.touchUpInside)
+    }
+    @objc func back(){
+       common.openMain(currentController: self)
+    }
     
 
 }

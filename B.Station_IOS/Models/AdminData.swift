@@ -21,7 +21,6 @@ struct AdminLogin: Codable {
 }
 
 struct AdminLoginDetails: Codable {
-    
     let id: Int
     let status : String?
     let name, phone,username: String

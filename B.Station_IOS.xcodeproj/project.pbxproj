@@ -211,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				5806880A23AFC76B00DE5839 /* AdminSign.storyboard */,
-				58F1756A23D67133004DA24C /* ActivateCompany.swift */,
 				585292D223DC7E4C00A97D49 /* AdminSgn.swift */,
 				5849E8F323DE414900C7B231 /* PhotosCell.swift */,
 			);
@@ -234,6 +233,7 @@
 			children = (
 				587567DA23DB8DDD00A7417F /* AdminLog.swift */,
 				587567DD23DB8E4D00A7417F /* AdminLog.storyboard */,
+				58F1756A23D67133004DA24C /* ActivateCompany.swift */,
 			);
 			path = AdminLogin;
 			sourceTree = "<group>";
